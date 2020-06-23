@@ -1,4 +1,7 @@
 <!-- /templates/product.liquid -->
+
+
+
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 
 <div itemscope itemtype="http://schema.org/Product" id="ProductSection--{{ section.id }}"
@@ -150,6 +153,7 @@
             <hr class="hr--small">
 
             <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
+            
             <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
             {% capture "form_classes" %}
@@ -224,15 +228,47 @@
               {% endif %}
 
               <div class="product-single__add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} product-single__add-to-cart--full-width{% endif %}">
+                
                 <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
                   <span class="btn__text">
+
                     {% if current_variant.available %}
                       {{ 'products.product.add_to_cart' | t }}
                     {% else %}
-                      {{ 'products.product.sold_out' | t }}
+                      {{ 'products.product.sold_out' | t }}                      
                     {% endif %}
                   </span>
+
                 </button>
+
+                <!--MODAL OF OUT OF STOCKS-->
+
+                {% if current_variant.available == false %}
+
+                  {% unless current_variant.available %}
+
+                    <div id="sold-out" class="product-single__add-to-cart--full-width">
+
+                      {% form 'contact'%}
+
+                        <button type="button" class="btn btn--add-to-cart btn-notify trigger" style="width: 100%">Notify me when available</button>
+                      
+                      {% endform%}
+
+                      <div class="modal">
+                        <div class="modal-content">
+                          <span class="close-button">&times;</span>
+                          <h5>Hello, I am a modal!</h5>
+                        </div>
+                      </div>
+
+                    </div>
+                    
+                  {% endunless %}
+                  
+                {% endif %}
+
+
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
                 {% endif %}
