@@ -4785,13 +4785,8 @@ $disclosure-list-large: 1100px;
   }
 }
 
-.btn-notify {
-  //background-color: black;
-}
-
-
 //modal for out of stock
-
+ 
 .modal {
   position: fixed;
   left: 0;
@@ -4808,22 +4803,25 @@ $disclosure-list-large: 1100px;
 
 .modal-content {
   position:absolute;
-  top: 50%;
+  top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 1rem 1.5rem;
-  width: 24rem;
+  padding: 2em 3em;
+  width: 33em;
   border-radius: 8px;
+  text-align: left;
 }
 
 .close-button {
-  float: right;
-  width: 1.5rem;
-  line-height: 1.5rem;
+  position: absolute;
+  top:10%;
+  right:5%;
+  width: 1.5em;
+  line-height: 1.5em;
   text-align: center;
   cursor: pointer;
-  border-radius: 0.24rem;
+  border-radius: 0.24em;
   background-color: lightgray;
 }
 
@@ -4838,3 +4836,40 @@ $disclosure-list-large: 1100px;
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+.modal-container {
+  position: relative;
+}
+
+.input-email {
+  border: 1px solid lightgray;
+  width: 100%;
+}
+
+.alert {
+  width: 100%;
+  color: #46AA2F;
+  margin-top: .5em;
+  background-color: #D3EFCD;
+  border-left: 5px solid #46AA2F;
+  padding: .5em 1em;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  bottom: 1%; 
+}
+
+.show-alert {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide-btn-notify {
+  opacity: 0;
+  visibility: hidden;
+}
+  
+.alert-close {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #46AA2F;
+}

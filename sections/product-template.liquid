@@ -241,33 +241,17 @@
 
                 </button>
 
-                <!--MODAL OF OUT OF STOCKS-->
-
                 {% if current_variant.available == false %}
 
                   {% unless current_variant.available %}
 
                     <div id="sold-out" class="product-single__add-to-cart--full-width">
 
-                      {% form 'contact'%}
-
-                        <button type="button" class="btn btn--add-to-cart btn-notify trigger" style="width: 100%">Notify me when available</button>
-                      
-                      {% endform%}
-
-                      <div class="modal">
-                        <div class="modal-content">
-                          <span class="close-button">&times;</span>
-                          <h5>Hello, I am a modal!</h5>
-                        </div>
-                      </div>
-
-                    </div>
+                      <button type="button" class="btn btn--add-to-cart btn-notify trigger" style="width: 100%">Notify me when available</button>
                     
+                    </div>
                   {% endunless %}
-                  
                 {% endif %}
-
 
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
@@ -297,7 +281,29 @@
   </script>
 {% endunless %}
 
+<!--MODAL OF OUT OF STOCKS-->
+<div class="modal">
+  <div class="modal-content">
+    <span class="close-button">&times;</span>
+    <h2>{{product.title}}</h2>
+      <p>Register to receive a notification when this item comes back in stock with an additional 10% off!</p>
 
+    <div class="modal-container">
+      {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %}
+    
+        {{ form.errors | default_errors }}
+          <input type="email" name="contact[email]" id="emailContact" placeholder="your@email.com" class="input-email"/>
+          <input type="submit" name="contact[submit]" class="btn btn--add-to-cart" id="btn-notify" style="width: 100%" value="Notify me when available"/>
+
+          {{form.email}}
+      {% endform %}
+ 
+      <div class="alert" id="alert-msg">
+        <span class="alert-message">You're in! We'll let you know when it's back. <a class="alert-close">Close</a></span>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% schema %}
 {
