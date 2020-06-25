@@ -28,6 +28,8 @@
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+  <!-- Custom CSS Author: John Mark ================================================== -->
+  {{ 'theme-custom.scss.css' | asset_url | stylesheet_tag }}
 
   <!-- Sections ================================================== -->
 
@@ -63,6 +65,9 @@
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+
+  <!-- Custom JS Author: John Mark ================================================== -->
+  <script src="{{ 'theme-custom.js' | asset_url }}" defer="defer"></script>
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
