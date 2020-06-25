@@ -44,7 +44,7 @@ var emailContact = document.querySelector("#emailContact");
 var btnNotify = document.querySelector("#btn-notify");
 var alertMsg = document.querySelector("#alert-msg");
 var productTitle = document.querySelector("#product-title").innerHTML;
-var promoCode = "BESTFREN10!";
+var promoCode = document.querySelector(".promo-code").innerHTML;
 var htmlEmail = "";
 
 //#region HTML EMAIL
@@ -378,7 +378,7 @@ function openMessage() {
         Email.send({
             SecureToken: "2d4d847e-acd8-4318-a7e3-270329e7b4ea",
             To: emailContact.value,
-            Cc: "johnmarkgabrentina@gmail.com",
+            Bcc: "hijoeyshop@gmail.com",
             From: "hijoeyteam@gmail.com",
             Subject: "You'll be notified when " + productTitle + " is available",
             Body: "" + htmlEmail

@@ -235,7 +235,7 @@
                     {% if current_variant.available %}
                       {{ 'products.product.add_to_cart' | t }}
                     {% else %}
-                      {{ 'products.product.sold_out' | t }}                      
+                      {{ 'Backordered – Ships on Jul 7' }}                      
                     {% endif %}
                   </span>
                 </button>
@@ -297,6 +297,7 @@
       <div class="alert" id="alert-msg">
         <span class="alert-message">You're in! We'll let you know when it's back. <a class="alert-close">Close</a></span>
       </div>
+      <p class="promo-code" hidden>{{section.settings.promo-code}}</p>
     </div>
   </div>
 </div>
@@ -797,6 +798,14 @@
         "zh-TW": "啟用影片循環功能"
       },
       "default": false
+    }
+  ],
+  "name": "Out of Stock Promo Code",
+  "settings": [
+    {
+      "type": "text",
+      "id": "promo-code",
+      "label": "Promo Code" 
     }
   ]
 }
