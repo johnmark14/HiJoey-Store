@@ -227,6 +227,13 @@
               </div>
               {% endif %}
 
+               <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
+              {% if current_variant.available %}
+                <div class="qty-alert">
+                  <p>Only {{ current_variant.inventory_quantity }} left - Ships on {{"now" | date: "%s" | plus: 432000 | date: "%b %d"}}</p>
+                </div>
+              {% endif %}
+
               <div class="product-single__add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} product-single__add-to-cart--full-width{% endif %}">
                 
                 <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
@@ -235,13 +242,14 @@
                     {% if current_variant.available %}
                       {{ 'products.product.add_to_cart' | t }}
                     {% else %}
-                      {{ 'Backordered – Ships on Jul 7' }}                      
+                    <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
+                      Backordered - Ships on {{"now" | date: "%s" | plus: 1296000 | date: "%b %d"}}                     
                     {% endif %}
                   </span>
                 </button>
 
                 <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-                {% if current_variant.available == false %}
+                {% if current_variant.available == false %} 
                   {% unless current_variant.available %}
                     <div id="sold-out" class="product-single__add-to-cart--full-width">
                       <button type="button" class="btn btn--add-to-cart btn-notify trigger" style="width: 100%">Notify me when available</button>
