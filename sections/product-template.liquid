@@ -241,14 +241,11 @@
 
                 </button>
 
+                <!-- Custom code for Notify Button--> 
                 {% if current_variant.available == false %}
-
                   {% unless current_variant.available %}
-
                     <div id="sold-out" class="product-single__add-to-cart--full-width">
-
                       <button type="button" class="btn btn--add-to-cart btn-notify trigger" style="width: 100%">Notify me when available</button>
-                    
                     </div>
                   {% endunless %}
                 {% endif %}
