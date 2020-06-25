@@ -285,11 +285,11 @@
 <div class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>
-    <h2>{{product.title}}</h2>
+    <h2 id="product-title">{{product.title}} {{product.type}}</h2>
       <p>Register to receive a notification when this item comes back in stock with an additional 10% off!</p>
 
     <div class="modal-container">
-      {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %}
+      {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %} 
     
         {{ form.errors | default_errors }}
           <input type="email" name="contact[email]" id="emailContact" placeholder="your@email.com" class="input-email"/>

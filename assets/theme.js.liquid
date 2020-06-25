@@ -4672,23 +4672,41 @@ function post(path, method="post") {
   form.submit();
 }
 
+var greet = document.querySelector(".successfull");
+var emailContact = document.querySelector("#emailContact");
+var btnNotify = document.querySelector("#btn-notify");
+var alertMsg = document.querySelector("#alert-msg");
+var productTitle = document.querySelector("#product-title").innerHTML;
+
 
 function openMessage() {
   
-  var greet = document.querySelector(".successfull");
-  var emailContact = document.querySelector("#emailContact");
-  var btnNotify = document.querySelector("#btn-notify");
-  var alertMsg = document.querySelector("#alert-msg");
-  
   if (emailContact.value.length != 0) {
 
-    // MailChimp Here 
-    btnNotify.classList.toggle("hide-btn-notify");
-    alertMsg.classList.toggle("show-alert");
-    emailContact.disabled = true;
-    console.log("hello"); 
+    try {
 
+      Email.send({
+          Host: "smtp.gmail.com",
+          Username: "novogamer14@gmail.com",
+          Password: "jmBeats14",
+          To: emailContact.value,
+          Cc: "johnmarkgabrentina@gmail.com",
+          From: "Contact@Support.com",
+          Subject: "You'll be notified when " + productTitle + " is available",
+          Body: "Thanks for registering! You'll receive a notification when this comes back in stock. Please use the code below for an additional 10% off on your next order. [BESTFREN10]"
+      }).then( doButton() );
+    
+    } catch (error) { 
+      console.log(error);
+    }
   }
   
   return false;
+}
+
+function doButton() {
+  
+  btnNotify.classList.toggle("hide-btn-notify");
+  alertMsg.classList.toggle("show-alert");
+  emailContact.disabled = true;
 }
