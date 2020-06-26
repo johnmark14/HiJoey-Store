@@ -249,13 +249,11 @@
                 </button>
 
                 <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-                {% if current_variant.available == false %} 
                   {% unless current_variant.available %}
                     <div id="sold-out" class="product-single__add-to-cart--full-width">
                       <button type="button" class="btn btn--add-to-cart btn-notify trigger" style="width: 100%">Notify me when available</button>
                     </div>
                   {% endunless %}
-                {% endif %}
 
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
@@ -305,7 +303,7 @@
       <div class="alert" id="alert-msg">
         <span class="alert-message">You're in! We'll let you know when it's back. <a class="alert-close">Close</a></span>
       </div>
-      <p class="promo-code" hidden>{{section.settings.promo-code}}</p>
+      <p class="promo-code" hidden>{{section.settings.promo-code}}</p> 
     </div>
   </div>
 </div>

@@ -1,3 +1,48 @@
+/*============================================================================
+  Dependency-free breakpoint mixin
+    - http://blog.grayghostvisuals.com/sass/sass-media-query-mixin/
+==============================================================================*/
+$min: min-width;
+$max: max-width;
+@mixin at-query ($constraint, $viewport1, $viewport2:null) {
+  @if $constraint == $min {
+    @media screen and ($min: $viewport1) {
+      @content;
+    }
+  } @else if $constraint == $max {
+    @media screen and ($max: $viewport1) {
+      @content;
+    }
+  } @else {
+    @media screen and ($min: $viewport1) and ($max: $viewport2) {
+      @content;
+    }
+  }
+}
+
+$viewportIncrement: 1px;
+$siteWidth: 1050px;
+$small: 590px;
+$medium: 768px;
+$large: 769px;
+$xlarge: $siteWidth + $viewportIncrement;
+
+$postSmall: $small + $viewportIncrement;
+$preMedium: $medium - $viewportIncrement;
+$preLarge: $large - $viewportIncrement;
+
+/*================ The following are dependencies of csswizardry grid ================*/
+$breakpoints: (
+  'small' '(max-width: #{$small})',
+  'medium' '(min-width: #{$postSmall}) and (max-width: #{$medium})',
+  'medium-down' '(max-width: #{$medium})',
+  'large' '(min-width: #{$large})',
+  'xlarge' '(min-width: #{$xlarge})'
+);
+$breakpoint-has-widths: ('small', 'medium', 'medium-down', 'large', 'xlarge');
+$breakpoint-has-push:  ('medium', 'medium-down', 'large');
+$breakpoint-has-pull:  ('medium', 'medium-down', 'large');
+
 .qty-alert {
   background-color: #f7f7f7;
   padding: 12px 0;
@@ -95,3 +140,40 @@
   #btn-notify {
     background-color: #1b1f23;
   }
+
+  @media screen and (max-width: 540px) { 
+
+    .close-button {
+      font-size: .9em;
+    }
+
+    .modal-content { 
+      width: 24em;
+      padding: 2em 2em;
+    }
+
+    h2#product-title {
+      font-size: 1.4em;
+    }
+
+    input#emailContact {
+      font-size: .9em;
+      padding: .5em;
+    }
+
+    input#btn-notify {
+      font-size: .8em;
+      padding: .7em;
+    }
+
+    .modal-content p {
+      font-size: 0.9em;
+    }
+
+    span.alert-message {
+      font-size: .8em;
+    }
+
+  }
+
+  
