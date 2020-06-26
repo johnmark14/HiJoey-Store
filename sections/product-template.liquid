@@ -230,7 +230,7 @@
                <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
               {% if current_variant.available %}
                 <div class="qty-alert">
-                  <p>Only {{ current_variant.inventory_quantity }} left - Ships on {{"now" | date: "%s" | plus: 432000 | date: "%b %d"}}</p>
+                  <caption>Only {{ current_variant.inventory_quantity }} left - Ships on {{"now" | date: "%s" | plus: 432000 | date: "%b %d"}}</caption>
                 </div>
               {% endif %}
 
