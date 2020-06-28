@@ -226,7 +226,7 @@
               <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
               {% if current_variant.available %}
                 <div class="qty-alert">
-                  <caption>Only {{ current_variant.inventory_quantity }} left - Ships on {{"now" | date: "%s" | plus: 432000 | date: "%b %d"}}</caption>
+                  <caption>Only {{ current_variant.inventory_quantity }} left - Ships on <span class="shiping-prod"></span></caption>
                 </div>
              {% endif %}
 
@@ -238,7 +238,7 @@
                       {{ 'products.product.add_to_cart' | t }}
                     {% else %}
                     <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-                      Backordered - Ships on {{"now" | date: "%s" | plus: 1296000 | date: "%b %d"}}                     
+                      Backordered - Ships on <span class="backorded-prod"></span>                     
                     {% endif %}
                   </span>
                 </button>
@@ -246,7 +246,7 @@
                 <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
                 {% unless current_variant.available %}
                   <div id="sold-out" class="product-single__add-to-cart--full-width">
-                    <button type="button" class="btn btn--add-to-cart btn-notify btn-outline trigger" style="width: 100%">Notify me when available</button>
+                    <button type="button" class="btn btn--add-to-cart btn-notify btn-outline trigger" style="width: 100%" onclick="toggleModal()">Notify me when available</button>
                   </div>
               {% endunless %}
               
@@ -281,7 +281,7 @@
 <!-- MODAL OF OUT OF STOCKS Author: John Mark ================================================== -->
 <div class="modal">
   <div class="modal-content">
-    <span class="close-button">&times;</span>
+    <span class="close-button" onclick="toggleModal()">&times;</span>
     <h2 id="product-title">{{product.title}}</h2>
       <p>Register to receive a notification when this item comes back in stock with an additional 10% off!</p>
 
@@ -296,7 +296,7 @@
       {% endform %}
  
       <div class="alert" id="alert-msg">
-        <span class="alert-message">You're in! We'll let you know when it's back. <a class="alert-close">Close</a></span>
+        <span class="alert-message">You're in! We'll let you know when it's back. <a class="alert-close" onclick="toggleAlertClose()">Close</a></span>
       </div>
       <!--
       <p class="promo-code" hidden>{{section.settings.promo-code}}</p>

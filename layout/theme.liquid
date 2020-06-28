@@ -65,13 +65,26 @@
   {{ 'customscript.js' | asset_url | script_tag }}
   {{ 'stickyMojo.js' | asset_url | script_tag }}
   {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+
+  <!-- Custom JS Author: John Mark ================================================== -->
+
+  <!-- Script used to send Emails ================================================== -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+  
   
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
 
-  <!-- Custom JS Author: John Mark ================================================== -->
-  <script src="{{ 'theme-custom.js' | asset_url }}" defer="defer"></script>
+  <!-- Script used to calculating holidays & Weekends ================================================== -->
+  {{ 'moment.min.js' | asset_url | | script_tag }}
+  {{ 'moment-holiday-pkg.min.js' | asset_url | script_tag }}
+
+  <!-- Custom Script Author: John Mark================================================== -->
+  <script src="{{ 'theme-custom.js' | asset_url }}" defer="defer"></script> 
+
+  
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
@@ -88,10 +101,6 @@
 <!--Gem_Page_Header_Script-->
 {% include 'gem-app-header-scripts' %}
 <!--End_Gem_Page_Header_Script-->
-
-<!-- Script used to send Emails ================================================== -->
-<script src="https://smtpjs.com/v3/smtp.js"></script>
-
 </head>
 
 {% comment %}

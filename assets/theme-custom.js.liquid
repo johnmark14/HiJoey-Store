@@ -1,31 +1,25 @@
+
 //Custom JavaScript Author: JM
 var modal = document.querySelector(".modal");
-var trigger = document.querySelector(".trigger");
-var closeButton = document.querySelector(".close-button");
-var alertClose = document.querySelector(".alert-close");
+var greet = document.querySelector(".successfull");
+var emailContact = document.querySelector("#emailContact");
+var btnNotify = document.querySelector("#btn-notify");
+var alertMsg = document.querySelector("#alert-msg");
 
+var productTitle = document.querySelector("#product-title").innerHTML;
+var promoCode = "BESTFREN10"; 
+var htmlEmail = "";
+
+var backordedProd = document.querySelector(".backorded-prod");
+var shipProd = document.querySelector(".shiping-prod");
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
 }
 
-function windowOnClick(event) {
-  if(event.target === modal) {
-    toggleModal();
-  }
-
-  if(event.target === alertClose) {
-    toggleAlertClose();
-  }
-}
-
 function toggleAlertClose() {
   post("/contact#contact_form");
 }
-
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click", windowOnClick);
 
 // Manual Post Method 
 function post(path, method="post") {
@@ -37,14 +31,6 @@ function post(path, method="post") {
   document.body.appendChild(form);
   form.submit();
 }
-
-var greet = document.querySelector(".successfull");
-var emailContact = document.querySelector("#emailContact");
-var btnNotify = document.querySelector("#btn-notify");
-var alertMsg = document.querySelector("#alert-msg");
-var productTitle = document.querySelector("#product-title").innerHTML;
-var promoCode = "BESTFREN10"; 
-var htmlEmail = "";
 
 //#region HTML EMAIL
 htmlEmail = `
@@ -388,12 +374,55 @@ function openMessage() {
       }
     }
     
-    return false;
-  }
+  return false;
+}
   
-  function doButton() {
-    
-    btnNotify.classList.toggle("hide-btn-notify");
-    alertMsg.classList.toggle("show-alert");
-    emailContact.disabled = true;
+function doButton() {
+  
+  btnNotify.classList.toggle("hide-btn-notify");
+  alertMsg.classList.toggle("show-alert");
+  emailContact.disabled = true;
+}
+
+// Calculate delivery expected date
+function setCalculate(numberOfDays) {
+
+  var dateFormat = "MMMM DD, YYYY";
+
+  //var numberOfDays = parseInt(document.getElementById("numberDays").value);
+
+  var a = moment().format(dateFormat);
+  var b = moment().add(numberOfDays, 'd').format(dateFormat);
+  
+  var targetDay = moment(b)
+  for (var m = moment(a); m.isBefore(targetDay); m.add(1, 'days')) {
+      
+      if(checkIfWeekEnds(m) || checkIfHolidays(m)) {
+        targetDay.add(1, 'd').format(dateFormat);
+      } 
   }
+
+return targetDay.subtract(1, 'd').format('MMMM DD');
+
+}
+
+function checkIfWeekEnds(day) {
+    if (day.day() == 6 || day.day() == 0) {
+        return true;
+    }
+}
+
+function checkIfHolidays(day) {
+    var holiday = day.format('YYYY-MM-DD');
+    if(moment(day.format('YYYY-MM-DD')).isHoliday()) {
+        return true;
+    }
+}
+
+if (backordedProd != null) {
+  backordedProd.innerHTML = setCalculate(15);
+}
+
+if(shipProd != null) {
+  shipProd.innerHTML= setCalculate(5);
+}
