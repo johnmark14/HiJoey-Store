@@ -1,0 +1,687 @@
+h1 {
+    font-size: 48px !important;
+  font-weight: 500 !important;
+  font-family: "Cooper BT",serif !important;
+  line-height:56px !important;
+}
+
+h2 {
+    font-size: 36px !important;
+  font-weight: 500 !important;
+  font-family: "Cooper BT",serif !important; 
+  line-height:42px !important;
+}
+
+h3 {
+    font-size: 28px !important;
+  line-height:36px !important;
+  font-weight:normal !important;
+}
+
+h4 {
+    font-size: 20px !important;
+  font-weight: 500 !important;
+  line-height:28px !important;
+  font-weight:normal !important;
+}
+
+h5 {
+    font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height:24px !important;
+}
+
+h6{
+    font-size: 12px !important;
+  line-height:16px !important;
+  font-weight: 600 !important;
+}
+body, p {
+	font-size:14px !important;
+  line-height:20px !important;
+  font-weight: normal !important;
+}
+caption {
+	font-size:12px !important;
+  line-height:16px !important;
+  font-weight: normal !important;
+
+}
+h3, h4, h5 {
+text-transform:capitalize !important;
+}
+h3, h4, h5, h6, body, p {
+font-family: "Harmonia Sans",sans-serif !important;
+}
+
+h1, h2, h3, h5, h6, a{
+color:#231F20 !important;
+  letter-spacing:0 !important;
+}
+h4, body, p, caption {
+color:#727272 !important;
+}
+a:hover {
+color:#727272 !important;
+}
+ .btn,
+  .btn-big,
+  .btn-outline,
+.btn-big-outline  {
+float:left;
+  display:inline-block;
+  letter-spacing: 0;
+      font-weight: 600 !important;
+    border-radius: 8px !important;
+  cursor:pointer;
+}
+
+.btn {
+    padding: 12px 24px !important;
+    margin: 8px 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #fff !important;
+    background: #324175 !important;
+      text-transform: capitalize;
+}
+.btn-big {
+    padding: 16px 24px !important;
+    margin: 8px 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #fff !important;
+    background: #324175 !important;
+}
+.btn-outline {
+	padding: 12px 24px !important;
+    margin: 8px 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    background: transparent !important;
+    border: 2px solid #324175 !important;
+    color: #324175 !important;
+}
+.btn-big-outline {
+	padding: 16px 24px !important;
+    margin: 8px 0 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    background: transparent !important;
+    border: 2px solid #324175 !important;
+    color: #324175 !important;
+}
+#test .main-content section {
+	float:left;
+      width:100%;
+  margin-bottom:20px;
+}
+/***
+HEADER
+***/
+.about.site-nav__item > ul a {
+font-size:14px !important;
+  line-height:20px !important;
+  font-weight: normal !important;
+}
+.site-nav__link,
+.mobile-nav__item a {
+font-size: 14px !important;
+line-height:14px !important;
+  font-weight: 600 !important;
+  color:#727272 !important;
+}
+  .mobile_menu {
+    z-index: 999;
+    position: relative;
+  }
+
+  .mobile-nav__item a {
+    font-size: 16px;
+}
+
+.site-header {
+    padding: 4px 0;
+ 
+}
+.site-header .grid--table {
+    display: block;
+}
+.site-header .grid--table>.grid__item {
+    float: none;
+    display: block;
+}
+.site_logo {
+    position: absolute;
+    top: 56px;
+    left: 0;
+}
+#AccessibleNav  .about.site-nav__item  ul.site-nav__dropdown {
+     padding-left: 160px !important;
+}
+.site_logo, .nav_menu_container {
+    width: 100%;
+    float: left !important;
+}
+#AccessibleNav {
+    text-align: left;
+}
+.site-header .wrapper {
+max-width:100%;
+  padding:8 16px;
+}
+/** Removing this so that the Shopify customize option works
+.site-header__logo img {
+    max-width: 100% !important;
+    height: 56px;
+}
+**/
+
+/** BEGINNING of Sean's code **/
+.site-header__logo img {
+  padding: 8px 0;
+
+}
+
+.site-header__logo-link {
+  vertical-align: middle; 
+}
+
+/** END of Sean's code **/
+
+.site-nav__link {
+    padding: 32px 24px;
+}
+.site-nav__item {
+ position: initial !important;
+}
+.site-nav--has-dropdown .site-nav__dropdown {
+
+}
+.site-nav__link a:before {
+	display:none !important;
+}
+.site-nav__dropdown-grandchild {
+    position: relative;
+    left: 0;
+    margin: 0;
+    z-index: 1;
+    opacity: 1 !important;
+ 
+    box-shadow: none !important;
+}
+#AccessibleNav .site-nav__dropdown {
+padding:40px 36px !important;
+}
+.site-nav__dropdown.site-nav--has-grandchildren {
+padding:10px 36px !important;
+}
+.site-nav__dropdown-grandchild a,
+.site-nav__dropdown-link {
+    padding: 5px 0;
+  text-align:left;
+}
+.shop.site-nav__item .site-nav__dropdown > li {
+  width:14%;
+  float:left;
+}
+.shop.site-nav__item .site-nav__dropdown > li:nth-child(7n+1) {
+ clear:both;
+  
+}
+.site-nav__dropdown-link {
+	font-style:normal !important;
+}
+
+.site-nav__dropdown-grandchild {
+transform: none;
+}
+.site-nav__dropdown .icon  {
+display:none;
+}
+
+.site-nav__dropdown > li > a {
+    font-weight: 600;
+}
+/***
+HEADER SHRINK
+****/
+.main-content {
+margin-top: 130px;
+}
+.site_logo {
+    position: absolute;
+    top: 17px;
+    left: 0;
+      max-width: 300px;
+    margin: auto;
+    left: 0;
+    right: 0;
+}
+.announcement-bar {
+    position: fixed;
+    width: 100%;
+  top:0;
+}
+.announcement-bar.shrink {
+    top: -38px;
+}
+.announcement-bar,
+.site-header,
+.site-nav__link,
+.site-header .site_logo,
+.site-header .site-header__logo img{
+    -webkit-transition: all 0.3s ease-in-out !important;
+    -moz-transition: all 0.3s ease-in-out !important;
+    -ms-transition: all 0.3s ease-in-out !important;
+    -o-transition: all 0.3s ease-in-out !important;
+    transition: all 0.3s ease-in-out !important;
+}
+.site-header {
+    top: 39px;
+    position: fixed;
+    width: 100%;
+  border-bottom: 1px solid #F1F0F0;
+}
+.site-header.shrink {
+      top: 0
+}
+.site-header.shrink .site-header__logo img {
+
+}
+
+.site-header.shrink .site-nav__link {
+    padding: 12px 24px;
+}
+.site-header.shrink .site_logo {
+    top: -5px;
+}
+
+/****
+FAQ PAGE
+****/
+#faq main .section-header {
+	display:none;
+}
+#faq main .grid__item {
+    width: 100%;
+    left: 0;
+}
+.faq.PageLayout {
+	float:left;
+  width:100%;
+}
+.faq.PageLayout .left,
+.faq.PageLayout .right{
+	float:left;
+}
+.faq.PageLayout .left {
+
+}
+.faq.PageLayout .right{
+
+    padding-left: 30px;
+}
+.FaqSummary {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.FaqSummary__Item {
+    margin-bottom: 12px !important;
+}
+.FaqSummary__Link {
+    cursor: pointer;
+    position: relative;
+    width: auto;
+    display: inline;
+}
+.FaqSummary__LinkLabel {
+    position: relative;
+    display: inline-block;
+}
+.FaqSummary__Item.is-active .FaqSummary__Link::after,
+#shopify-section-footer .site-footer__linklist a:hover:after{
+    transform: scale(1, 1);
+}
+.FaqSummary__Link::after,
+#shopify-section-footer .site-footer__linklist a:after{
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    transform: scale(0, 1);
+    transform-origin: left center;
+    background: currentColor;
+    transition: transform 0.2s linear;
+}
+.Faq__Section {
+    margin-bottom: 34px !important;
+      text-align: left !important;
+}
+.Anchor {
+    display: block;
+    position: relative;
+    top: -75px;
+    visibility: hidden;
+}
+.Faq__Item {
+    position: relative;
+    margin: 14px 0;
+}
+.Faq__Icon {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #9d9d9d;
+    transition: all 0.3s ease-in-out;
+}
+.Faq__Icon svg {
+    width: 8px;
+    height: 10px;
+    vertical-align: baseline;
+}
+.Faq__ItemWrapper {
+    padding-left: 26px;
+}
+.Faq__Question {
+display: block;
+    width: 100%;
+    margin-bottom: 0;
+    text-align: left;
+    cursor: pointer;
+    padding-left: 20px;
+}
+.Faq__AnswerWrapper {
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    transition: height 0.25s ease-in-out, visibility 0s ease-in-out 0.25s;
+}
+.Faq__Answer {
+    padding: 16px 20px 22px;
+}
+.Faq__Answer p:last-child,
+.Faq__Answer p:last-of-type{
+	margin-bottom:0 ;
+}
+
+
+.accordion-container{
+position: relative;
+    height: auto;
+    margin-bottom: 50px;
+}
+
+.set {
+  position: relative;
+  width: 100%;
+  height: auto;
+    margin: 14px 0;
+}
+.set > a{
+  display: block;
+  text-decoration: none;
+  color: #555;
+  font-weight: 600;
+  -webkit-transition:all 0.2s linear;
+  -moz-transition:all 0.2s linear;
+  transition:all 0.2s linear;
+}
+.set > a i{
+  float: right;
+  margin-top: 2px;
+}
+.set > a.active{
+}
+.content{
+  display:none;
+}
+
+.active .Faq__Icon {
+    transform: rotateZ(90deg);
+    color: #454545;
+}
+
+#main {
+        width: 500px;
+        height: 1000px; /*can be anything, just should make sure it is taller than the sidebar*/
+        padding: 25px;
+        float: left;
+      }
+      #sidebar {
+        width:300px;
+        min-height: 200px;
+        margin: 10px 0 15px 0; /*controls the cutoff of the top and bottom limitations*/
+        padding: 15px 10px;
+        float: left; /* float right for a right aligned sidebar */
+        left:auto !important;
+      }
+      #footer {
+        width: 940px;
+        clear:both;
+        background-color: #ccc;
+        height: 500px;
+        margin-top: 100px;
+      }
+      #wrapper {
+        width: 800px; /* MUST HAVE WIDTH SET, should be the sidebar width + main width */
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+
+/***
+SITE FOOTER
+****/
+.site-footer {
+    border-top: 1px solid #ebebeb;
+    padding-top: 80px;
+}
+.site-footer a {
+    position: relative;
+}
+#shopify-section-footer .twenty {
+width:20%;
+  float:left;
+}
+#shopify-section-footer .forty {
+width:40%;
+  float:left;
+}
+
+.site-footer__linklist li:first-child,
+.©-2020-hijoey-co {
+	font-weight: bold;
+margin-bottom: 10px;
+    font-size: 12px !important;
+    line-height: 16px !important;
+    font-weight: 600 !important;
+    color: #231F20;
+    pointer-events: none;
+}
+
+.site-footer__linklist li  {
+font-size:14px !important;
+  line-height:20px !important;
+  font-weight: normal !important;
+}
+#shopify-section-footer h6 {
+color:#231F20 !important;
+}
+.newsletter--form {
+    width: 100%;
+    display: block;
+}
+.newsletter--form .input-group {
+width:100%;
+  display:block;
+}
+.newsletter--form .input-group-btn {
+    position: absolute ;
+    top: 10px;
+    right: 10px;
+    width: 35px;
+}
+.newsletter--form img {
+    width: 100%;
+    height: 100%;
+}
+.social-icons {
+    float: left;
+    margin-top: 10px;
+}
+.social-icons li {
+display:inline-block;
+  margin-right:10px;
+}
+.social-icons li:last-child {
+margin-right:0;
+}
+#footer_bottom {
+background:#F7F7F7 ;
+      float: left;
+    width: 100%;
+     padding: 12px 0;
+}
+#footer_bottom ul {
+	margin-bottom:0;
+  text-align: right;
+}
+#footer_bottom li {
+	display:inline-block;
+  font-size:12px !important;
+  line-height:16px !important;
+  font-weight: normal !important;
+      margin-right: 24px;
+}
+
+/***
+MEDIA QUERY
+***/
+@media only screen and (max-width: 1110px) {
+  .mobile_menu.large--hide,
+  .site-nav--open {
+    display: none;
+   display:block !important;
+  }
+  .nav_menu_container  {
+  display:none !important;
+  }
+.site-header.shrink .site_logo {
+    top: -1px;
+}
+  
+}
+
+@media only screen and (max-width: 1024px) {
+.mobile_first {
+	clear:both;
+  margin-left:0;
+}
+h1 {
+    font-size: 28px !important;
+  line-height:36px !important;
+}
+
+h2 {
+    font-size: 24px !important;
+  line-height:32px !important;
+}
+
+h3 {
+    font-size: 22px !important;
+  line-height:28px !important;
+}
+
+h4 {
+    font-size: 16px !important;
+  line-height:24px !important;
+}
+
+h5 {
+    font-size: 16px !important;
+  line-height:24px !important;
+}
+
+h6 {
+    font-size: 12px !important;
+  line-height:16px !important;
+}
+body, p {
+	font-size:14px !important;
+  line-height:20px !important;
+}
+.site-header .grid--table {
+    height: 60px;
+}
+  
+#shopify-section-footer .twenty,
+  #shopify-section-footer .forty {
+  width:50%;
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 1110px) and (min-width: 768px) {
+
+  .site_logo {
+    top: 5px;
+ }
+  #AccessibleNav {
+    text-align: center;
+ }
+}
+
+@media only screen and (max-width: 999px)  {
+  .nav_menu_container {
+     padding-bottom:20px;
+
+  }
+}
+
+@media only screen and (max-width: 768px)  {
+.site_logo {
+    top: -2px;
+}
+}
+
+@media only screen and (max-width: 767px)  {
+  .main-content {
+    margin-top: 108px;
+}
+  .privacy-policy,
+.inspired-by-christina-stella {
+display:none !important;
+}
+  #shopify-section-footer .twenty,
+  #shopify-section-footer .forty {
+  width:100%;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+#sidebar {
+display:none;
+}
+  #main {
+    width: 100%;
+    height: auto;
+}
+  #wrapper {
+    width: 100%;
+}
+  
+  .btn,
+  .btn-big,
+  .btn-outline,
+  .btn-big-outline {
+    width:100% !important;
+    display:block !important;
+        text-align: center;
+}
+
+  
+}
+
