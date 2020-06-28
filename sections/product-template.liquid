@@ -1,7 +1,4 @@
 <!-- /templates/product.liquid -->
-
-
-
 {%- assign first_3d_model = product.media | where: "media_type", "model" | first -%}
 
 <div itemscope itemtype="http://schema.org/Product" id="ProductSection--{{ section.id }}"
@@ -153,7 +150,6 @@
             <hr class="hr--small">
 
             <meta itemprop="priceCurrency" content="{{ cart.currency.iso_code }}">
-            
             <link itemprop="availability" href="http://schema.org/{% if product.available %}InStock{% else %}OutOfStock{% endif %}">
 
             {% capture "form_classes" %}
@@ -226,19 +222,18 @@
                 <input type="number" hidden="hidden" id="Quantity" name="quantity" value="1" min="1" class="js-quantity-selector">
               </div>
               {% endif %}
-
-               <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
+              
+              <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
               {% if current_variant.available %}
                 <div class="qty-alert">
                   <caption>Only {{ current_variant.inventory_quantity }} left - Ships on {{"now" | date: "%s" | plus: 432000 | date: "%b %d"}}</caption>
                 </div>
-              {% endif %}
+             {% endif %}
+
 
               <div class="product-single__add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} product-single__add-to-cart--full-width{% endif %}">
-                
                 <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
                   <span class="btn__text">
-
                     {% if current_variant.available %}
                       {{ 'products.product.add_to_cart' | t }}
                     {% else %}
@@ -249,12 +244,12 @@
                 </button>
 
                 <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-                  {% unless current_variant.available %}
-                    <div id="sold-out" class="product-single__add-to-cart--full-width">
-                      <button type="button" class="btn btn--add-to-cart btn-notify trigger" style="width: 100%">Notify me when available</button>
-                    </div>
-                  {% endunless %}
-
+                {% unless current_variant.available %}
+                  <div id="sold-out" class="product-single__add-to-cart--full-width">
+                    <button type="button" class="btn btn--add-to-cart btn-notify btn-outline trigger" style="width: 100%">Notify me when available</button>
+                  </div>
+              {% endunless %}
+              
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
                 {% endif %}
@@ -307,6 +302,8 @@
     </div>
   </div>
 </div>
+
+
 
 {% schema %}
 {

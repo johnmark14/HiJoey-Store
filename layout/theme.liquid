@@ -28,6 +28,7 @@
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
+
   <!-- Custom CSS Author: John Mark ================================================== -->
   {{ 'theme-custom.scss.css' | asset_url | stylesheet_tag }}
 
@@ -61,7 +62,10 @@
   </script>
 
   {{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
-
+  {{ 'customscript.js' | asset_url | script_tag }}
+  {{ 'stickyMojo.js' | asset_url | script_tag }}
+  {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+  
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
@@ -87,6 +91,7 @@
 
 <!-- Script used to send Emails ================================================== -->
 <script src="https://smtpjs.com/v3/smtp.js"></script>
+
 </head>
 
 {% comment %}
@@ -124,7 +129,7 @@
       {% endunless %}
     </main>
 
-    <hr class="hr--large">
+
 
     {% section 'footer' %}
 

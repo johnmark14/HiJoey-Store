@@ -120,8 +120,8 @@
 
       <header class="site-header" role="banner"{% if section.settings.transparent_header_enable %} data-transparent-header="true"{% endif %}>
         <div class="wrapper">
-          <div class="grid--full grid--table">
-            <div class="grid__item large--hide large--one-sixth one-quarter">
+          <div class="grid--full grid--table ">
+            <div class="grid__item large--one-sixth one-quarter mobile_menu">
               <div class="site-nav--open site-nav--mobile">
                 <button type="button" class="icon-fallback-text site-nav__link site-nav__link--burger js-drawer-open-button-left" aria-controls="NavDrawer">
                   <span class="burger-icon burger-icon--top"></span>
@@ -131,21 +131,23 @@
                 </button>
               </div>
             </div>
-            <div class="grid__item large--one-third medium-down--one-half">
+            
+            
+            <div class="grid__item large--one-third medium-down--one-half site_logo">
               {% comment %}
                 Use the uploaded logo from theme settings if enabled.
                 Site name gets precedence with H1 tag on homepage, div on other pages.
               {% endcomment %}
               {% if request.page_type == 'index' %}
-                <h1 class="site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+                <h1 class="site-header__logo large--center" itemscope itemtype="http://schema.org/Organization">
               {% else %}
-                <div class="h1 site-header__logo large--left" itemscope itemtype="http://schema.org/Organization">
+                <div class="h1 site-header__logo large--center" itemscope itemtype="http://schema.org/Organization">
               {% endif %}
                 {% capture image_size %}{{ logo_max_width | escape }}x{% endcapture %}
 
                 <a href="{{ routes.root_url }}" itemprop="url" class="site-header__logo-link">
                   {% if section.settings.logo %}
-                    <img class="site-header__logo-image" src="{{ section.settings.logo | img_url: image_size }}" srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x" alt="{{ section.settings.logo.alt | default: shop.name }}" itemprop="logo">
+                    <img class="site-header__logo-image" src="{{ section.settings.logo | img_url: '512x' }}" srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x" alt="{{ section.settings.logo.alt | default: shop.name }}" itemprop="logo">
 
                     {% if request.page_type == 'index' and section.settings.transparent_header_enable %}
                       {% if section.settings.transparent_logo == blank %}
@@ -166,7 +168,9 @@
                 </div>
               {% endif %}
             </div>
-            <nav class="grid__item large--two-thirds large--text-right medium-down--hide" role="navigation">
+            
+            
+            <nav class="nav_menu_container grid__item large--two-thirds large--text-left medium-down--hide" role="navigation">
               {% comment %}
                 List out your main-menu linklist (default)
 
@@ -179,7 +183,7 @@
                   {% if link.links != blank %}
                   {% assign parent_index = forloop.index %}
                     <li
-                      class="site-nav__item site-nav--has-dropdown {% if link.active %}site-nav--active{% endif %}"
+                      class="{{ link.title | handle }} site-nav__item site-nav--has-dropdown {% if link.active %}site-nav--active{% endif %}"
                       aria-haspopup="true"
                       data-meganav-type="parent">
                       <a
@@ -247,7 +251,7 @@
                       </ul>
                     </li>
                   {% else %}
-                    <li class="site-nav__item{% if link.active %} site-nav--active{% endif %}">
+                    <li class="no_dropdown site-nav__item{% if link.active %} site-nav--active{% endif %}">
                       <a
                         href="{{ link.url }}"
                         class="site-nav__link"
@@ -297,7 +301,7 @@
                     </a>
                   </li>
                 {% endif %}
-
+{%comment%}
                 <li class="site-nav__item site-nav__item--compressed">
                   <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
                     <span class="icon-fallback-text">
@@ -307,10 +311,19 @@
                     <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
                   </a>
                 </li>
-
+{%endcomment%}
               </ul>
               <!-- //site-nav -->
+              
+              
             </nav>
+         
+            
+            
+            
+            
+            
+          {%comment%}  
             <div class="grid__item large--hide one-quarter">
               <div class="site-nav--mobile text-right">
                 <a href="{{ routes.cart_url }}" class="site-nav__link cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
@@ -322,6 +335,7 @@
                 </a>
               </div>
             </div>
+          {%endcomment%} 
           </div>
 
         </div>

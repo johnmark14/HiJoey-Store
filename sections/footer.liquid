@@ -81,41 +81,79 @@
         {% when 2 %}
           {% assign footer_column_width = 'one-half small--one-whole' %}
         {% when 3 %}
-          {% assign footer_column_width = 'one-third small--one-whole' %}
+          {% assign footer_column_width = 'one-fourth medium--one-half small--one-whole' %}
         {% when 4 %}
           {% assign footer_column_width = 'large--one-quarter medium--one-half' %}
       {% endcase %}
 
       {% if linklists[section.settings.footer_link_list].links.size > 0 %}
-        <div class="grid__item {{ footer_column_width }}">
+        <div class="grid__item twenty">
           <ul class="no-bullets site-footer__linklist">
             {% for link in linklists[section.settings.footer_link_list].links %}
-
-      {% comment %}
-        Create a second column
-      {% endcomment %}
-      {% if extra_footer_linklist_column and forloop.index == footer_linklist_split %}
-          </ul>
-        </div>
-        <div class="grid__item {{ footer_column_width }}">
-          <ul class="no-bullets site-footer__linklist">
-      {% endif %}
-
               <li><a href="{{ link.url }}">{{ link.title }}</a></li>
-
             {% endfor %}
           </ul>
         </div>
       {% endif %}
 
+      {% if linklists.footer-menu-2.links.size > 0 %}
+        <div class="grid__item twenty">
+          <ul class="no-bullets site-footer__linklist">
+            {% for link in linklists.footer-menu-2.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      
+      {% if linklists.footer-menu-3.links.size > 0 %}
+        <div class="grid__item twenty mobile_first">
+          <ul class="no-bullets site-footer__linklist">
+            {% for link in linklists.footer-menu-3.links %}
+              <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+      
       {% if footer_social_enable %}
-        <div class="grid__item {{ footer_column_width }}">
+        <div class="grid__item forty">
+          <h6>Join the #AlwaysCurious Club + Get 10% Off</h6>
+          <p>Get early access to buttons, mats, promotions, and learning resources from experts!</p>
+          {% form 'customer' %}
+      {{ form.errors | default_errors }}
+      {% if form.posted_successfully? %}
+        <div class="newsletter--form">
+          <div class="note form-success">{{ 'general.newsletter_form.newsletter_confirmation' | t }}</div>
+        </div>
+      {% else %}
+        <label for="Email" class="newsletter__label hidden-label">{{ 'general.newsletter_form.newsletter_email' | t }}</label>
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter--form">
+          <div class="input-group">
+            <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+            <span class="input-group-btn">
+              <button id="Subscribe" type="submit"
+                class=" newsletter__submit"
+                aria-label="{{ 'general.newsletter_form.submit' | t }}">
+                <span class="newsletter__submit-text--large"><img src="{{ 'next.svg' | asset_url }}"  alt="Arrow RIght" > </span>
+                <span class="newsletter__submit-text--small">
+                  <span class="icon icon-arrow-right" aria-hidden="true"></span>
+                </span>
+              </button>
+            </span>
+          </div>
+        </div>
+      {% endif %}
+    {% endform %}
+          
+          
             <ul class="no-bullets social-icons">
               {% if settings.social_facebook_link != blank %}
                 <li>
                   <a href="{{ settings.social_facebook_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Facebook' }}">
                     <span class="icon icon-facebook" aria-hidden="true"></span>
-                    Facebook
+                    
                   </a>
                 </li>
               {% endif %}
@@ -123,7 +161,7 @@
                 <li>
                   <a href="{{ settings.social_twitter_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Twitter' }}">
                     <span class="icon icon-twitter" aria-hidden="true"></span>
-                    Twitter
+                    
                   </a>
                 </li>
               {% endif %}
@@ -131,7 +169,7 @@
                 <li>
                   <a href="{{ settings.social_pinterest_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Pinterest' }}">
                     <span class="icon icon-pinterest" aria-hidden="true"></span>
-                    Pinterest
+                    
                   </a>
                 </li>
               {% endif %}
@@ -139,7 +177,7 @@
                 <li>
                   <a href="{{ settings.social_instagram_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Instagram' }}">
                     <span class="icon icon-instagram" aria-hidden="true"></span>
-                    Instagram
+                    
                   </a>
                 </li>
               {% endif %}
@@ -147,7 +185,7 @@
                 <li>
                   <a href="{{ settings.social_snapchat_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Snapchat' }}">
                     <span class="icon icon-snapchat" aria-hidden="true"></span>
-                    Snapchat
+                    
                   </a>
                 </li>
               {% endif %}
@@ -155,7 +193,7 @@
                 <li>
                   <a href="{{ settings.social_google_plus_link | escape }}" rel="publisher" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Google Plus' }}">
                     <span class="icon icon-google_plus" aria-hidden="true"></span>
-                    Google Plus
+                    
                   </a>
                 </li>
               {% endif %}
@@ -163,7 +201,7 @@
                 <li>
                   <a href="{{ settings.social_tumblr_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Tumblr' }}">
                     <span class="icon icon-tumblr" aria-hidden="true"></span>
-                    Tumblr
+                    
                   </a>
                 </li>
               {% endif %}
@@ -171,7 +209,7 @@
                 <li>
                   <a href="{{ settings.social_youtube_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'YouTube' }}">
                     <span class="icon icon-youtube" aria-hidden="true"></span>
-                    YouTube
+                    
                   </a>
                 </li>
               {% endif %}
@@ -179,7 +217,7 @@
                 <li>
                   <a href="{{ settings.social_vimeo_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Vimeo' }}">
                     <span class="icon icon-vimeo" aria-hidden="true"></span>
-                    Vimeo
+                    
                   </a>
                 </li>
               {% endif %}
@@ -187,7 +225,7 @@
                 <li>
                   <a href="{{ settings.social_fancy_link | escape }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: 'Fancy' }}">
                     <span class="icon icon-fancy" aria-hidden="true"></span>
-                    Fancy
+                    
                   </a>
                 </li>
               {% endif %}
@@ -203,7 +241,10 @@
         endif
       -%}
 
-      <div class="grid__item {{ footer_column_width }} {% if num_footer_columns == 1 %}text-center{% else %}large--text-right{% endif %}">
+      <div class="grid__item full-width {% if num_footer_columns == 1 %}text-center{% else %}large--text-right{% endif %}">
+        
+        
+        
         {%- form 'localization', class: selectors_form_class -%}
           {%- if locale_selector -%}
             <div class="selectors-form__item">
@@ -254,8 +295,9 @@
           {%- endif -%}
         {%- endform -%}
 
+        {%comment%}
         <p class="site-footer__copyright-content">&copy; {{ 'now' | date: '%Y' }}, {{ shop.name | link_to: routes.root_url }}<br>{{ powered_by_link }}</p>
-
+		{%endcomment%}
         {%- if section.settings.show_payment_icons -%}
           {%- unless shop.enabled_payment_types == empty -%}
             <span class="visually-hidden">{{ 'general.payment.method' | t }}</span>
@@ -273,7 +315,19 @@
 
   </div>
 </footer>
-
+<section id="footer_bottom">
+  <div class="wrapper">
+    {% if linklists.secondary-footer-menu-terms-copyright.links.size > 0 %}
+        <div class="">
+          <ul class="no-bullets ">
+            {% for link in linklists.secondary-footer-menu-terms-copyright.links %}
+            <li class="{{ link.title | handle }}"><a href="{{ link.url }}"><caption>{{ link.title }}</caption></a></li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+  </div>
+</section>
 
 
 {% schema %}

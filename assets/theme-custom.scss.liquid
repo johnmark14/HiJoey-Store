@@ -6,7 +6,7 @@ $min: min-width;
 $max: max-width;
 @mixin at-query ($constraint, $viewport1, $viewport2:null) {
   @if $constraint == $min {
-    @media screen and ($min: $viewport1) {
+    @media screen and ($min: $viewport1) { 
       @content;
     }
   } @else if $constraint == $max {
@@ -71,7 +71,7 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
     transform: translate(-50%, -50%);
     background-color: white;
     padding: 2em 3em;
-    width: 33em;
+    width: 37em;
     border-radius: 8px;
     text-align: left;
   }
@@ -102,6 +102,14 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
   .modal-container {
     position: relative;
   }
+
+  h2#product-title {
+    font-size: 30px !important;
+  }
+
+  .modal-content p {
+    font-size: 16px !important;
+  }
   
   .input-email {
     border: 1px solid lightgray;
@@ -114,11 +122,10 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
     margin-top: .5em;
     background-color: #D3EFCD;
     border-left: 5px solid #46AA2F;
-    padding: .5em 1em;
+    padding: 1em 1em;
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    bottom: 1%; 
   } 
   
   .show-alert {
@@ -134,7 +141,7 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
   .alert-close {
     text-decoration: underline;
     cursor: pointer;
-    color: #46AA2F;
+    color: #46AA2F !important;
   }
   
   #btn-notify {
@@ -144,7 +151,7 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
   @media screen and (max-width: 540px) { 
 
     .close-button {
-      font-size: .9em;
+      font-size: .9em !important;
     }
 
     .modal-content { 
@@ -153,25 +160,29 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
     }
 
     h2#product-title {
-      font-size: 1.4em;
+      font-size: 1.4em !important;
     }
 
     input#emailContact {
-      font-size: .9em;
+      font-size: .9em !important; 
       padding: .5em;
     }
 
     input#btn-notify {
-      font-size: .8em;
+      font-size: .8em !important;
       padding: .7em;
     }
 
     .modal-content p {
-      font-size: 0.9em;
+      font-size: 0.9em !important;
+    }
+
+    .alert {
+        padding: .5em 1em; 
     }
 
     span.alert-message {
-      font-size: .8em;
+      font-size: .8em !important;
     }
 
   }

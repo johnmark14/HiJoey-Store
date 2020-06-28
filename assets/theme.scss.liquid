@@ -2773,8 +2773,8 @@ $slick-dot-character: '\2022';
   @include at-query($max, $medium) {
     img {
       max-height: $drawerHeaderHeight - ($gutter / 2); // account for border-box height
-      margin-top: $gutter / 3;
-      margin-bottom: $gutter / 3;
+      margin-top: $gutter / 4;
+      margin-bottom: $gutter / 4;
     }
   }
 }
@@ -2980,7 +2980,7 @@ $slick-dot-character: '\2022';
   @include bodyFontItalic;
   display: block;
   white-space: nowrap;
-  padding: 5px 15px;
+  padding: 4px 16px;
   font-size: em(16px);
   .site-nav--has-grandchildren & {
     padding-right: $gutter * 1.5;
@@ -3291,6 +3291,7 @@ button.mfp-arrow {
   }
 
   .grid-uniform & {
+/** REMOVE THIS BECAUSE IT ADDS EXCESS TOP AND BOTTOM PRODUCT IMG MARGINS WHEN SCALING TO SMALLER SCREEN **/
     display: table-cell;
     vertical-align: middle;
     overflow: hidden;
@@ -4784,6 +4785,4 @@ $disclosure-list-large: 1100px;
     width: 100%;
   }
 }
-
-
 
