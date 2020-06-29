@@ -6,7 +6,7 @@ var emailContact = document.querySelector("#emailContact");
 var btnNotify = document.querySelector("#btn-notify");
 var alertMsg = document.querySelector("#alert-msg");
 
-var productTitle = document.querySelector("#product-title").innerHTML;
+var productTitle = document.querySelector("#product-title");
 var promoCode = "BESTFREN10"; 
 var htmlEmail = "";
 
@@ -357,6 +357,9 @@ htmlEmail = `
 function openMessage() {
   
     if (emailContact.value.length != 0) {
+
+      //Get the product Title;
+      productTitle = productTitle.innerHTML;
   
       try {
   
@@ -388,8 +391,6 @@ function doButton() {
 function setCalculate(numberOfDays) {
 
   var dateFormat = "MMMM DD, YYYY";
-
-  //var numberOfDays = parseInt(document.getElementById("numberDays").value);
 
   var a = moment().format(dateFormat);
   var b = moment().add(numberOfDays, 'd').format(dateFormat);
