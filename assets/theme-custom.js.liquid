@@ -17,12 +17,14 @@ var shipProd = document.querySelector(".shiping-prod");
 
 
 function showItems() {
-  accordionIcon.classList.toggle("rotateIcon");
+  
 
   if(accordionPanel.style.maxHeight) {
     accordionPanel.style.maxHeight = null;
+    accordionIcon.innerHTML = "&#43;"; 
   } else {
     accordionPanel.style.maxHeight = accordionPanel.scrollHeight + "px";
+    accordionIcon.innerHTML = "&ndash;"; 
   }
 }
 function toggleModal() {

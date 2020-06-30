@@ -151,8 +151,8 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
   // Accordion style information
 
 .product__desc--container {
-  border-top: 1px solid #000;
-  border-bottom: 1px solid #000;
+  border-top: 1px solid #EBEBEB;
+  border-bottom: 1px solid #EBEBEB;
   margin-bottom: 10px;
 }
 .product__desc--accordion {
@@ -162,17 +162,23 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
   text-align: left;
   border: none;
   outline: none;
-  padding: 10px 0;
+  padding: 12px 0;
   position: relative;
-  font-size: 1.3em;
+}
+
+.product__desc--accordion h5 {
+  color: #727272 !important;
+  margin: 0;
+  text-transform: none !important;
 }
 
 .product__desc--icon {
   position: absolute;
-  top: -10%;
+  top: 0%;
   right: 5%;
-  float: right;
-  font-size: 1.9em;
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #727272;
   transition: all 0.3s ease-in-out;
 }
 
@@ -186,68 +192,72 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
 }
 
 .product__desc--panel ul li {
-  font-size: 1.12em;
-  margin: 15px 0;
+  font-family: "Harmonia Sans", sans-serif !important;
+  font-size: 14px !important; 
+  line-height: 20px !important;
+  font-weight: normal !important;
+  color: #727272 !important;
   list-style: none;
+}
+.product__desc--panel ul {
+  margin: 1em; 
 }
 
 .product__desc--panel ul li:last-child {
   margin-bottom: 20px;
+}
+.product__desc--panel ul li:first-child {
+  margin-top: 15px;
 }
 
 .product__desc--panel ul li::before {
   content: '\25CF';
   display: inline-block;
   width: 1em;
-  margin-left: -1.1em;
+  margin-left: -1em;
 }
 
-  .rotateIcon {
-    transform: rotate(90deg);
-    
+.show {
+  height: 50px;
+}
+
+@media screen and (max-width: 540px) { 
+
+  .close-button {
+    font-size: .9em !important;
   }
 
-  .show {
-    height: 50px;
+  .modal-content { 
+    width: 24em;
+    padding: 2em 2em;
   }
 
-  @media screen and (max-width: 540px) { 
-
-    .close-button {
-      font-size: .9em !important;
-    }
-
-    .modal-content { 
-      width: 24em;
-      padding: 2em 2em;
-    }
-
-    h2#product-title {
-      font-size: 1.4em !important;
-    }
-
-    input#emailContact {
-      font-size: .9em !important; 
-      padding: .5em;
-    }
-
-    input#btn-notify {
-      font-size: .8em !important;
-      padding: .7em;
-    }
-
-    .modal-content p {
-      font-size: 0.9em !important;
-    }
-
-    .alert {
-        padding: .5em 1em; 
-    }
-
-    span.alert-message {
-      font-size: .8em !important;
-    }
-
+  h2#product-title {
+    font-size: 1.4em !important;
   }
+
+  input#emailContact {
+    font-size: .9em !important; 
+    padding: .5em;
+  }
+
+  input#btn-notify {
+    font-size: .8em !important;
+    padding: .7em;
+  }
+
+  .modal-content p {
+    font-size: 0.9em !important;
+  }
+
+  .alert {
+      padding: .5em 1em; 
+  }
+
+  span.alert-message {
+    font-size: .8em !important;
+  }
+
+}
 
   

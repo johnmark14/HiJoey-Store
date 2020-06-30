@@ -261,9 +261,12 @@
 
           <!-- Custom code for Accordion Author: John Mark ================================================== -->
           <div class="product-single__description product__desc--container" itemprop="description" >
-            <button class="product__desc--accordion" onclick="showItems()"><b> Product Details and Features </b><span class="product__desc--icon">&rsaquo;</span></button>
-            <div class="product__desc--panel">
-              {{ product.description }}
+            <button class="product__desc--accordion" onclick="showItems()">
+              <h5>Product Details and Features</h5>
+              <span class="product__desc--icon">&#43;</span>
+            </button>
+            <div class="product__desc--panel"> 
+              {{product.description}}
             </div>
           </div>
           
