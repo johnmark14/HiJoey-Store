@@ -1,5 +1,7 @@
 
 //Custom JavaScript Author: JM
+var accordionPanel = document.querySelector(".product__desc--panel");
+var accordionIcon = document.querySelector(".product__desc--icon");
 var modal = document.querySelector(".modal");
 var greet = document.querySelector(".successfull");
 var emailContact = document.querySelector("#emailContact");
@@ -13,6 +15,16 @@ var htmlEmail = "";
 var backordedProd = document.querySelector(".backorded-prod");
 var shipProd = document.querySelector(".shiping-prod");
 
+
+function showItems() {
+  accordionIcon.classList.toggle("rotateIcon");
+
+  if(accordionPanel.style.maxHeight) {
+    accordionPanel.style.maxHeight = null;
+  } else {
+    accordionPanel.style.maxHeight = accordionPanel.scrollHeight + "px";
+  }
+}
 function toggleModal() {
   modal.classList.toggle("show-modal");
 }

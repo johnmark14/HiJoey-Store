@@ -148,6 +148,69 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
     background-color: #1b1f23;
   }
 
+  // Accordion style information
+
+.product__desc--container {
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px;
+}
+.product__desc--accordion {
+  background-color: white;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  padding: 10px 0;
+  position: relative;
+  font-size: 1.3em;
+}
+
+.product__desc--icon {
+  position: absolute;
+  top: -10%;
+  right: 5%;
+  float: right;
+  font-size: 1.9em;
+  transition: all 0.3s ease-in-out;
+}
+
+  /* Style the accordion panel. Note: hidden by default */
+.product__desc--panel {
+  display: block;
+  max-height: 0;
+  height: 100%;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+.product__desc--panel ul li {
+  font-size: 1.12em;
+  margin: 15px 0;
+  list-style: none;
+}
+
+.product__desc--panel ul li:last-child {
+  margin-bottom: 20px;
+}
+
+.product__desc--panel ul li::before {
+  content: '\25CF';
+  display: inline-block;
+  width: 1em;
+  margin-left: -1.1em;
+}
+
+  .rotateIcon {
+    transform: rotate(90deg);
+    
+  }
+
+  .show {
+    height: 50px;
+  }
+
   @media screen and (max-width: 540px) { 
 
     .close-button {
