@@ -226,11 +226,15 @@
               {% endif %}
             
              <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
-             {% if current_variant.available %}
+             {% if current_variant.inventory_quantity > 0 %}
               <div class="qty-alert">
                 <caption>Only {{ current_variant.inventory_quantity }} left - Ships on <span class="shiping-prod"></span></caption>
               </div>
-              {% endif %}
+             {%else%}
+                <div class="qty-alert">
+                  <caption>Backordered - Ships on <span class="backorded-prod"></span></caption>
+                </div>
+             {% endif %}
 
               <div class="product-single__add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} product-single__add-to-cart--full-width{% endif %}">
                 <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
@@ -245,11 +249,11 @@
                 </button>
                 
                 <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-                {% unless current_variant.available %}
+                {% if current_variant.inventory_quantity == 0 %}
                   <div id="sold-out" class="product-single__add-to-cart--full-width">
-                    <button type="button" class="btn btn--add-to-cart btn-notify btn-outline trigger" style="width: 100%" onclick="toggleModal()">Notify me when available</button>
+                    <button type="button" class="btn btn--add-to-cart btn-notify btn-outline trigger" style="width: 100%">Notify me when available</button>
                   </div>
-                {% endunless %}
+                {% endif %}
                 
                 {% if section.settings.enable_payment_button %}
                   {{ form | payment_button }}
@@ -302,7 +306,7 @@
       <p>Register to receive a notification when this item comes back in stock with an additional 10% off!</p>
 
     <div class="modal-container">
-      {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %} 
+      {% form 'contact', contact, onSubmit: "openMessage(); return false;" %} 
     
         {{ form.errors | default_errors }}
           <input type="email" name="contact[email]" id="emailContact" placeholder="your@email.com" class="input-email"/>

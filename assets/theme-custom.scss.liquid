@@ -48,6 +48,11 @@
   background-color: darkgray;
 }
 
+.close-button::selection {
+  color: none;
+  background: none;
+}
+ 
 .show-modal {
   opacity: 1;
   visibility: visible;
@@ -78,10 +83,11 @@ h2#product-title {
   margin-top: .5em;
   background-color: #D3EFCD;
   border-left: 5px solid #46AA2F;
-  padding: 1em 1em;
+  padding: 10px;
   opacity: 0;
   visibility: hidden;
   position: absolute;
+  bottom: 0%
 } 
 
 .show-alert {

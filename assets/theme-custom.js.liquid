@@ -1,13 +1,17 @@
 
 //Custom JavaScript Author: JM
+const closeButton = document.querySelector(".close-button");
+const alertClose = document.querySelector(".alert-close");
+const openModal = document.querySelector(".trigger");
 const modal = document.querySelector(".modal");
 const greet = document.querySelector(".successfull");
 const emailContact = document.querySelector("#emailContact");
 const btnNotify = document.querySelector("#btn-notify");
 const alertMsg = document.querySelector("#alert-msg");
-const productTitle = document.querySelector("#product-title");
 const backordedProd = document.querySelector(".backorded-prod");
 const shipProd = document.querySelector(".shiping-prod");
+
+let productTitle = document.querySelector("#product-title");
 
 var promoCode = "BESTFREN10"; 
 var htmlEmail = "";
@@ -18,6 +22,12 @@ function onlyOne(checkbox) {
       if (item !== checkbox) item.checked = false
   })
 }
+
+// this close the modal using the close button
+closeButton.addEventListener("click", toggleModal);
+alertClose.addEventListener("click", toggleAlertClose);
+
+openModal.addEventListener("click", toggleModal);
 
 function toggleModal() {
   modal.classList.toggle("show-modal");
@@ -363,7 +373,6 @@ htmlEmail = `
 function openMessage() {
   
     if (emailContact.value.length != 0) {
-
       //Get the product Title;
       productTitle = productTitle.innerHTML;
   
