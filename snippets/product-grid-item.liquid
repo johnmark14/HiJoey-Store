@@ -45,9 +45,14 @@
 <div class="grid__item grid-product {{ grid_item_width }}{% if sold_out %} is-sold-out{% endif %}">
   <div class="grid-product__wrapper">
     <div class="grid-product__image-wrapper">
-      <a class="grid-product__image-link{% unless featured_image.src == blank %} grid-product__image-link--loading{% endunless %}" href="{{ product.url | within: collection }}" data-image-link>
+
+      <!-- ORIG SHOPIFY BROOKLYN THEME ORIGINAL CODE
+      
+      <a class="grid-product__image-link{% unless featured_image.src == blank %} grid-product__image-link--loading{% endunless %}" href="{{ product.url | within: collection }}" data-image-link>      
+
         {% if featured_image.src == blank %}
-          <img class="grid-product__image" src="{{ featured_image.src | img_url: '1024x' }}" alt="{{ featured_image.alt | escape }}">
+			           
+    	    <img class="grid-product__image" src="{{ featured_image.src | img_url: '1024x' }}" alt="{{ featured_image.alt | escape }}">
         {% else %}
           {% include 'image-style' with image: featured_image, small_style: true, width: width, height: height, wrapper_id: img_wrapper_id, img_id_class: img_id_class %}
           <div id="{{ img_wrapper_id }}" class="product--wrapper">
@@ -61,11 +66,59 @@
                    data-image>
             </div>
           </div>
+
           <noscript>
             <img class="grid-product__image" src="{{ featured_image.src | img_url: '1024x' }}" alt="{{ featured_image.alt | escape }}">
           </noscript>
+
         {% endif %}
       </a>
+
+      END OF ORIG SHOPIFY BROOKLYN THEME CODE -- Sean adding new code below for Changing Product Img on Hover -->
+      
+      <a class="grid-product__image-link{% unless featured_image.src== blank %} grid-product__image-link--loading{% endunless %}" href="{{ product.url | within: collection }}" data-image-link>
+	   <div class="reveal">
+        {% if featured_image.src== blank %}
+
+
+          <img class="grid-product__image" src="{{ featured_image.src | img_url: '1024x' }}" alt="{{ featured_image.alt | escape }}">
+          <img class="hidden" src="{{ product.images[1].src | img_url: 'large' }}" alt="{{ product.images[1].alt | escape }}" />
+  
+          {% else %}
+          {% include 'image-style' with image: featured_image, small_style: true, width: width, height: height, wrapper_id: img_wrapper_id, img_id_class: img_id_class %}
+          <div id="{{ img_wrapper_id }}" class="product--wrapper">
+            <div style="padding-top:{{ 1 | divided_by: featured_image.aspect_ratio | times: 100 }}%;">
+              <img class="product--image lazyload {{ img_id_class }}"
+                   data-src="{{ featured_image.src | img_url: '1024x' }}"
+                   data-widths="[180, 370, 590, 740, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ featured_image.aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ featured_image.alt | escape }}"
+                   data-image>
+            {% if product.images.size > 1 %}
+              <img class="product--image lazyload hidden {{ img_id_class }}"
+                   data-src="{{ product.images[1] | img_url: 'large'}}"
+                   data-widths="[180, 370, 590, 740, 900, 1080, 1296, 1512, 1728, 2048]"
+                   data-aspectratio="{{ product.images[1].aspect_ratio }}"
+                   data-sizes="auto"
+                   alt="{{ product.images[1].alt | escape }}"
+                   data-image>
+            {% endif %}
+            </div>
+          </div>
+          
+          <noscript>
+            <img class="grid-product__image" src="{{ featured_image.src | img_url: '1024x' }}" alt="{{ featured_image.alt | escape }}">
+         	<img class="hidden grid-product__image" src="{{ product.images[1].src | img_url: 'large' }}" alt="{{ product.images[1].alt | escape }}" />
+  
+         </noscript>
+        {% endif %}
+  </div>
+</a>
+      
+      
+<!-- SHOPIFY BROOKLYN THEME ORIGINAL CODE was originally
+
       {% if sold_out %}
         <div class="grid-product__sold-out">
           <p>{{ 'products.product.sold_out_html' | t }}</p>
@@ -73,16 +126,32 @@
       {% elsif on_sale %}
         <div class="grid-product__on-sale">
           {% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}{% endcapture %}
-          <p>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</p>
+          <tag-label>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</tag-label>
         </div>
       {% endif %}
+
+END OF ORIGINAL SHOPIFY CODE -- SEAN'S COPY+PASTE OF ORIG CODE BELOW W/EDITS TO CUSTOMIZE SALE TAG W/ TAG-LABEL SIZE FONT -->
+      
+      
+      {% if sold_out %}
+        <div class="grid-product__sold-out">
+          <tag-label>SOLD OUT</tag-label>
+          <!--<tag-label>{{ 'products.product.sold_out_html' | t }}</tag-label>-->
+        </div>
+      {% elsif on_sale %}
+        <div class="grid-product__on-sale">
+          <tag-label>SALE</tag-label>
+          <!--{% capture saved_amount %}{{ product.compare_at_price | minus: product.price | money_without_trailing_zeros }}{% endcapture %}
+          <tag-label>{{ 'products.general.save_html' | t: saved_amount: saved_amount }}</tag-label>-->
+        </div>
+      {% endif %}      
     </div>
 
     <a href="{{ product.url | within: collection }}" class="grid-product__meta">
-      <span class="grid-product__title">{{ product.title }}</span>
+      <span class="grid-product__title"><h5>{{ product.title }}</h5></span>
       <span class="grid-product__price-wrap">
-        <span class="long-dash">—</span>
-        <span class="grid-product__price">
+        <!-- REMOVING LONG-DASH –– BESIDE PRICE <span class="long-dash">—</span>-->
+        <span class="grid-product__price"><p>
           {% if on_sale %}
             <span class="visually-hidden">{{ 'products.general.sale_price' | t }}</span>
           {% else %}
@@ -97,7 +166,7 @@
           {% else %}
             {{ product.price | money_without_trailing_zeros }}
           {% endif %}
-        </span>
+          </p></span>
 
         {%- if product.price_varies == false and variant.unit_price_measurement -%}
           {%- capture unit_price_separator -%}
@@ -121,6 +190,10 @@
       {% if section.settings.product_vendor_enable %}
         <p class="grid-product__vendor">{{ product.vendor }}</p>
       {% endif %}
-    </a>
+     </a>
+    
+<!-- Sean's added code for img reveal on hover -->    
+<!-- End of Sean's added code for img reveal on hover -->    
+    
   </div>
 </div>

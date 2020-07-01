@@ -118,8 +118,8 @@
       
       {% if footer_social_enable %}
         <div class="grid__item forty">
-          <h6>Join the #AlwaysCurious Club + Get 10% Off</h6>
-          <p>Get early access to buttons, mats, promotions, and learning resources from experts!</p>
+          <h6>Join the #AlwaysCurious Club</h6>
+          <p>If you’re ready to join an incredible network of experimenting doggos, and build invaluable communication skills, here’s how to join.</p>
           {% form 'customer' %}
       {{ form.errors | default_errors }}
       {% if form.posted_successfully? %}
@@ -131,7 +131,7 @@
         <input type="hidden" name="contact[tags]" value="newsletter">
         <div class="newsletter--form">
           <div class="input-group">
-            <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="{{ 'general.newsletter_form.newsletter_placeholder' | t }}" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
+            <input type="email" value="{% if customer %}{{ customer.email }}{% endif %}" placeholder="hooman@hijoey.co" name="contact[email]" id="Email" class="input-group-field newsletter__input" autocorrect="off" autocapitalize="off">
             <span class="input-group-btn">
               <button id="Subscribe" type="submit"
                 class=" newsletter__submit"

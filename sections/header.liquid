@@ -301,8 +301,11 @@
                     </a>
                   </li>
                 {% endif %}
-{%comment%}
-                <li class="site-nav__item site-nav__item--compressed">
+
+                <li class="site-nav__item site-nav__item--compressed " style="float:right;">
+                <div class="ultimate-currency"></div>
+                </li>
+                <li class="site-nav__item site-nav__item--compressed header_cart">
                   <a href="{{ routes.cart_url }}" class="site-nav__link site-nav__link--icon cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
                     <span class="icon-fallback-text">
                       <span class="icon icon-cart" aria-hidden="true"></span>
@@ -311,7 +314,10 @@
                     <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
                   </a>
                 </li>
-{%endcomment%}
+
+                
+                	
+             
               </ul>
               <!-- //site-nav -->
               
@@ -323,8 +329,10 @@
             
             
             
-          {%comment%}  
-            <div class="grid__item large--hide one-quarter">
+         
+            <div class="grid__item large--hide one-quarter mobile_cart">
+          
+              
               <div class="site-nav--mobile text-right">
                 <a href="{{ routes.cart_url }}" class="site-nav__link cart-link js-drawer-open-button-right" aria-controls="CartDrawer">
                   <span class="icon-fallback-text">
@@ -334,8 +342,11 @@
                   <span class="cart-link__bubble{% if cart.item_count > 0 %} cart-link__bubble--visible{% endif %}"></span>
                 </a>
               </div>
+              
+             
+              
             </div>
-          {%endcomment%} 
+      
           </div>
 
         </div>

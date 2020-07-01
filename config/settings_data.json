@@ -6,9 +6,9 @@
     "color_borders": "#ebebeb",
     "color_button_text": "#ffffff",
     "color_primary": "#324175",
-    "color_secondary": "#1b1f23",
-    "color_product_background": "#f7f7f7",
-    "color_sale_tag": "#1b1f23",
+    "color_secondary": "#324175",
+    "color_product_background": "rgba(0,0,0,0)",
+    "color_sale_tag": "#fe524a",
     "color_input": "#f7f7f7",
     "color_newsletter": "#f7f7f7",
     "color_drawer_background": "#f7f7f7",
@@ -26,7 +26,7 @@
     "type_base_family": "harmonia_sans_n4",
     "type_base_size": "16px",
     "type_base_italize_titles": true,
-    "cart_type": "drawer",
+    "cart_type": "page",
     "cart_notes_enable": true,
     "share_image": "shopify:\/\/shop_images\/1-outside-btn-box-11.jpg",
     "social_facebook_link": "",
@@ -73,10 +73,10 @@
           "drawer_search_enable": false,
           "show_announcement": true,
           "home_page_only": false,
-          "text": "Free Shipping on orders over $45+",
-          "link": "shopify:\/\/collections\/all",
-          "color_bg": "#f3f3f3",
-          "color_text": "#333333"
+          "text": "FREE SHIPPING on orders over $45 + Happiness Guarantee",
+          "link": "",
+          "color_bg": "#ebebeb",
+          "color_text": "#231f20"
         }
       },
       "slideshow": {
@@ -211,14 +211,14 @@
       "product-template": {
         "type": "product-template",
         "settings": {
-          "product_vendor_enable": false,
+          "product_vendor_enable": true,
           "social_sharing_products": true,
-          "quantity_enabled": false,
-          "product_selector": "radio",
+          "quantity_enabled": true,
+          "product_selector": "select",
           "enable_payment_button": false,
           "add_to_cart_button_size": "large",
           "media_layout": "thumbnails",
-          "enable_image_zoom": false,
+          "enable_image_zoom": true,
           "enable_video_looping": false
         }
       },

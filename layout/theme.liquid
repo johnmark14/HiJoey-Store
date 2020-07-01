@@ -28,7 +28,7 @@
   <!-- CSS ================================================== -->
   {{ 'timber.scss.css' | asset_url | stylesheet_tag }}
   {{ 'theme.scss.css' | asset_url | stylesheet_tag }}
-
+  
   <!-- Custom CSS Author: John Mark ================================================== -->
   {{ 'theme-custom.scss.css' | asset_url | stylesheet_tag }}
 
@@ -65,26 +65,20 @@
   {{ 'customscript.js' | asset_url | script_tag }}
   {{ 'stickyMojo.js' | asset_url | script_tag }}
   {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
-
-  <!-- Custom JS Author: John Mark ================================================== -->
-
-  <!-- Script used to send Emails ================================================== -->
-  <script src="https://smtpjs.com/v3/smtp.js"></script>
-
-  
   
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+  
+  
 
   <!-- Script used to calculating holidays & Weekends ================================================== -->
   {{ 'moment.min.js' | asset_url | | script_tag }}
   {{ 'moment-holiday-pkg.min.js' | asset_url | script_tag }}
-
-  <!-- Custom Script Author: John Mark================================================== -->
-  <script src="{{ 'theme-custom.js' | asset_url }}" defer="defer"></script> 
-
-  
+  <!-- Script used to send Emails ================================================== -->
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <!-- Custom JS Author: John Mark ================================================== -->
+  <script src="{{ 'theme-custom.js' | asset_url }}" defer="defer"></script>
 
   <!-- Header hook for plugins ================================================== -->
   {{ content_for_header }}
@@ -101,6 +95,9 @@
 <!--Gem_Page_Header_Script-->
 {% include 'gem-app-header-scripts' %}
 <!--End_Gem_Page_Header_Script-->
+  
+
+  
 </head>
 
 {% comment %}
@@ -164,12 +161,13 @@
   {% if settings.cart_type == 'drawer' %}
     {% include 'ajax-cart-template' %}
   {% endif %}
-
+  
   {% if request.page_type == 'product' or request.page_type == 'index' %}
       <script>
         // Override default values of shop.strings for each template.
         // Alternate product templates can change values of
         // add to cart button, sold out, and unavailable states here.
+
         theme.productStrings = {
           addToCart: {{ 'products.product.add_to_cart' | t | json }},
           soldOut: {{ 'products.product.sold_out' | t | json }},

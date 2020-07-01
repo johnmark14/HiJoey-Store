@@ -133,7 +133,9 @@
     </div>
   {%- elsif section.settings.collection_products_grid == 'grid' -%}
     <div class="grid-uniform">
-      {%- assign grid_item_width = 'medium--one-half large--one-third' -%}
+<!--  Original Brooklyn Shopify code  {%- assign grid_item_width = 'medium--one-half large--one-third' -%} -->
+<!-- Sean's code to make product grid display 2 images instead of 1 -->
+      {%- assign grid_item_width = 'medium--one-half large--one-third small--one-half' -%}
       {%- for product in collection.products -%}
         {%- include 'product-grid-item' -%}
       {%- else -%}
