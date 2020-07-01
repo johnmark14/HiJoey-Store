@@ -1,32 +1,24 @@
 
 //Custom JavaScript Author: JM
-var accordionPanel = document.querySelector(".product__desc--panel");
-var accordionIcon = document.querySelector(".product__desc--icon");
-var modal = document.querySelector(".modal");
-var greet = document.querySelector(".successfull");
-var emailContact = document.querySelector("#emailContact");
-var btnNotify = document.querySelector("#btn-notify");
-var alertMsg = document.querySelector("#alert-msg");
+const modal = document.querySelector(".modal");
+const greet = document.querySelector(".successfull");
+const emailContact = document.querySelector("#emailContact");
+const btnNotify = document.querySelector("#btn-notify");
+const alertMsg = document.querySelector("#alert-msg");
+const productTitle = document.querySelector("#product-title");
+const backordedProd = document.querySelector(".backorded-prod");
+const shipProd = document.querySelector(".shiping-prod");
 
-var productTitle = document.querySelector("#product-title");
 var promoCode = "BESTFREN10"; 
 var htmlEmail = "";
 
-var backordedProd = document.querySelector(".backorded-prod");
-var shipProd = document.querySelector(".shiping-prod");
-
-
-function showItems() {
-  
-
-  if(accordionPanel.style.maxHeight) {
-    accordionPanel.style.maxHeight = null;
-    accordionIcon.innerHTML = "&#43;"; 
-  } else {
-    accordionPanel.style.maxHeight = accordionPanel.scrollHeight + "px";
-    accordionIcon.innerHTML = "&ndash;"; 
-  }
+function onlyOne(checkbox) {
+  const checkboxes = document.getElementsByName('check')
+  checkboxes.forEach((item) => {
+      if (item !== checkbox) item.checked = false
+  })
 }
+
 function toggleModal() {
   modal.classList.toggle("show-modal");
 }

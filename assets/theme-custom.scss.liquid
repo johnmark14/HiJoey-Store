@@ -64,162 +64,193 @@ $breakpoint-has-pull:  ('medium', 'medium-down', 'large');
     z-index: 1000;
   }
   
-  .modal-content { 
-    position:absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 2em 3em;
-    width: 37em;
-    border-radius: 8px;
-    text-align: left;
-  }
-  
-  .close-button {
-    position: absolute;
-    top:10%;
-    right:5%;
-    width: 1.5em;
-    line-height: 1.5em;
-    text-align: center;
-    cursor: pointer;
-    border-radius: 0.24em;
-    background-color: lightgray;
-  }
-  
-  .close-button:hover {
-    background-color: darkgray;
-  }
-  
-  .show-modal {
-    opacity: 1;
-    visibility: visible;
-    transform: scale(1.0);
-    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-  }
-  
-  .modal-container {
-    position: relative;
-  }
-
-  h2#product-title {
-    font-size: 30px !important;
-  }
-
-  .modal-content p {
-    font-size: 16px !important;
-  }
-  
-  .input-email {
-    border: 1px solid lightgray;
-    width: 100%;
-  }
-  
-  .alert {
-    width: 100%;
-    color: #46AA2F;
-    margin-top: .5em;
-    background-color: #D3EFCD;
-    border-left: 5px solid #46AA2F;
-    padding: 1em 1em;
-    opacity: 0;
-    visibility: hidden;
-    position: absolute;
-  } 
-  
-  .show-alert {
-    opacity: 1;
-    visibility: visible;
-  }
-  
-  .hide-btn-notify {
-    opacity: 0;
-    visibility: hidden;
-  }
-    
-  .alert-close {
-    text-decoration: underline;
-    cursor: pointer;
-    color: #46AA2F !important;
-  }
-  
-  #btn-notify {
-    background-color: #1b1f23;
-  }
-
-  // Accordion style information
-
-.product__desc--container {
-  border-top: 1px solid #EBEBEB;
-  border-bottom: 1px solid #EBEBEB;
-  margin-bottom: 10px;
-}
-.product__desc--accordion {
+.modal-content { 
+  position:absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: white;
-  cursor: pointer;
-  width: 100%;
+  padding: 2em 3em;
+  width: 37em;
+  border-radius: 8px;
   text-align: left;
-  border: none;
-  outline: none;
-  padding: 12px 0;
+}
+
+.close-button {
+  position: absolute;
+  top:10%;
+  right:5%;
+  width: 1.5em;
+  line-height: 1.5em;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.24em;
+  background-color: lightgray;
+}
+
+.close-button:hover {
+  background-color: darkgray;
+}
+
+.show-modal {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.0);
+  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.modal-container {
   position: relative;
 }
 
-.product__desc--accordion h5 {
+h2#product-title {
+  font-size: 30px !important;
+}
+
+.modal-content p {
+  font-size: 16px !important;
+}
+
+.input-email {
+  border: 1px solid lightgray;
+  width: 100%;
+}
+
+.alert {
+  width: 100%;
+  color: #46AA2F;
+  margin-top: .5em;
+  background-color: #D3EFCD;
+  border-left: 5px solid #46AA2F;
+  padding: 1em 1em;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+} 
+
+.show-alert {
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide-btn-notify {
+  opacity: 0;
+  visibility: hidden;
+}
+  
+.alert-close {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #46AA2F !important;
+}
+  
+#btn-notify {
+  background-color: #1b1f23;
+}
+
+// Accordion style information
+
+.acc__container {
+  border-bottom: solid 1px #EBEBEB;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.acc__chkbox {
+  display: none;
+}
+
+.acc__btn {
+  border-top: solid 1px #EBEBEB;
+  display: block;
+  position: relative;
+  padding: 15px 0;
+  cursor: pointer;
+}
+
+.acc__btn h5 {
+  margin: 0 !important;
+}
+.acc__btn h5::selection {
+  color: none;
+  background: none;
+}
+
+// for the buttons
+.acc__btn span {
+  margin-top: 10px;
+}
+
+.acc__btn h5 {
   color: #727272 !important;
   margin: 0;
   text-transform: none !important;
 }
 
-.product__desc--icon {
+.acc__btn span,
+.acc__btn span::before {
+  content: '';
   position: absolute;
-  top: 0%;
-  right: 5%;
-  font-size: 1.8em;
-  font-weight: bold;
-  color: #727272;
-  transition: all 0.3s ease-in-out;
+  top: 15px;
+  right: 15px;
+  width: 15px;
+  height: 3px;
+  background-color: #727272;
 }
 
-  /* Style the accordion panel. Note: hidden by default */
-.product__desc--panel {
-  display: block;
-  max-height: 0;
-  height: 100%;
+.acc__btn span::before {
+  transform: rotateZ(90deg);
+  width: 15px;
+  top: 0;
+  left: 0;
+}
+//End button
+
+.acc__panel {
+  //padding-top: 15px;
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
   overflow: hidden;
-  transition: max-height 0.2s ease-out;
 }
 
-.product__desc--panel ul li {
+.acc__panel ul li {
   font-family: "Harmonia Sans", sans-serif !important;
-  font-size: 14px !important; 
-  line-height: 20px !important;
+  font-size: 14px !important;
   font-weight: normal !important;
-  color: #727272 !important;
+  line-height: 20px !important;
   list-style: none;
 }
-.product__desc--panel ul {
-  margin: 1em; 
-}
 
-.product__desc--panel ul li:last-child {
-  margin-bottom: 20px;
-}
-.product__desc--panel ul li:first-child {
-  margin-top: 15px;
-}
-
-.product__desc--panel ul li::before {
+.acc__panel ul li::before {
   content: '\25CF';
   display: inline-block;
-  width: 1em;
-  margin-left: -1em;
+  width: 15px;
+  margin-left: -15px;
 }
 
-.show {
-  height: 50px;
+.acc__panel ul {
+  margin: 0  0 0 15px;
 }
+
+.acc__panel p strong a {
+  color: #4A80F2 !important;
+}
+
+.chk1:checked + .acc__btn + .acc__panel,
+.chk2:checked + .acc__btn + .acc__panel{
+  padding: 15px 0;
+  opacity: 1;
+  visibility: visible;
+  height: 100%;
+}
+
+.chk1:checked + .acc__btn span::before,
+.chk2:checked + .acc__btn span::before {
+    width: 0;
+}
+
+
 
 @media screen and (max-width: 540px) { 
 

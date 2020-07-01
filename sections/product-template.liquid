@@ -260,16 +260,24 @@
           </div>
 
           <!-- Custom code for Accordion Author: John Mark ================================================== -->
-          <div class="product-single__description product__desc--container" itemprop="description" >
-            <button class="product__desc--accordion" onclick="showItems()">
-              <h5>Product Details and Features</h5>
-              <span class="product__desc--icon">&#43;</span>
-            </button>
-            <div class="product__desc--panel"> 
-              {{product.description}}
+          <div class="acc__container">
+            <input class="acc__chkbox chk1" type="checkbox" name="check" id="item1" onclick="onlyOne(this)" checked>
+            <label class="acc__btn" for="item1"><h5>Product Details and Description</h5> <span></span> </label>
+            <div class="acc__panel" itemprop="description">
+              {{ product.description }}
+            </div>
+
+            <input class="acc__chkbox chk2" type="checkbox" name="check" id="item2" onclick="onlyOne(this)">
+            <label class="acc__btn" for="item2"><h5>Shipping and Return</h5> <span></span> </label>
+            <div class="acc__panel" itemprop="description">
+              <p>Orders take 2-4 business days to process before they are shipped.
+                Once shipped, delivery will take 1-6 business days (depending on your distance from Toronto).
+                International shipments are free on orders $75+, and take between 5-10 days in transit.
+              </p>
+              <p><strong>To read more about our shipping and devlivery policies, please visit our FAQ <a href="https://hijoey.co/pages/faq" target="_blank">here</a>.</strong></p>
             </div>
           </div>
-          
+
           {% if section.settings.social_sharing_products %}
             {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
           {% endif %}
