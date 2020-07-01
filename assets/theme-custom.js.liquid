@@ -24,10 +24,9 @@ function onlyOne(checkbox) {
 }
 
 // this close the modal using the close button
-closeButton.addEventListener("click", toggleModal);
-alertClose.addEventListener("click", toggleAlertClose);
-
-openModal.addEventListener("click", toggleModal);
+if(closeButton) {closeButton.addEventListener("click", toggleModal);}
+if(alertClose) {alertClose.addEventListener("click", toggleAlertClose);}
+if(openModal) {openModal.addEventListener("click", toggleModal);}
 
 function toggleModal() {
   modal.classList.toggle("show-modal");

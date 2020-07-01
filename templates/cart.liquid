@@ -56,6 +56,9 @@
                     <a href="{{ item.url }}" class="h4 cart__product-name">
                       {{ item.product.title }}
                     </a>
+                    {% if item.variant.inventory_quantity == 0 %}
+                      <caption>Note: Backordered - Ships on <span class="backorded-prod"></span></caption>
+                    {% endif %}
                     {% unless item.variant.title contains 'Default' %}
                       <p class="cart__product-meta">
                         {{ item.variant.title }}

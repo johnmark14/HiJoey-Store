@@ -251,7 +251,8 @@
                 <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
                 {% if current_variant.inventory_quantity == 0 %}
                   <div id="sold-out" class="product-single__add-to-cart--full-width">
-                    <button type="button" class="btn btn--add-to-cart btn-notify btn-outline trigger" style="width: 100%">Notify me when available</button>
+                    <!--<button type="button" class="btn-notify trigger" style="width: 100%">Notify me when available</button>-->
+                    <a href="#" class="btn-notify trigger"><caption>Just Notify Me When Available</caption></a>
                   </div>
                 {% endif %}
                 
@@ -266,13 +267,13 @@
           <!-- Custom code for Accordion Author: John Mark ================================================== -->
           <div class="acc__container">
             <input class="acc__chkbox chk1" type="checkbox" name="check" id="item1" onclick="onlyOne(this)" checked>
-            <label class="acc__btn" for="item1"><h5>Product Details and Features</h5> <span></span> </label>
+            <label class="acc__btn" for="item1"><h5>Product Details & Features</h5> <span></span> </label>
             <div class="acc__panel" itemprop="description">
               {{ product.description }}
             </div>
 
             <input class="acc__chkbox chk2" type="checkbox" name="check" id="item2" onclick="onlyOne(this)">
-            <label class="acc__btn" for="item2"><h5>Shipping and Return</h5> <span></span> </label>
+            <label class="acc__btn" for="item2"><h5>Shipping & Returns</h5> <span></span> </label>
             <div class="acc__panel" itemprop="description">
               <p>Orders take 2-4 business days to process before they are shipped.
                 Once shipped, delivery will take 1-6 business days (depending on your distance from Toronto).
