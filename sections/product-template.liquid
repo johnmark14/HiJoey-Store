@@ -227,9 +227,15 @@
             
              <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
              {% if current_variant.inventory_quantity > 0 %}
-              <div class="qty-alert">
-                <caption>Only {{ current_variant.inventory_quantity }} left - Ships on <span class="shiping-prod"></span></caption>
-              </div>
+                {% if current_variant.inventory_quantity < 10 %}
+                  <div class="qty-alert"> 
+                    <caption>Only {{ current_variant.inventory_quantity }} left - Ships on <span class="shiping-prod"></span></caption>
+                  </div>
+                {% else %}
+                  <div class="qty-alert">
+                    <caption><i>Only a few left</i>- Ships on <span class="shiping-prod"></span></caption>
+                  </div>
+                {% endif %}
              {%else%}
                 <div class="qty-alert">
                   <caption>Backordered - Ships on <span class="backorded-prod"></span></caption>
