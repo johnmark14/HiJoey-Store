@@ -82,7 +82,55 @@ $('#sidebar').stickyMojo({footerID: '#shopify-section-footer', contentID: '#main
 		}
 	});
 
+ 
+    $('.featured_slider ').slick({
+  infinite: true,
+  slidesToShow: 3,
+      slidesToScroll: 3,
+    dots:false,
+    arrows:true,
+    autoplay: true,
+      prevArrow: '<i class="fas fa-chevron-left"></i>',
+  nextArrow: '<i class="fas fa-chevron-right"></i>',
+  autoplaySpeed: 4000,
+        responsive: [
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+    // You can unslick at a given breakpoint now by adding:
+    // settings: "unslick"
+    // instead of a settings object
+  ]
+});
 
+
+  $('.testimonial').slick({
+  infinite: true,
+  slidesToShow: 1,
+    dots:true,
+    prevArrow: '<i class="fas fa-chevron-left"></i>',
+  nextArrow: '<i class="fas fa-chevron-right"></i>',
+    arrows:true,
+    autoplay: true,
+  autoplaySpeed: 4000
+});
+  
+  
+
+  $('.dog_slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+    dots:false,
+    arrows:true,
+    prevArrow: '<i class="fas fa-chevron-left"></i>',
+  nextArrow: '<i class="fas fa-chevron-right"></i>',
+    autoplay: true,
+  autoplaySpeed: 4000
+});
   
   
   });

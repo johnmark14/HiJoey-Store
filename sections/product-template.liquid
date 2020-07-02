@@ -225,7 +225,7 @@
               </div>
               {% endif %}
             
-             <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
+              <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
              {% if current_variant.inventory_quantity > 0 %}
                 {% if current_variant.inventory_quantity < 10 %}
                   <div class="qty-alert"> 
@@ -236,11 +236,11 @@
                     <caption><i>Only a few left - Ships on <span class="shiping-prod"></span></i></caption>
                   </div>
                 {% endif %}
-             {%else%}
+              {%else%}
                 <div class="qty-alert">
                   <caption><i>Backordered - Ships on <span class="backorded-prod"></span></i></caption>
                 </div>
-             {% endif %}
+              {% endif %}
 
               <div class="product-single__add-to-cart{% if section.settings.add_to_cart_button_size == 'large' %} product-single__add-to-cart--full-width{% endif %}">
                 <button type="submit" name="add" id="AddToCart--{{ section.id }}" class="btn btn--add-to-cart{% if section.settings.enable_payment_button %} btn--secondary-accent{% endif %}"{% unless current_variant.available %} disabled="disabled"{% endunless %}>
@@ -249,7 +249,7 @@
                       {{ 'products.product.add_to_cart' | t }}
                     {% else %}
                       <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-                      Backordered - Ships on <span class="backorded-prod"></span>                     
+                      Backordered - Ships on <span class="backorded-prod"></span>                         
                     {% endif %}
                   </span>
                 </button>
@@ -267,7 +267,9 @@
                 {% endif %}
               </div>
             {% endform %}
+
           </div>
+
           <!-- Custom code for Unique value prop Author: John Mark ================================================== -->
           {% if product.type == 'Button' or product.type == 'Mat' %}
             <div class="prop__container">
@@ -282,10 +284,11 @@
               </ul>
             </div>
           {% endif %}
+
           <!-- Custom code for Accordion Author: John Mark ================================================== -->
           <div class="acc__container">
             <input class="acc__chkbox chk1" type="checkbox" name="check" id="item1" onclick="onlyOne(this)">
-            <label class="acc__btn" for="item1"><h5>Product Details & Features</h5> <span></span> </label> 
+            <label class="acc__btn" for="item1"><h5>Product Details & Features</h5> <span></span> </label>
             <div class="acc__panel" itemprop="description">
               {{ product.description }}
             </div>
@@ -318,14 +321,14 @@
 {% endunless %}
 
 <!-- MODAL OF OUT OF STOCKS Author: John Mark ================================================== -->
-<div class="modal" id="myModal">
+<div class="modal">
   <div class="modal-content">
     <span class="close-button">&times;</span>
     <h2 id="product-title">{{product.title}}</h2>
       <p>Register to receive a notification when this item comes back in stock with an additional 10% off!</p>
 
     <div class="modal-container">
-      {% form 'contact', contact, onSubmit: "openMessage(); return false;" %} 
+      {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %} 
     
         {{ form.errors | default_errors }}
           <input type="email" name="contact[email]" id="emailContact" placeholder="your@email.com" class="input-email"/>

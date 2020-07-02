@@ -79,109 +79,6 @@
           "color_text": "#231f20"
         }
       },
-      "slideshow": {
-        "type": "slideshow",
-        "blocks": {
-          "slideshow-0": {
-            "type": "slide",
-            "settings": {
-              "image": "shopify:\/\/shop_images\/a-curly-brown-haired-dog-in-a-red-bow-tie.jpg",
-              "image_position": "center bottom",
-              "image_overlay": true,
-              "image_overlay_opacity": 33,
-              "text_alignment": "right",
-              "slide_heading": "Your best friend deserves the best",
-              "slide_subheading": "Your doggo is always listening–and now, you can too.",
-              "button_label": "Shop now",
-              "button_link": "shopify:\/\/collections\/all",
-              "slide_text_color": "#ffffff",
-              "slide_button_label_color": "#ffffff",
-              "slide_button_background_color": "#1f2021"
-            }
-          }
-        },
-        "block_order": [
-          "slideshow-0"
-        ],
-        "settings": {
-          "home_hero_height": "full",
-          "hero_home_auto": false,
-          "home_hero_auto_speed": 5
-        }
-      },
-      "featured-content": {
-        "type": "featured-content",
-        "settings": {
-          "home_page_full_width": false,
-          "section_title": "Everything you need to communicate, delivered.",
-          "text": "<p>We make&nbsp;dog communication&nbsp;training simple with designer-curated colors, customized floor mats, and premium dog training buzzers delivered to your door.<\/p>",
-          "text_size": "large"
-        }
-      },
-      "featured-collections": {
-        "type": "featured-collections",
-        "blocks": {
-          "featured-collections-0": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "featured-collections-1": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "featured-collections-2": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "featured-collections-3": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "featured-collections-4": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          }
-        },
-        "block_order": [
-          "featured-collections-0",
-          "featured-collections-1",
-          "featured-collections-2",
-          "featured-collections-3",
-          "featured-collections-4"
-        ],
-        "settings": {
-          "title": "Collection list"
-        }
-      },
-      "featured-products": {
-        "type": "featured-products",
-        "settings": {
-          "title": "Featured collection",
-          "home_featured_products": "",
-          "collection_products_grid": "grid"
-        }
-      },
-      "featured-product": {
-        "type": "featured-product",
-        "settings": {
-          "featured_product": "",
-          "show_variant_labels": true,
-          "show_vendor": false,
-          "enable_payment_button": true,
-          "show_share_buttons": true,
-          "enable_video_looping": false
-        }
-      },
       "newsletter": {
         "type": "newsletter",
         "settings": {
@@ -229,17 +126,6 @@
           "heading": "You may also like"
         }
       },
-      "1591384288031": {
-        "type": "featured-row",
-        "settings": {
-          "image": "shopify:\/\/shop_images\/small-dog-standing-in-doorway.jpg",
-          "layout": "right",
-          "title": "Everything you need to communicate, delivered.",
-          "text": "<p>We make&nbsp;dog training communication buzzers&nbsp;simple with designer-curated colors, mess-free peel and customized floor mats, and premium,&nbsp;dog training buzzers delivered to your door.<\/p>",
-          "button_label": "",
-          "button_link": ""
-        }
-      },
       "list-collections-template": {
         "type": "list-collections-template",
         "settings": {
@@ -266,16 +152,220 @@
           "show_share_buttons": true,
           "social_message": "Spread the word"
         }
+      },
+      "1593671344567": {
+        "type": "banner",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/hijoey-hero-banner.jpg",
+          "layout": "right",
+          "title": "Modern communication <br>with your best friend",
+          "text": "Beautifully designed buttons for your curious pup",
+          "button_label": "Shop Now",
+          "button_link": "shopify:\/\/collections"
+        }
+      },
+      "1593671463590": {
+        "type": "home-section-2",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/shop-mat-view-4.jpg",
+          "layout": "right",
+          "title": "Everything you need to communicate, delivered.",
+          "text": "<p>We make dog communication sleek and affordable. Just ask and get the best of hijoey &ndash; including customized floor mats, and step-by-step training programs, delivered to your door.<\/p>",
+          "button_label": "",
+          "button_link": "",
+          "icon1": "shopify:\/\/shop_images\/minimalist-home.png",
+          "list_content_1": "Designed For Your Minimalist Home",
+          "icon2": "shopify:\/\/shop_images\/clearer-sound.png",
+          "list_content_2": "Easy To Press With Clearer Sound",
+          "icon3": "shopify:\/\/shop_images\/happiness-guarantee.png",
+          "list_content_3": "Happiness Guarantee"
+        }
+      },
+      "1593671766559": {
+        "type": "featured-products",
+        "settings": {
+          "title": "Shop our best-selling training buzzers!",
+          "link_title": "SEE ALL BUZZERS",
+          "home_featured_products": "best-sellers",
+          "collection_products_grid": "grid"
+        }
+      },
+      "1593672972719": {
+        "type": "testimonials",
+        "blocks": {
+          "1593672972719-0": {
+            "type": "html",
+            "settings": {
+              "code": "\"I absolutely love this product! My 6 month old lab picked up how to use the buttons on the first try. I gave him treats every time he touched the button and I'm SOOO excited that it worked.\"",
+              "cust_name": "MATT HUGHES",
+              "width": "100%",
+              "alignment": "top-middle"
+            }
+          },
+          "1593672997888": {
+            "type": "html",
+            "settings": {
+              "code": "\"My dog loves her button. I love how cute and simple the designs are. It just arrives at my door, easy to use, and ready to go.",
+              "cust_name": "Heather Laurie",
+              "width": "100%",
+              "alignment": "top-middle"
+            }
+          },
+          "1593673011663": {
+            "type": "html",
+            "settings": {
+              "code": "\"We trained our Bella with a hanging doorbell with string. The buzzer took a while to teach her at first, but now she comes running in to tell us exactly what she wants. I still smile when she pushes it with her nose or slaps it with her paw. Absolutely great experience so far.\"",
+              "cust_name": "Daniel Warner",
+              "width": "100%",
+              "alignment": "top-middle"
+            }
+          },
+          "1593673025145": {
+            "type": "html",
+            "settings": {
+              "code": "\"We got this and installed it by the kitchen. We followed the directions and by the second week, our 5 year old Rosie was doing it by herself! She loves it!! I love it!!\"",
+              "cust_name": "Jessica Peters",
+              "width": "100%",
+              "alignment": "top-middle"
+            }
+          },
+          "1593673046376": {
+            "type": "html",
+            "settings": {
+              "code": "\"We have had the training buzzer for a week after leaving our jingle bells at a friends place. Roscoe picked it up very quickly. We even bought another buzzer bundle for traveling. Great buy! Would buy again!\"",
+              "cust_name": "Steven Lee",
+              "width": "100%",
+              "alignment": "top-middle"
+            }
+          }
+        },
+        "block_order": [
+          "1593672972719-0",
+          "1593672997888",
+          "1593673011663",
+          "1593673025145",
+          "1593673046376"
+        ],
+        "settings": {
+          "Heading": "See our Happy Customers"
+        }
+      },
+      "1593673380830": {
+        "type": "feature-row-slider",
+        "blocks": {
+          "1593673398273": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/talking-doge-eat.jpg"
+            }
+          },
+          "1593673412879": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/talking-doge-outside.jpg"
+            }
+          },
+          "1593673417111": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/talking-doge-love.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1593673398273",
+          "1593673412879",
+          "1593673417111"
+        ],
+        "settings": {
+          "title": "Get your answers from hijoey",
+          "content": "Want the latest behavioural training tips, product updates, and more? Join our #AlwaysCurious Club!"
+        }
+      },
+      "1593673427695": {
+        "type": "feature-row-slider-bottom",
+        "blocks": {
+          "1593673453664": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/talking-doge-toy.jpg"
+            }
+          },
+          "1593673465553": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/talking-doge-treat.jpg"
+            }
+          },
+          "1593673470689": {
+            "type": "logo_image",
+            "settings": {
+              "image": "shopify:\/\/shop_images\/talking-doge-sleep.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "1593673453664",
+          "1593673465553",
+          "1593673470689"
+        ],
+        "settings": {
+          "title": "No more stressful barking or whining",
+          "content": "Your doggo can be the smartest pup that your friends and family have ever seen!"
+        }
+      },
+      "1593673828470": {
+        "type": "featured-guarantee",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/100_guaranteed.png",
+          "title": "100 DAY TRIAL &amp; EASY RETURNS",
+          "text": "<p>We believe in designing quality products to better communicate with our best friends. Every product we make is thoughtfully created to keep you both feeling confident and happy. Still curious? Let&rsquo;s go.<\/p>"
+        }
+      },
+      "1593674073014": {
+        "type": "featured-collections",
+        "blocks": {
+          "1593674073014-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "mat-set"
+            }
+          },
+          "1593674073014-1": {
+            "type": "collection",
+            "settings": {
+              "collection": "button-sets"
+            }
+          },
+          "1593674073014-2": {
+            "type": "collection",
+            "settings": {
+              "collection": "all"
+            }
+          }
+        },
+        "block_order": [
+          "1593674073014-0",
+          "1593674073014-1",
+          "1593674073014-2"
+        ],
+        "settings": {
+          "image": "",
+          "title": "SHOP HIJOEY",
+          "text": "The best training buttons &amp; mats"
+        }
       }
     },
     "content_for_index": [
-      "slideshow",
-      "1591384288031",
-      "featured-content",
-      "featured-collections",
-      "featured-products",
-      "featured-product",
-      "newsletter"
+      "1593671344567",
+      "1593671463590",
+      "1593671766559",
+      "newsletter",
+      "1593672972719",
+      "1593673380830",
+      "1593673427695",
+      "1593673828470",
+      "1593674073014"
     ]
   },
   "presets": {

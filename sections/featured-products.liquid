@@ -1,13 +1,14 @@
+
 <div id="CollectionSection" data-section-id="{{ section.id }}" data-section-type="collection-template" data-grid-type="{{ section.settings.collection_products_grid }}">
   <div class="wrapper">
     {% if section.settings.title != blank %}
-      <div class="section-header text-center">
-        <h2 class="h1 section-header__title">{{ section.settings.title | escape }}</h2>
-        <hr class="hr--small">
+      <div class="section-header text-left">
+        <h2 class=" section-header__title">{{ section.settings.title | escape }}</h2>
+        <a href="/collections/{{ section.settings.home_featured_products }}"><h6>{{ section.settings.link_title }}</h6></a>
       </div>
     {% endif %}
 
-    <div class="{% if section.settings.collection_products_grid == 'collage' %}grid grid-collage{% else %}grid-uniform{% endif %}">
+    <div class="{% if section.settings.collection_products_grid == 'collage' %}grid grid-collage{% else %}featured_slider grid-uniform{% endif %}">
 
       {% comment %}
         Loop through products in your Frontpage collection.
@@ -47,11 +48,15 @@
 
         {% else %}
 
-          {% assign grid_item_width = 'medium--one-half large--one-third' %}
+
+          {% assign grid_item_width = '' %}
           {% for product in collections[section.settings.home_featured_products].products %}
-            {% include 'product-grid-item' %}
+     
+            {% include 'product-grid-item-home' %}
+ 
           {% endfor %}
 
+  
         {% endif %}
 
       {% endif %}
@@ -128,6 +133,14 @@
         "zh-TW": "精選商品系列"
       }
     },
+{
+      "type": "text",
+      "id": "link_title",
+      "label": {
+        "en": "LInk Title"
+      }
+    },
+
     {
       "type": "collection",
       "id": "home_featured_products",

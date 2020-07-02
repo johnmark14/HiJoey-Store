@@ -1,0 +1,170 @@
+<div class="wrapper"> 
+  <div class="page-width ">
+
+      
+  <!-- MOBILE-->
+
+    <div class="feature-row_container desktop_only">
+ 
+   
+      <div class="one-half first text_content feature-row__text--{{ section.settings.layout }}">
+        <div class="feature_content">
+        {% if section.settings.title != blank %}
+          <h2 class="h2">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+        {% if section.settings.content != blank %}
+          <div class="rte-setting featured-row__subtext">{{ section.settings.content }}</div>
+        {% endif %}
+       
+      
+      </div>
+      </div>
+
+ 
+      <div class="one-half ">
+
+        
+        {% if section.blocks.size > 0 %}
+        <ul class="dog_slider">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+                    <li>
+                       <figure>
+                         <img src="{{ block.settings.image | img_url: '1920x' }}" />
+                       </figure>
+                    </li>
+            {% endif %}
+
+          {% endfor %}
+                          </ul>
+      {% endif %}
+
+     
+        
+        
+      </div>
+      
+      
+    </div>
+      <!-- END OF DESKTOP-->
+    
+    
+      <!-- MOBILE-->
+    
+    <div class="feature-row_container mobile_only">
+ 
+   
+      
+
+ 
+      <div class="one-half first">
+
+        
+        {% if section.blocks.size > 0 %}
+        <ul class="dog_slider">
+          {% for block in section.blocks %}
+            {% if block.settings.image != blank %}
+                    <li>
+                       <figure>
+                         <img src="{{ block.settings.image | img_url: '1920x' }}" />
+                       </figure>
+                    </li>
+            {% endif %}
+
+          {% endfor %}
+                          </ul>
+      {% endif %}
+
+     
+        
+        
+      </div>
+      
+      <div class="one-half  text_content feature-row__text--{{ section.settings.layout }}">
+        <div class="feature_content">
+        {% if section.settings.title != blank %}
+          <h2 class="h2">{{ section.settings.title | escape }}</h2>
+        {% endif %}
+        {% if section.settings.content != blank %}
+          <div class="rte-setting featured-row__subtext">{{ section.settings.content }}</div>
+        {% endif %}
+       
+      
+      </div>
+      </div>
+      
+      
+      
+    </div>
+    
+    <!-- END OF MOBILE-->
+    
+    
+  </div>
+</div>
+
+
+
+{% schema %}
+ {
+    "name": "Home Section 5 Top",
+    "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": {
+            "en": "Image"
+          }
+        },
+		{
+          "type": "textarea",
+          "id": "content",
+          "label": {
+            "en": "Image"
+          }
+        }
+    ],
+    "class": "index-section dog_slider_container",
+    "max_blocks": 100,
+    "blocks": [
+      {
+        "type": "logo_image",
+        "name": "Image",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }
+        ]
+      }
+    ],
+    "presets": [
+       {
+      "name": {
+        "en": "Home Section 5 Top"
+      },
+      "category": {
+        "da": "Billede",
+        "de": "Foto",
+        "en": "Image",
+        "es": "Imagen",
+        "fi": "Kuva",
+        "fr": "Image",
+        "hi": "इमेज",
+        "it": "Immagine",
+        "ja": "画像",
+        "ko": "이미지",
+        "nb": "Bilde",
+        "nl": "Afbeelding",
+        "pt-BR": "Imagem",
+        "pt-PT": "Imagem",
+        "sv": "Bild",
+        "th": "รูปภาพ",
+        "zh-CN": "图片",
+        "zh-TW": "圖片"
+      }
+    }
+    ]
+  }
+{% endschema %}

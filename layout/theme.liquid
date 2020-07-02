@@ -61,18 +61,23 @@
     };
   </script>
 
+  <!-- Custom JS Author: VINCENT ================================================== -->
+  <script src="https://kit.fontawesome.com/88cce38d66.js" crossorigin="anonymous"></script>
   {{ 'jquery-2.2.3.min.js' | asset_url | script_tag }}
   {{ 'customscript.js' | asset_url | script_tag }}
   {{ 'stickyMojo.js' | asset_url | script_tag }}
+  {{ 'slick.js' | asset_url | script_tag }}
+  
+  <!-- Custom CSS Author: VINCENT ================================================== -->
+  
   {{ 'custom.scss.css' | asset_url | stylesheet_tag }}
+  {{ 'slick.css' | asset_url | stylesheet_tag }}
   
   <script src="{{ 'lazysizes.min.js' | asset_url }}" async="async"></script>
 
   <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
   
-  
-
-  <!-- Script used to calculating holidays & Weekends ================================================== -->
+  <!-- Script used to calculate holidays & Weekends ================================================== -->
   {{ 'moment.min.js' | asset_url | | script_tag }}
   {{ 'moment-holiday-pkg.min.js' | asset_url | script_tag }}
   <!-- Script used to send Emails ================================================== -->
@@ -96,7 +101,6 @@
 {% include 'gem-app-header-scripts' %}
 <!--End_Gem_Page_Header_Script-->
   
-
   
 </head>
 
