@@ -229,16 +229,16 @@
              {% if current_variant.inventory_quantity > 0 %}
                 {% if current_variant.inventory_quantity < 10 %}
                   <div class="qty-alert"> 
-                    <caption>Only {{ current_variant.inventory_quantity }} left - Ships on <span class="shiping-prod"></span></caption>
+                    <caption><i>Only {{ current_variant.inventory_quantity }} left - Ships on <span class="shiping-prod"></span></i></caption>
                   </div>
                 {% else %}
                   <div class="qty-alert">
-                    <caption><i>Only a few left</i>- Ships on <span class="shiping-prod"></span></caption>
+                    <caption><i>Only a few left - Ships on <span class="shiping-prod"></span></i></caption>
                   </div>
                 {% endif %}
              {%else%}
                 <div class="qty-alert">
-                  <caption>Backordered - Ships on <span class="backorded-prod"></span></caption>
+                  <caption><i>Backordered - Ships on <span class="backorded-prod"></span></i></caption>
                 </div>
              {% endif %}
 
@@ -258,7 +258,7 @@
                 {% if current_variant.inventory_quantity == 0 %}
                   <div id="sold-out" class="product-single__add-to-cart--full-width">
                     <!--<button type="button" class="btn-notify trigger" style="width: 100%">Notify me when available</button>-->
-                    <a href="#" class="btn-notify trigger"><caption>Just Notify Me When Available</caption></a>
+                    <a href="#myModal" class="btn-notify trigger"><caption>Just Notify Me When Available</caption></a>
                   </div>
                 {% endif %}
                 
@@ -267,20 +267,25 @@
                 {% endif %}
               </div>
             {% endform %}
-
           </div>
           <!-- Custom code for Unique value prop Author: John Mark ================================================== -->
-          <div class="prop__container">
-            <ul class="prop__item">
-              <li><span></span><p>Designed For Your Minimalist Home</p></li>
-              <li><span></span><p>Easy To Press & Clearer Sound</p></li>
-              <li><span></span><p>Happiness Guarantee</p></li>
-            </ul>
-          </div>
+          {% if product.type == 'Button' or product.type == 'Mat' %}
+            <div class="prop__container">
+              <ul class="prop__item">
+                <li>{{ 'icon-home.png' | asset_url | img_tag: 'Icon Home' }} <p>Designed For Your Minimalist Home</p></li>
+                {% if product.type == 'Button' %}
+                  <li>{{ 'icon-sound.png' | asset_url | img_tag: 'Icon Sound' }} <p>Easy To Press & Clearer Sound</p></li>
+                {% else %}
+                  <li>{{ 'icon-mat.png' | asset_url | img_tag: 'Icon Mat' }} <p>Customized Button Cutouts & Connecting Borders</p></li>
+                {% endif %}
+                <li>{{ 'icon-happiness.png' | asset_url | img_tag: 'Icon Happiness' }} <p>Happiness Guarantee</p></li>
+              </ul>
+            </div>
+          {% endif %}
           <!-- Custom code for Accordion Author: John Mark ================================================== -->
           <div class="acc__container">
-            <input class="acc__chkbox chk1" type="checkbox" name="check" id="item1" onclick="onlyOne(this)" checked>
-            <label class="acc__btn" for="item1"><h5>Product Details & Features</h5> <span></span> </label>
+            <input class="acc__chkbox chk1" type="checkbox" name="check" id="item1" onclick="onlyOne(this)">
+            <label class="acc__btn" for="item1"><h5>Product Details & Features</h5> <span></span> </label> 
             <div class="acc__panel" itemprop="description">
               {{ product.description }}
             </div>
@@ -313,7 +318,7 @@
 {% endunless %}
 
 <!-- MODAL OF OUT OF STOCKS Author: John Mark ================================================== -->
-<div class="modal">
+<div class="modal" id="myModal">
   <div class="modal-content">
     <span class="close-button">&times;</span>
     <h2 id="product-title">{{product.title}}</h2>
