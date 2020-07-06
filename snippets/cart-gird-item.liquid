@@ -1,0 +1,20 @@
+{% comment %}
+<section class="cart_grid_items">
+   <h4>Recommended Items </h4>
+{% if collections.best-sellers.products.size > 0 %}
+<ul>
+  {% if prodtags contains 'Starter' or prodtags contains 'Home' or prodtags contains 'Active' %}
+    {% for product in collections.best-sellers.products %}
+	  {% unless product.tags contains 'Starter' or product.tags contains 'Home' or product.tags contains 'Active %}
+      <li class=" {% for tag in product.tags %}{{ tag | handleize }}  {% endfor %}">{% include 'product-grid-item-cart' %}</li>
+	  {% endunless %}
+    {% endfor %}
+  {% endif %}
+  
+
+</ul>
+{% endif %}
+    
+  
+</section>
+{% endcomment %}
