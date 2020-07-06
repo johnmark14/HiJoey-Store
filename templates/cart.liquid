@@ -144,7 +144,9 @@
 
                     <!-- Custom code for note backordered Author: John Mark ================================================== --> 
                     {% if item.variant.inventory_quantity == 0 %}
-                      <caption>Note: Backordered - Ships on <span class="backorded-prod"></span></caption>
+                      <div class="cart-caption">
+                        <caption>Note: Backordered - Ships on <span class="backorded-prod"></span></caption>
+                      </div> 
                     {% endif %} 
                     
                     {% if settings.product_vendor_enable %}
