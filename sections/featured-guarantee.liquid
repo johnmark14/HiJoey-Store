@@ -33,7 +33,7 @@
     
     <div class="feature_content">
     {% if section.settings.title != blank %}
-          <h5 class="">{{ section.settings.title | escape }}</h5>
+          <h4 class="">{{ section.settings.title | escape }}</h4>
         {% endif %}
         {% if section.settings.text != blank %}
           <div class="rte-setting featured-row__subtext">{{ section.settings.text }}</div>
@@ -51,6 +51,7 @@
   "name": {
     "en": "100% Guarantee Section"
   },
+"class": "home_section_7",
   "settings": [
 {
       "type": "image_picker",
@@ -122,7 +123,7 @@
     },
 
     {
-      "type": "richtext",
+      "type": "html",
       "id": "text",
       "label": {
         "da": "Tekst",

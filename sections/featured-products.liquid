@@ -4,7 +4,7 @@
     {% if section.settings.title != blank %}
       <div class="section-header text-left">
         <h2 class=" section-header__title">{{ section.settings.title | escape }}</h2>
-        <a href="/collections/{{ section.settings.home_featured_products }}"><h6>{{ section.settings.link_title }}</h6></a>
+        <a class="featured_link desktop_only" href="/collections/{{ section.settings.home_featured_products }}"><h5>{{ section.settings.link_title }}</h5></a>
       </div>
     {% endif %}
 
@@ -61,6 +61,9 @@
 
       {% endif %}
     </div>
+    
+    
+    <a class="featured_link mobile_only" href="/collections/{{ section.settings.home_featured_products }}"><h5>{{ section.settings.link_title }}</h5></a>
   </div>
 </div>
 
@@ -88,6 +91,7 @@
     "zh-CN": "特色产品系列",
     "zh-TW": "精選商品系列"
   },
+  "class": "home_section_3",
   "settings": [
     {
       "type": "text",

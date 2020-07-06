@@ -225,7 +225,7 @@
               </div>
               {% endif %}
             
-              <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
+             <!-- Custom code for counting product quantity Button Author: John Mark ================================================== --> 
              {% if current_variant.inventory_quantity > 0 %}
                 {% if current_variant.inventory_quantity < 10 %}
                   <div class="qty-alert"> 
@@ -258,7 +258,7 @@
                 {% if current_variant.inventory_quantity == 0 %}
                   <div id="sold-out" class="product-single__add-to-cart--full-width">
                     <!--<button type="button" class="btn-notify trigger" style="width: 100%">Notify me when available</button>-->
-                    <a href="#myModal" class="btn-notify trigger"><caption>Just Notify Me When Available</caption></a>
+                    <a href="#notify" class="btn-notify trigger"><caption-link>Just Notify Me When Available</caption-link></a>
                   </div>
                 {% endif %}
                 
@@ -267,24 +267,23 @@
                 {% endif %}
               </div>
             {% endform %}
-
           </div>
-
+			
           <!-- Custom code for Unique value prop Author: John Mark ================================================== -->
           {% if product.type == 'Button' or product.type == 'Mat' %}
             <div class="prop__container">
               <ul class="prop__item">
-                <li>{{ 'icon-home.png' | asset_url | img_tag: 'Icon Home' }} <p>Designed For Your Minimalist Home</p></li>
+                <li>{{ 'hijoey-minimalist-home-icon.png' | asset_url | img_tag: 'Icon Home' }} <p>Perfectly Designed For Your Minimalist Home</p></li>
                 {% if product.type == 'Button' %}
-                  <li>{{ 'icon-sound.png' | asset_url | img_tag: 'Icon Sound' }} <p>Easy To Press & Clearer Sound</p></li>
+                  <li>{{ 'hijoey-clearer-sound-icon.png' | asset_url | img_tag: 'Icon Sound' }} <p>Super Easy To Press With Clearer Sound</p></li>
                 {% else %}
-                  <li>{{ 'icon-mat.png' | asset_url | img_tag: 'Icon Mat' }} <p>Customized Button Cutouts & Connecting Borders</p></li>
+                  <li>{{ 'hijoey-custom-mats-icon.png' | asset_url | img_tag: 'Icon Mat' }} <p>Custom Button Cutouts & Hassle Free</p></li>
                 {% endif %}
-                <li>{{ 'icon-happiness.png' | asset_url | img_tag: 'Icon Happiness' }} <p>Happiness Guarantee</p></li>
+                <li>{{ 'hijoey-happiness-guarantee-icon.png' | asset_url | img_tag: 'Icon Happiness' }} <p>100% Happiness Guarantee</p></li>
               </ul>
             </div>
           {% endif %}
-
+          
           <!-- Custom code for Accordion Author: John Mark ================================================== -->
           <div class="acc__container">
             <input class="acc__chkbox chk1" type="checkbox" name="check" id="item1" onclick="onlyOne(this)">
@@ -304,9 +303,12 @@
             </div>
           </div>
 
+                    <div class="ultimate-badges"></div>
+          
           {% if section.settings.social_sharing_products %}
             {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
           {% endif %}
+
         </div>
       </div>
     </div>
@@ -321,17 +323,17 @@
 {% endunless %}
 
 <!-- MODAL OF OUT OF STOCKS Author: John Mark ================================================== -->
-<div class="modal" id="myModal">
+<div class="modal" id="notify-me">
   <div class="modal-content">
     <span class="close-button">&times;</span>
     <h2 id="product-title">{{product.title}}</h2>
-      <p>Register to receive a notification when this item comes back in stock with an additional 10% off!</p>
+      <p>Register to receive a notification when this item comes back in stock!</p>
 
     <div class="modal-container">
       {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %} 
     
         {{ form.errors | default_errors }}
-          <input type="email" name="contact[email]" id="emailContact" placeholder="your@email.com" class="input-email"/>
+          <input type="email" name="contact[email]" id="emailContact" placeholder="hooman@hijoey.co" class="input-email"/>
           <input type="submit" name="contact[submit]" class="btn btn--add-to-cart" id="btn-notify" style="width: 100%" value="Notify me when available"/>
 
           {{form.email}}

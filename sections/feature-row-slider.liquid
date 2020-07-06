@@ -9,6 +9,11 @@
    
       <div class="one-half first text_content feature-row__text--{{ section.settings.layout }}">
         <div class="feature_content">
+        {% if section.settings.content_image != blank %}
+          <figure>
+          	<img src="{{ section.settings.content_image | img_url:'1024x'}}">
+          </figure>
+        {% endif %} 
         {% if section.settings.title != blank %}
           <h2 class="h2">{{ section.settings.title | escape }}</h2>
         {% endif %}
@@ -82,6 +87,11 @@
       
       <div class="one-half  text_content feature-row__text--{{ section.settings.layout }}">
         <div class="feature_content">
+           {% if section.settings.content_image != blank %}
+          <figure>
+          	<img src="{{ section.settings.content_image | img_url:'1024x'}}">
+          </figure>
+        {% endif %} 
         {% if section.settings.title != blank %}
           <h2 class="h2">{{ section.settings.title | escape }}</h2>
         {% endif %}
@@ -109,6 +119,11 @@
  {
     "name": "Home Section 5 Top",
     "settings": [
+		{
+            "type": "image_picker",
+            "id": "content_image",
+            "label": "Image"
+          },
         {
           "type": "text",
           "id": "title",

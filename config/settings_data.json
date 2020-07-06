@@ -28,6 +28,7 @@
     "type_base_italize_titles": true,
     "cart_type": "page",
     "cart_notes_enable": true,
+    "cart_notice": "Please note: Due to COVID-19, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "share_image": "shopify:\/\/shop_images\/1-outside-btn-box-11.jpg",
     "social_facebook_link": "",
     "social_twitter_link": "",
@@ -42,7 +43,7 @@
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": false,
-    "favicon": "shopify:\/\/shop_images\/hijoey_Logo_-_light.png",
+    "favicon": "shopify:\/\/shop_images\/hijoey_Logo_-_light_a4ef3ea5-0dc1-4780-a427-0ebeacca0ab2.png",
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/hijoey_Logo_-_light.png",
     "checkout_logo_position": "left",
@@ -57,6 +58,7 @@
     "checkout_accent_color": "#324175",
     "checkout_button_color": "#000000",
     "checkout_error_color": "#e32c2b",
+    "content": "Please note: Due to COVID-19 circumstances, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "sections": {
       "header": {
         "type": "header",
@@ -73,17 +75,10 @@
           "drawer_search_enable": false,
           "show_announcement": true,
           "home_page_only": false,
-          "text": "FREE SHIPPING on orders over $45 + Happiness Guarantee",
+          "text": "Free Shipping on orders over $45+",
           "link": "",
           "color_bg": "#ebebeb",
           "color_text": "#231f20"
-        }
-      },
-      "newsletter": {
-        "type": "newsletter",
-        "settings": {
-          "heading": "Your best friend deserves the best",
-          "subheading": "<p>Get hijoey promotions and advice for your&nbsp;doggo<\/p>"
         }
       },
       "footer": {
@@ -110,7 +105,7 @@
         "settings": {
           "product_vendor_enable": true,
           "social_sharing_products": true,
-          "quantity_enabled": true,
+          "quantity_enabled": false,
           "product_selector": "select",
           "enable_payment_button": false,
           "add_to_cart_button_size": "large",
@@ -156,12 +151,12 @@
       "1593671344567": {
         "type": "banner",
         "settings": {
-          "image": "shopify:\/\/shop_images\/hijoey-hero-banner.jpg",
+          "image": "shopify:\/\/shop_images\/hijoey-hero-banner_4280b51f-f171-47f0-a1ed-5ccb33f9cf41.jpg",
           "layout": "right",
-          "title": "Modern communication <br>with your best friend",
-          "text": "Beautifully designed buttons for your curious pup",
+          "title": "Communication that makes your best friend happy",
+          "text": "",
           "button_label": "Shop Now",
-          "button_link": "shopify:\/\/collections"
+          "button_link": "shopify:\/\/collections\/best-sellers"
         }
       },
       "1593671463590": {
@@ -170,22 +165,22 @@
           "image": "shopify:\/\/shop_images\/shop-mat-view-4.jpg",
           "layout": "right",
           "title": "Everything you need to communicate, delivered.",
-          "text": "<p>We make dog communication sleek and affordable. Just ask and get the best of hijoey &ndash; including customized floor mats, and step-by-step training programs, delivered to your door.<\/p>",
+          "text": "Inspired by <a href=\"https:\/\/www.instagram.com\/hunger4words\/\" target=\"_blank\">Christina Hunger &amp; Stella<\/a>, we're making dog communication more modern and functional. Just ask and get the best of hijoey -- including new upgraded training buttons, customized floor mats, and training worksheets, all delivered to your door.",
           "button_label": "",
           "button_link": "",
-          "icon1": "shopify:\/\/shop_images\/minimalist-home.png",
-          "list_content_1": "Designed For Your Minimalist Home",
-          "icon2": "shopify:\/\/shop_images\/clearer-sound.png",
+          "icon1": "shopify:\/\/shop_images\/hijoey-minimalist-home-icon_9db02208-b893-42f5-a871-dc105a2b5505.png",
+          "list_content_1": "Perfectly Designed For Your Minimalist Home",
+          "icon2": "shopify:\/\/shop_images\/hijoey-clearer-sound-icon.png",
           "list_content_2": "Easy To Press With Clearer Sound",
-          "icon3": "shopify:\/\/shop_images\/happiness-guarantee.png",
-          "list_content_3": "Happiness Guarantee"
+          "icon3": "shopify:\/\/shop_images\/hijoey-happiness-guarantee-icon.png",
+          "list_content_3": "100% Happiness Guarantee"
         }
       },
       "1593671766559": {
         "type": "featured-products",
         "settings": {
-          "title": "Shop our best-selling training buzzers!",
-          "link_title": "SEE ALL BUZZERS",
+          "title": "Shop our best-selling training buttons!",
+          "link_title": "SEE ALL BUTTONS",
           "home_featured_products": "best-sellers",
           "collection_products_grid": "grid"
         }
@@ -199,13 +194,13 @@
               "code": "\"I absolutely love this product! My 6 month old lab picked up how to use the buttons on the first try. I gave him treats every time he touched the button and I'm SOOO excited that it worked.\"",
               "cust_name": "MATT HUGHES",
               "width": "100%",
-              "alignment": "top-middle"
+              "alignment": "center"
             }
           },
           "1593672997888": {
             "type": "html",
             "settings": {
-              "code": "\"My dog loves her button. I love how cute and simple the designs are. It just arrives at my door, easy to use, and ready to go.",
+              "code": "\"My dog loves her button. I love how cute and simple the designs are. It just arrives at my door, easy to use, and ready to go. So happy I joined the pilot group!\"",
               "cust_name": "Heather Laurie",
               "width": "100%",
               "alignment": "top-middle"
@@ -214,7 +209,7 @@
           "1593673011663": {
             "type": "html",
             "settings": {
-              "code": "\"We trained our Bella with a hanging doorbell with string. The buzzer took a while to teach her at first, but now she comes running in to tell us exactly what she wants. I still smile when she pushes it with her nose or slaps it with her paw. Absolutely great experience so far.\"",
+              "code": "\"We trained our Bella with a doorbell at first. But we love the talking button way more! Now she comes running in to tell us exactly what she wants. Absolutely great experience so far.\"",
               "cust_name": "Daniel Warner",
               "width": "100%",
               "alignment": "top-middle"
@@ -232,7 +227,7 @@
           "1593673046376": {
             "type": "html",
             "settings": {
-              "code": "\"We have had the training buzzer for a week after leaving our jingle bells at a friends place. Roscoe picked it up very quickly. We even bought another buzzer bundle for traveling. Great buy! Would buy again!\"",
+              "code": "\"We have had the training buzzer for a week after leaving our jingle bells at a friends place. Roscoe picked it up very quickly. We even bought another button set for traveling. Would buy again!\"",
               "cust_name": "Steven Lee",
               "width": "100%",
               "alignment": "top-middle"
@@ -278,8 +273,9 @@
           "1593673417111"
         ],
         "settings": {
-          "title": "Get your answers from hijoey",
-          "content": "Want the latest behavioural training tips, product updates, and more? Join our #AlwaysCurious Club!"
+          "content_image": "",
+          "title": "Reduce Whining. Relieve Heartbreaks.",
+          "content": "We've all been there. That feeling of losing a small part of your soul when you don't know what your pup wants and you hear that cry or whimper. Communication is the key, and hijoey gives your friend the simplest actions to relieve your heartbreaks."
         }
       },
       "1593673427695": {
@@ -310,31 +306,32 @@
           "1593673470689"
         ],
         "settings": {
-          "title": "No more stressful barking or whining",
-          "content": "Your doggo can be the smartest pup that your friends and family have ever seen!"
+          "content_image": "",
+          "title": "Proudly Canadian Owned & Operated.",
+          "content": "We're partnered with ethical manufacturers across Canada and beyond, crafting each piece with both a minimalist aesthetic and modern function in mind. Each purchase you make also helps our local animal rescues and adoption shelters."
         }
       },
       "1593673828470": {
         "type": "featured-guarantee",
         "settings": {
-          "image": "shopify:\/\/shop_images\/100_guaranteed.png",
-          "title": "100 DAY TRIAL &amp; EASY RETURNS",
-          "text": "<p>We believe in designing quality products to better communicate with our best friends. Every product we make is thoughtfully created to keep you both feeling confident and happy. Still curious? Let&rsquo;s go.<\/p>"
+          "image": "shopify:\/\/shop_images\/100_guaranteed_07ec2d33-09da-44e6-9f1b-2a6b75fb0dec.png",
+          "title": "100 DAY TRIAL & EASY RETURNS",
+          "text": "We know it's very important to never rush or force the process on our friends. To make this time as easy and as stress free as possible, we'll happily provide a full refund if you don't fall in love with our hijoey training products."
         }
       },
       "1593674073014": {
         "type": "featured-collections",
         "blocks": {
-          "1593674073014-0": {
-            "type": "collection",
-            "settings": {
-              "collection": "mat-set"
-            }
-          },
           "1593674073014-1": {
             "type": "collection",
             "settings": {
               "collection": "button-sets"
+            }
+          },
+          "1593674073014-0": {
+            "type": "collection",
+            "settings": {
+              "collection": "mat-set"
             }
           },
           "1593674073014-2": {
@@ -345,8 +342,8 @@
           }
         },
         "block_order": [
-          "1593674073014-0",
           "1593674073014-1",
+          "1593674073014-0",
           "1593674073014-2"
         ],
         "settings": {
@@ -360,7 +357,6 @@
       "1593671344567",
       "1593671463590",
       "1593671766559",
-      "newsletter",
       "1593672972719",
       "1593673380830",
       "1593673427695",

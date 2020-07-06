@@ -86,7 +86,7 @@ $('#sidebar').stickyMojo({footerID: '#shopify-section-footer', contentID: '#main
     $('.featured_slider ').slick({
   infinite: true,
   slidesToShow: 3,
-      slidesToScroll: 3,
+      slidesToScroll: 1,
     dots:false,
     arrows:true,
     autoplay: true,
