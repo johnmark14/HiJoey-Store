@@ -268,17 +268,87 @@ h2#product-title {
   line-height: 20px !important;
 }
 
-.faq-acc {
-  padding: 40px 0;
+///////////////////////
+//FAQs
+
+.faq-acc__container {
+  padding: 40px 20px 20px 40px;
+  text-align: left;
+  text-align: center;
+}
+
+.faq-acc__container h3 {
+  margin: 40px 0 !important;
+}
+
+.faq-acc__checkbox {
+  display: none;
+} 
+
+.faq-acc__btn { 
+  position: relative;
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  line-height: 0px;
+}
+
+.faq-acc__btn h4 {
+  font-weight: bold !important;
+  font-size: 20px !important;
+  color: #231F20 !important;
+}
+
+.faq-acc__btn h4::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background: url({{'arrow-down.svg' | asset_url }});
+  background-image: url({{'arrow-down.svg' | asset_url }});
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: center;
+  fill: #727272;
+  transform: rotate(-90deg);
+  margin-left: 20px;
+  transition: all 0.3s ease-out;
+}
+
+.faq-acc__container .panel {
+  text-align: left; 
+  visibility: hidden;
+  max-height: 0;
+  transition: max-height 0.25s ease-in-out, visibility 0s ease-in-out 0.20s;
+  overflow: hidden;  
+}
+
+.faq-acc__container .panel p {
+  font-size: 16px !important;
+}
+
+#faqbox-1:checked + .faq-acc__btn + .panel,
+#faqbox-2:checked + .faq-acc__btn + .panel,
+#faqbox-3:checked + .faq-acc__btn + .panel,
+#faqbox-4:checked + .faq-acc__btn + .panel{
+  visibility: visible;
+  position: relative; 
+  max-height: 300px; 
+} 
+
+#faqbox-1:checked + .faq-acc__btn h4::after,
+#faqbox-2:checked + .faq-acc__btn h4::after,
+#faqbox-3:checked + .faq-acc__btn h4::after,
+#faqbox-4:checked + .faq-acc__btn h4::after{
+  transform: rotate(0deg); 
 }
 
 ///////////////////////
 //Unique for Cart backorederd caption
-.cart-caption {
+.cart-caption { 
   font-size: 12px;
   line-height: 16px;
 }
-
 
 @media screen and (max-width: 540px) { 
 
