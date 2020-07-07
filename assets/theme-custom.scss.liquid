@@ -269,7 +269,79 @@ h2#product-title {
 }
 
 ///////////////////////
-//FAQs
+//HOW TO SECTION
+
+.how-to {
+  margin: 60px 0;
+  background-color: #BDCBD8;
+  padding: 40px 40px 90px 40px;
+}
+
+.how-to h3 {
+  text-align: center;
+  font-size: 40px !important;
+  text-transform: uppercase !important;
+  color: #231F20 !important;
+  padding: 40px 0;
+}
+
+.how-to__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-gap: 20px;
+}
+
+.how-to__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.how-to__text {
+  color: #231F20;
+  align-self: flex-start;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: 1fr;
+  grid-gap: 10px;
+}
+
+.how-to__text span {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border: 2px solid #231F20;
+  color: inherit;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold !important;
+}
+
+.how-to__text--inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.how-to__text--inner h5,
+.how-to__text--inner p {
+  margin: 0 !important;
+  color: inherit !important;
+}
+
+.how-to__text--inner p {
+  font-size: 16px !important;
+}
+
+.how-to__text--inner h5 {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  padding: 10px 0 5px 0;
+}
+
+///////////////////////
+//FAQs SECTION
 
 .faq-acc__container {
   text-align: left;
@@ -352,6 +424,47 @@ h2#product-title {
   line-height: 16px;
 }
 
+@media screen and (max-width: 800px) {
+  .how-to__text {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    grid-gap: 0;
+  }
+
+}
+
+@media screen and (max-width: 600px) {
+
+  .faq-acc__btn h4 {
+    font-size: 14px !important;
+  }
+
+  .faq-acc__btn h4::after {
+    width: 12px;
+    height: 12px;
+    background-size: 12px;
+  }
+
+  .faq-acc__container .panel p {
+    font-size: 12px !important;
+  }
+
+  .how-to__container {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, auto);
+    grid-gap: 60px;
+  }
+
+  .how-to__text {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    align-self: center;
+    grid-gap: 30px;
+    margin: 30px 0;
+  }
+
+}
+
 @media screen and (max-width: 540px) { 
 
   .close-button {
@@ -392,21 +505,6 @@ h2#product-title {
 
 }
 
-@media screen and (max-width: 600px) {
 
-  .faq-acc__btn h4 {
-    font-size: 14px !important;
-  }
-
-  .faq-acc__btn h4::after {
-    width: 12px;
-    height: 12px;
-    background-size: 12px;
-  }
-
-  .faq-acc__container .panel p {
-    font-size: 12px !important;
-  }
-}
 
   
