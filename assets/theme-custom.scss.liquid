@@ -272,13 +272,13 @@ h2#product-title {
 //FAQs
 
 .faq-acc__container {
-  padding: 40px 20px 20px 40px;
   text-align: left;
-  text-align: center;
 }
 
-.faq-acc__container h3 {
-  margin: 40px 0 !important;
+.faq-section .grid h3 {
+  margin-top: 60px !important;
+  padding: 20px 0 !important;
+  text-transform: uppercase !important;
 }
 
 .faq-acc__checkbox {
@@ -288,8 +288,7 @@ h2#product-title {
 .faq-acc__btn { 
   position: relative;
   padding-top: 20px;
-  display: flex;
-  align-items: center;
+  display: inline-block;
   line-height: 0px;
 }
 
@@ -330,7 +329,9 @@ h2#product-title {
 #faqbox-1:checked + .faq-acc__btn + .panel,
 #faqbox-2:checked + .faq-acc__btn + .panel,
 #faqbox-3:checked + .faq-acc__btn + .panel,
-#faqbox-4:checked + .faq-acc__btn + .panel{
+#faqbox-4:checked + .faq-acc__btn + .panel,
+#faqbox-5:checked + .faq-acc__btn + .panel,
+#faqbox-6:checked + .faq-acc__btn + .panel{
   visibility: visible;
   position: relative; 
   max-height: 300px; 
@@ -339,7 +340,9 @@ h2#product-title {
 #faqbox-1:checked + .faq-acc__btn h4::after,
 #faqbox-2:checked + .faq-acc__btn h4::after,
 #faqbox-3:checked + .faq-acc__btn h4::after,
-#faqbox-4:checked + .faq-acc__btn h4::after{
+#faqbox-4:checked + .faq-acc__btn h4::after,
+#faqbox-5:checked + .faq-acc__btn h4::after,
+#faqbox-6:checked + .faq-acc__btn h4::after{
   transform: rotate(0deg); 
 }
 

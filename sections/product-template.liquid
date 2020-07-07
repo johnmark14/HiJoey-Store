@@ -312,48 +312,21 @@
       </div>
     </div>
   </div>
-
-  <div class="grid product-single">
-    <div class="grid__item large--twelfths-twelfths">
-      <div class="faq-acc__container">
-        <h3>Frequently Asked Questions</h3>
-        <input class="faq-acc__checkbox faqbox" type="checkbox" name="faqbox" id="faqbox-1">
-        <label for="faqbox-1" class="faq-acc__btn">
-          <h4>How do I use Tushy Ottoman toilet stool?</h4>
-        </label>
-        <div class="panel"> 
-          <p>To use the toilet stool, simply place it in front of your favorite throne and position your feet on top of it. This should bring your posture to a squat position and you’re ready to go.</p>
-        </div>
-
-        <input class="faq-acc__checkbox faqbox" type="checkbox" name="faqbox" id="faqbox-2">
-        <label for="faqbox-2" class="faq-acc__btn">
-          <h4>How does using a toilet stool improve my #2?</h4>
-        </label>
-        <div class="panel"> 
-          <p>Using a TUSHY ottoman toilet stool, your adjusted posture opens up your colon, allowing for an easier and less strenuous release of your bowels.</p>
-        </div>
-
-        <input class="faq-acc__checkbox faqbox" type="checkbox" name="faqbox" id="faqbox-3">
-        <label for="faqbox-3" class="faq-acc__btn">
-          <h4>What are the dimensions of the TUSHY Ottoman?</h4>
-        </label>
-        <div class="panel"> 
-          <p>The TUSHY Ottoman toilet stool is 16.5 inches wide, 9 inches long, and 9 inches high with legs.</p>
-        </div>
-
-        <input class="faq-acc__checkbox faqbox" type="checkbox" name="faqbox" id="faqbox-4">
-        <label for="faqbox-4" class="faq-acc__btn"> 
-          <h4>What materials are the TUSHY Ottoman made from?</h4>
-        </label>
-        <div class="panel"> 
-          <p>The body of the toilet stool is made from PP (polypropylene) for its surface finish properties and the legs are a PC/ABS (polycarbonate/acrylonitrile butadiene styrene) mixture for its high tensile and impact strength.</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  
 </div>
+{% if product.type == 'Button' or product.type == 'Mat' %}
+  <section class="faq-section">
+    <div class="grid product-single">
+      <h3>Frequently Asked Questions</h3>
+      <div class="grid__item large--nine-twelfths faq-acc__container">
+        {% if product.type == 'Button' %}
+          {% include 'faq-for-buttons' %}
+        {% else %}
+          {% include 'faq-for-mats' %} 
+        {% endif %} 
+      </div>
+    </div>
+  </section>
+{% endif %}
 
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">
