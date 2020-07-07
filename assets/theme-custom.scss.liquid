@@ -308,7 +308,6 @@ h2#product-title {
   background-repeat: no-repeat;
   background-size: 15px;
   background-position: center;
-  fill: #727272;
   transform: rotate(-90deg);
   margin-left: 20px;
   transition: all 0.3s ease-out;
@@ -391,6 +390,23 @@ h2#product-title {
     font-size: .8em !important;
   }
 
+}
+
+@media screen and (max-width: 600px) {
+
+  .faq-acc__btn h4 {
+    font-size: 14px !important;
+  }
+
+  .faq-acc__btn h4::after {
+    width: 12px;
+    height: 12px;
+    background-size: 12px;
+  }
+
+  .faq-acc__container .panel p {
+    font-size: 12px !important;
+  }
 }
 
   
