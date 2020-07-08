@@ -316,47 +316,17 @@
 <!-- Used to exit from theme defined margin & padding ================================================== -->
 </div>
 </div>
-
-<section class="how-to">
-  <h3>How to Tushy</h3>
-  <div class="how-to__container">
-    <div class="how-to__item">
-      <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
-      <img src="//cdn.shopify.com/s/files/1/0881/2654/t/243/assets/gm-how-to-01_290x.png?v=11812627946039128501" alt="Tushy">
-      <div class="how-to__text">
-        <span>1</span>
-        <div class="how-to__text--inner">
-          <h5>Do Your Doo</h5>
-          <p>Don't be shy, everybody poops.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="how-to__item">
-      <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
-      <img src="https://cdn.shopify.com/s/files/1/0881/2654/t/243/assets/gm-how-to-02_290x.png?v=17231102839211954645" alt="Tushy">
-      <div class="how-to__text">
-        <span>2</span>
-        <div class="how-to__text--inner">
-          <h5>TURN THE KNOB</h5>
-          <p>Adjust the pressure from gentle butt spritz to power wash.</p>
-        </div>
-      </div>
-    </div>
-
-    <div class="how-to__item">
-      <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
-      <img src="https://cdn.shopify.com/s/files/1/0881/2654/t/243/assets/gm-how-to-03_290x.png?v=4732677451204276243" alt="Tushy">
-      <div class="how-to__text">
-        <span>3</span>
-        <div class="how-to__text--inner">
-          <h5>FIND THE PERFECT ANGLE</h5>
-          <p>Adjust the nozzle for a precise clean.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+{% if product.type == 'Button' or product.type == 'Mat' %}
+  <section class="how-to">
+    {% if product.type == 'Button' %}
+      <!--Can be found at snippets folder-->
+      {% include 'howto-for-buttons' %}
+    {% else %}
+      <!--Can be found at snippets folder-->
+      {% include 'howto-for-mats' %} 
+    {% endif %} 
+  </section> 
+{% endif %}
 
 <!-- Used to exit from theme defined margin & padding ================================================== -->
 <div class="wrapper">
@@ -367,8 +337,10 @@
       <h3>Frequently Asked Questions</h3>
       <div class="grid__item large--nine-twelfths faq-acc__container">
         {% if product.type == 'Button' %}
+          <!--Can be found at snippets folder-->
           {% include 'faq-for-buttons' %}
         {% else %}
+          <!--Can be found at snippets folder-->
           {% include 'faq-for-mats' %} 
         {% endif %} 
       </div>
