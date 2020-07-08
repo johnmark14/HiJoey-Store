@@ -331,6 +331,7 @@
 <!-- Used to exit from theme defined margin & padding ================================================== -->
 <div class="wrapper">
 <div id="shopify-section-product-template" class="shopify-section">
+<!-- Section code for FAQ Author: John Mark ================================================== -->  
 {% if product.type == 'Button' or product.type == 'Mat' %}
   <section class="faq-section">
     <div class="grid product-single">
@@ -347,6 +348,30 @@
     </div>
   </section>
 {% endif %}
+<!-- Section code for Product Benefits Author: John Mark ================================================== -->  
+<section class="prod-benefits">
+  <div class="grid product-single">
+    <div class="prod-benefits__container">
+      <div class="content">
+        <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
+        <img src="https://cdn.shopify.com/s/files/1/0881/2654/t/243/assets/icon-easy-instalation.png?v=3125623284521381431" alt="">
+        <h5>EASY INSTALLATION</h5>
+      </div>
+
+      <div class="content">
+        <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
+        <img src="//cdn.shopify.com/s/files/1/0881/2654/t/243/assets/icon-risk-free.png?v=4665692295512380322" alt="">
+        <h5>60 DAY RISK-FREE TRIAL</h5>
+      </div>
+
+      <div class="content">
+        <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
+        <img src="//cdn.shopify.com/s/files/1/0881/2654/t/243/assets/icon-customer-service.png?v=6604568963754561200" alt="">
+        <h5>EXCEPTIONAL CUSTOMER SERVICE</h5>
+      </div>
+    </div>
+  </div>
+</section>
 
 {% unless product == empty %}
   <script type="application/json" id="ProductJson-{{ section.id }}">
