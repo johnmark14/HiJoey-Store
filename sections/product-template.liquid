@@ -255,7 +255,7 @@
               </button>
               
               <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-              {% if current_variant.inventory_quantity == 0 %}
+              {% if current_variant.inventory_quantity < 0 %}
                 <div id="sold-out" class="product-single__add-to-cart--full-width">
                   <!--<button type="button" class="btn-notify trigger" style="width: 100%">Notify me when available</button>-->
                   <a href="#notify" class="btn-notify trigger"><caption-link>Just Notify Me When Available</caption-link></a>
@@ -334,9 +334,9 @@
 <!-- Section code for FAQ Author: John Mark ================================================== -->  
 {% if product.type == 'Button' or product.type == 'Mat' %}
   <section class="faq-section">
-    <div class="grid product-single">
-      <h3>Frequently Asked Questions</h3>
-      <div class="grid__item large--nine-twelfths faq-acc__container">
+    <div class="grid product-single"> 
+      <h3 class="h3-strong">Frequently Asked Questions</h3>
+      <div class="grid__item large--ten-twelfths faq-acc__container">
         {% if product.type == 'Button' %}
           <!--Can be found at snippets folder-->
           {% include 'faq-for-buttons' %}
@@ -353,21 +353,18 @@
   <div class="grid product-single">
     <div class="prod-benefits__container">
       <div class="content">
-        <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
-        <img src="https://cdn.shopify.com/s/files/1/0881/2654/t/243/assets/icon-easy-instalation.png?v=3125623284521381431" alt="">
-        <h5>EASY INSTALLATION</h5>
+        {{ 'hijoey-freetraining.png' | asset_url | img_tag: 'Free Training' }}
+        <h4 class="h4-strong">FREE TRAINING WORKSHEETS</h4>
       </div>
 
       <div class="content">
-        <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
-        <img src="//cdn.shopify.com/s/files/1/0881/2654/t/243/assets/icon-risk-free.png?v=4665692295512380322" alt="">
-        <h5>60 DAY RISK-FREE TRIAL</h5>
+        {{ 'hijoey-100.png' | asset_url | img_tag: '100 days' }}
+        <h4 class="h4-strong">100 DAY RISK-FREE TRIAL</h4>
       </div>
 
       <div class="content">
-        <!--{{ 'replace-me' | asset_url | img_tag: 'alt-here' }}-->
-        <img src="//cdn.shopify.com/s/files/1/0881/2654/t/243/assets/icon-customer-service.png?v=6604568963754561200" alt="">
-        <h5>EXCEPTIONAL CUSTOMER SERVICE</h5>
+        {{ 'hijoey-support.png' | asset_url | img_tag: 'Exceptional Customer Service' }}
+        <h4 class="h4-strong">EXCEPTIONAL CUSTOMER SERVICE</h4>
       </div>
     </div>
   </div>

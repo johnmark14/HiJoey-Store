@@ -28,7 +28,6 @@
     "type_base_italize_titles": true,
     "cart_type": "page",
     "cart_notes_enable": true,
-    "cart_notice": "Please note: Due to COVID-19, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "share_image": "shopify:\/\/shop_images\/1-outside-btn-box-11.jpg",
     "social_facebook_link": "",
     "social_twitter_link": "",
@@ -58,6 +57,7 @@
     "checkout_accent_color": "#324175",
     "checkout_button_color": "#000000",
     "checkout_error_color": "#e32c2b",
+    "cart_notice": "Please note: Due to COVID-19, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "content": "Please note: Due to COVID-19 circumstances, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "sections": {
       "header": {
@@ -306,7 +306,6 @@
           "1593673470689"
         ],
         "settings": {
-          "content_image": "",
           "title": "Proudly Canadian Owned & Operated.",
           "content": "We're partnered with ethical manufacturers across Canada and beyond, crafting each piece with both a minimalist aesthetic and modern function in mind. Each purchase you make also helps our local animal rescues and adoption shelters."
         }
