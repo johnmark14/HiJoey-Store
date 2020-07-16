@@ -257,7 +257,7 @@
               </button>
               
               <!-- Custom code for Notify Button Author: John Mark ================================================== --> 
-              {% if current_variant.inventory_quantity < 0 %}
+              {% if current_variant.inventory_quantity <= 0 %}
                 <div id="sold-out" class="product-single__add-to-cart--full-width">
                   <!--<button type="button" class="btn-notify trigger" style="width: 100%">Notify me when available</button>-->
                   <a href="#Notify" class="btn-notify trigger"><caption-link>Just Notify Me When Available</caption-link></a>
@@ -352,15 +352,19 @@
           
             <!--Can be found at snippets folder-->
             {% include 'faq-for-buttons' %}
-
+          
+          </div>
         {% else %}
+          {% comment %} PLEASE UNCOMMENT IF CONTENT!!!!!
+          <div class="grid__item large--ten-twelfths faq-acc__container">
 
-            <!--Can be found at snippets folder-->
-            <!-- PLEASE UNCOMMENT IF CONTENT!!!!!
-            {% include 'faq-for-mats' %} 
-            -->
+          <!--Can be found at snippets folder-->
+          {% include 'faq-for-mats' %} 
+
+          </div>
+          {% endcomment %}
         {% endif %} 
-        </div>
+        
       </div>
     </section>
   {% endif %}

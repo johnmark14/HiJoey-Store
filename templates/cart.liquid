@@ -150,7 +150,7 @@
                     </div>
 
                     <!-- Custom code for note backordered Author: John Mark ================================================== --> 
-                    {% if item.variant.inventory_quantity < 0 %}
+                    {% if item.variant.inventory_quantity <= 0 %}
                       <div class="cart-caption">
                         <caption>Note: Backordered - Ships on <span class="backorded-prod"></span></caption>
                       </div> 
