@@ -323,7 +323,9 @@
       {% include 'howto-for-buttons' %}
     {% else %}
       <!--Can be found at snippets folder-->
+      <!-- PLEASE UNCOMMENT IF CONTENT!!!!!
       {% include 'howto-for-mats' %} 
+      -->
     {% endif %} 
   </section> 
 {% endif %}
@@ -335,15 +337,20 @@
 {% if product.type == 'Button' or product.type == 'Mat' %}
   <section class="faq-section">
     <div class="grid product-single"> 
-      <h3 class="h3-strong">Frequently Asked Questions</h3>
-      <div class="grid__item large--ten-twelfths faq-acc__container">
-        {% if product.type == 'Button' %}
+      {% if product.type == 'Button' %}
+        <h3 class="h3-strong">Frequently Asked Questions</h3>
+        <div class="grid__item large--ten-twelfths faq-acc__container">
+        
           <!--Can be found at snippets folder-->
           {% include 'faq-for-buttons' %}
-        {% else %}
+
+      {% else %}
+
           <!--Can be found at snippets folder-->
+          <!-- PLEASE UNCOMMENT IF CONTENT!!!!!
           {% include 'faq-for-mats' %} 
-        {% endif %} 
+          -->
+      {% endif %} 
       </div>
     </div>
   </section>

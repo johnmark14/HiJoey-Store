@@ -377,13 +377,15 @@ h2#product-title {
 }
 
 .faq-acc__btn {
-  position: relative;
-  padding-top: 20px;
-  display: inline-block;
-  line-height: 0px;
+  display: inline-grid;
+  grid-template-columns: auto min-content;
+  grid-column-gap: 20px;
+  align-items: center;
+
+  margin-top: 30px;
 }
 
-.faq-acc__btn h4::after {
+.faq-acc__btn::after {
   content: "";
   width: 15px;
   height: 15px;
@@ -396,11 +398,16 @@ h2#product-title {
   background-size: 15px;
   background-position: center;
   transform: rotate(-90deg);
-  margin-left: 20px;
   transition: all 0.3s ease-out;
 }
 
+.faq-acc__btn h4 {
+  margin: 0 !important;
+  display: inline-block;
+}
+
 .faq-acc__container .panel {
+  margin-top: 10px;
   text-align: left;
   visibility: hidden;
   max-height: 0;
@@ -423,12 +430,12 @@ h2#product-title {
   max-height: 300px;
 }
 
-#faqbox-1:checked + .faq-acc__btn h4::after,
-#faqbox-2:checked + .faq-acc__btn h4::after,
-#faqbox-3:checked + .faq-acc__btn h4::after,
-#faqbox-4:checked + .faq-acc__btn h4::after,
-#faqbox-5:checked + .faq-acc__btn h4::after,
-#faqbox-6:checked + .faq-acc__btn h4::after {
+#faqbox-1:checked + .faq-acc__btn::after,
+#faqbox-2:checked + .faq-acc__btn::after,
+#faqbox-3:checked + .faq-acc__btn::after,
+#faqbox-4:checked + .faq-acc__btn::after,
+#faqbox-5:checked + .faq-acc__btn::after,
+#faqbox-6:checked + .faq-acc__btn::after {
   transform: rotate(0deg);
 }
 ///////////////////////
@@ -488,20 +495,6 @@ h2#product-title {
 }
 
 @media screen and (max-width: 600px) {
-  .h4-small {
-    font-size: 14px !important;
-  }
-
-  .faq-acc__btn h4::after {
-    width: 12px;
-    height: 12px;
-    background-size: 12px;
-  }
-
-  .faq-acc__container .panel p {
-    font-size: 12px !important;
-  }
-
   .how-to__container {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, auto);
@@ -557,6 +550,12 @@ h2#product-title {
 
   span.alert-message {
     font-size: 0.8em !important;
+  }
+
+  //////////////////
+  //FAQ
+  .faq-acc__btn {
+    display: grid;
   }
 
   //////////////////
