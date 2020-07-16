@@ -1,4 +1,7 @@
 jQuery(function($){
+
+$( ".policy-list" ).addClass( "myClass yourClass" );
+
   
     $("#ProdInfo").click(function() {
     $('html, body').animate({

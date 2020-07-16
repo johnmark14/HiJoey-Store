@@ -39,9 +39,11 @@
         
         <div class="one-half first">
           
-        <a id="backToShopping" href="/collections/" class="top_cart_titles">← Back To Shopping</a>
+        <a id="backToShopping" href="/" class="top_cart_titles">← Back To Shopping</a>
         
          {% capture prodtags %}
+          
+          {% comment %}
           {%- for item in cart.items -%}
            {%- if item.product.tags.size >0 -%}
           
@@ -55,11 +57,21 @@
          
            {%- endif -%}
           {%- endfor -%}
-           {% endcapture %}
+          {%endcomment%}
           
+          {% for item in cart.items %}
+              {{ item.product.title }} ,
+          {% endfor %}
+          
+           {% endcapture %}
+
        
           
         {% for item in cart.items %}
+          
+         
+          
+          
           
           <div class="cart__row">
             <div class="grid--full cart__row--table-large">
@@ -83,16 +95,11 @@
                     <a href="{{ item.url }}" class="h4 cart__product-name">
                       {{ item.product.title }}
                     </a>
-
-                    
-
                     {% unless item.variant.title contains 'Default' %}
                       <p class="cart__product-meta">
                         {{ item.variant.title }}
                       </p>
                     {% endunless %}
-
-                    
 					
             
                       
@@ -143,7 +150,7 @@
                     </div>
 
                     <!-- Custom code for note backordered Author: John Mark ================================================== --> 
-                    {% if item.variant.inventory_quantity == 0 %}
+                    {% if item.variant.inventory_quantity < 0 %}
                       <div class="cart-caption">
                         <caption>Note: Backordered - Ships on <span class="backorded-prod"></span></caption>
                       </div> 
@@ -175,9 +182,9 @@
                     
                     
                     
-                    <p class="cart__product-meta">
+                    <p class="cart__product-meta remove">
                       <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0">
-                        <caption-link>{{ 'cart.general.remove' | t }}</caption-link>
+                        <caption-link>x</caption-link>
                       </a>
                     </p>
                   </div>
@@ -229,7 +236,7 @@
                 </div>
               </div>
               {%- endif -%}
-              <div class="grid--full cart__row--table b_bottom">
+              <div class="grid--full cart__row--table b_bottom price_section">
                 <div class="grid__item one-half first large--text-center">
                   <p class="cart__subtotal">{{ 'cart.general.subtotal' | t }}</p>
                 </div>
@@ -296,6 +303,7 @@
   </div>
 </div>
   
+ <hr class="hr--big">
 
  {% include 'cart-gird-item.liquid' %} 
 

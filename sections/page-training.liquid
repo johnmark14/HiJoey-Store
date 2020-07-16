@@ -1,0 +1,229 @@
+<section class="section_1">
+  <div class="wrapper">
+    <div class="one-third first">
+      {% if section.settings.sec1_left_title %}
+      <h6>
+      <span class="section_title">
+         {{ section.settings.sec1_left_title }}
+      </span>
+      </h6>
+      {% endif %}
+    </div>
+    <div class="two-thirds ">
+      {% if section.settings.header %}
+      <h1>{{ section.settings.header }}</h1>
+      {% endif %}
+      
+      {% if section.settings.header_subtext %}
+      <h4>{{ section.settings.header_subtext }}</h4>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if section.settings.sec2_bg %}
+<section class="section_2">
+      
+    <div class="section_content">
+     	<img src="{{ section.settings.sec2_bg | img_url: '1920x' }}">
+    </div>
+
+</section>
+{% endif %}
+
+<section class="section_3">
+  <div class="wrapper">
+    <div class="one-third first">
+      {% if section.settings.sec3_left_title %}
+      <h6>
+      <span class="section_title">
+         <a href="{{ section.settings.sec3_left_title_link }}"><i class="fas fa-angle-left"></i> {{ section.settings.sec3_left_title }}</a>
+      </span>
+      </h6>
+      {% endif %}
+    </div>
+    <div class="two-thirds ">
+      {% if section.settings.sec3_header %}
+      <h2>{{ section.settings.sec3_header }}</h2>
+      {% endif %}
+      
+      {% if section.settings.sec3_header_subtext %}
+      <h4>{{ section.settings.sec3_header_subtext }}</h4>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% if section.settings.sec4_bg %}
+<section class="section_4">
+	<div class="wrapper">
+      <div class="section_content">
+          <img src="{{ section.settings.sec4_bg | img_url: '1920x' }}">
+      </div>
+  	</div>
+</section>
+{% endif %}
+
+<section class="section_5">
+            <div class="wrapper">
+              <div class="one-third first">
+                 {% if section.settings.sec5_left_title %}
+                  <h3><span class="section_title">
+                    {{ section.settings.sec5_left_title }} 
+                  </span></h3>
+                  {% endif %}
+              </div>
+              <div class="two-thirds ">
+                {% form 'contact' %}
+
+                {% comment %}
+                  Successful message
+                {% endcomment %}
+                {% if form.posted_successfully? %}
+                  <script>
+                    window.location = "/pages/thank-you-for-contacting-us";
+                    </script>
+                {% endif %}
+
+                {{ form.errors | default_errors }}
+
+                <div class="grid grid--small">
+                  <div class="grid__item large--one-half">
+
+                    <input class="required" type="text" id="ContactFormFirstName" class="input-full" name="contact["First Name"]" placeholder="First Name" autocapitalize="words" >
+                  </div>
+
+                  <div class="grid__item large--one-half">
+                    <input class="required" type="text" id="ContactFormLastName" class="input-full" name="contact["Last Name"]" placeholder="Last Name" autocapitalize="words">
+                  </div>
+                </div>
+				
+                <div class="grid grid--small">
+                  <div class="grid__item large--one-half">
+
+                   <input class="required" type="text" id="ContactFormDogsName" class="input-full" name="contact["Doggo Name"]" placeholder="Doggo's Name">
+                 </div>
+
+                  <div class="grid__item large--one-half">
+                <input class="required" type="email" id="ContactFormEmail" class="input-full" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}">
+                </div>
+                </div>
+                
+                
+            
+
+              <div class="fullwidth checkbox">
+                <input type="hidden" name="properties[Yes, I’d like to receive marketing emails from hijoey]" value="No">
+                <label class="title">Can we email you?</label>
+                <input id="yes-id-like-to-receive-marketing-emails-from-hijoey" required class="required fas fa-check" type="checkbox" name="properties[Yes, I’d like to receive marketing emails from hijoey]" value="Yes">
+                <label for="yes-id-like-to-receive-marketing-emails-from-hijoey">Yes, I’d like to receive experiment insights and training tips from hijoey</label>
+                 </div>
+
+              <input type="submit" class="btn left" value="Download for free">
+                
+              {% if section.settings.sec5_note != '' %}
+              <span class="bottom_note">{{ section.settings.sec5_note }}</span>
+              {% endif %}
+              
+              {% endform %}
+              </div>
+            </div>
+          </section>
+
+
+{% schema %}
+  {
+    "name": "Training Page",
+    "settings": [
+		{
+           "type":      "header",
+           "content":   "Section 1"
+        },
+		{
+           "type":      "text",
+           "id":        "sec1_left_title",
+           "label":     "Left Label"
+        },
+		{
+           "type":      "text",
+           "id":        "header",
+           "label":     "Header"
+        },
+		{
+           "type":      "textarea",
+           "id":        "header_subtext",
+           "label":     "Sub Text"
+        },
+
+
+		{
+           "type":      "header",
+           "content":   "Section 2"
+        },
+		{
+           "type":      "image_picker",
+           "id":        "sec2_bg",
+           "label":     "Image"
+        },
+
+
+		{
+           "type":      "header",
+           "content":   "Section 3"
+        },
+		{
+           "type":      "text",
+           "id":        "sec3_left_title",
+           "label":     "Left Label"
+        },
+        {
+           "type":      "url",
+           "id":        "sec3_left_title_link",
+           "label":     "Left Link"
+        },
+		{
+           "type":      "text",
+           "id":        "sec3_header",
+           "label":     "Header"
+        },
+		{
+           "type":      "textarea",
+           "id":        "sec3_header_subtext",
+           "label":     "Sub Text"
+        },
+
+
+		{
+           "type":      "header",
+           "content":   "Section 4"
+        },
+		{
+           "type":      "image_picker",
+           "id":        "sec4_bg",
+           "label":     "Image"
+        },
+
+
+		{
+           "type":      "header",
+           "content":   "Section 5"
+        },
+		{
+           "type":      "text",
+           "id":        "sec5_left_title",
+           "label":     "Left Label"
+        },
+		{
+           "type":      "textarea",
+           "id":        "sec5_note",
+           "label":     "Note"
+        }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

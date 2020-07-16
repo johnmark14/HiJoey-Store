@@ -28,6 +28,7 @@
     "type_base_italize_titles": true,
     "cart_type": "page",
     "cart_notes_enable": true,
+    "cart_notice": "Please note: Due to COVID-19, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "share_image": "shopify:\/\/shop_images\/1-outside-btn-box-11.jpg",
     "social_facebook_link": "",
     "social_twitter_link": "",
@@ -57,7 +58,6 @@
     "checkout_accent_color": "#324175",
     "checkout_button_color": "#000000",
     "checkout_error_color": "#e32c2b",
-    "cart_notice": "Please note: Due to COVID-19, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "content": "Please note: Due to COVID-19 circumstances, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "sections": {
       "header": {
@@ -306,6 +306,7 @@
           "1593673470689"
         ],
         "settings": {
+          "content_image": "",
           "title": "Proudly Canadian Owned & Operated.",
           "content": "We're partnered with ethical manufacturers across Canada and beyond, crafting each piece with both a minimalist aesthetic and modern function in mind. Each purchase you make also helps our local animal rescues and adoption shelters."
         }
@@ -349,6 +350,54 @@
           "image": "",
           "title": "SHOP HIJOEY",
           "text": "The best training buttons &amp; mats"
+        }
+      },
+      "page-training": {
+        "type": "page-training",
+        "settings": {
+          "sec1_left_title": "GET STARTED",
+          "header": "Training",
+          "header_subtext": "Ever wondered what companies like Blind say on our first call with a prospective client? Wonder no longer. Structure your first meeting that will help you win the job.",
+          "sec2_bg": "shopify:\/\/shop_images\/hijoey-Modeling_Worksheet_Cover-Free_Talking_Dog_Training_Resource.jpg",
+          "sec3_left_title": "GO BACK",
+          "sec3_left_title_link": "https:\/\/hijoey.co\/",
+          "sec3_header": "Ever wonder how to run a first meeting with a lead?",
+          "sec3_header_subtext": "You’re in the right place. This is a template to help you through that first meeting with a prospective client. This structure is what we commonly use at Blind, and we thought you’d enjoy it. There has been just about a million versions of this floating around our office – special thanks to Keone Cheung, who pioneered the first version. There’s no catch, no cost, and no action needed from you, except to fill out the form above and download your worksheet! And of course, we’d love it if you forwarded this link to your friends, especially if they would get value out of this worksheet. As always, thanks for being so awesome!",
+          "sec4_bg": "shopify:\/\/shop_images\/hijoey-Modeling_Worksheet-Free_Talking_Dog_Training_Resource.jpg",
+          "sec5_left_title": "DOWNLOAD THE WORKBOOK",
+          "sec5_note": ""
+        }
+      },
+      "page-thank-you": {
+        "type": "page-thank-you",
+        "settings": {
+          "header": "Thank you!",
+          "header_subtext": "Ready to download First Meeting Workbook? Just click the button below! If you don’t have time to look through it right now, no worries. Everything is on its way to your inbox so that you can enjoy it later.",
+          "dl_btn": "https:\/\/cdn.shopify.com\/s\/files\/1\/0279\/6427\/6870\/files\/Dog_Training_Resource.pdf?v=1594338489",
+          "dl_btntext": "Download",
+          "sec2_left_title": "Courses",
+          "sec2_header": "Check Out Our Products",
+          "featured_product": "active-set",
+          "featured_collection": "best-sellers",
+          "sec3_left_title": "MORE DOWNLOADS",
+          "sec3_header": "Other Resources",
+          "resource_list": "resources"
+        }
+      },
+      "page-training-blog": {
+        "type": "page-training-blog",
+        "settings": {
+          "sec1_left_title": "hijoey's Training Class",
+          "header": "Ever wonder what your best friend is thinking? Let's find out together.",
+          "header_subtext": "There's still a lot we don't know. Experiment with our open and evolving frameworks and join the club so we can continue to learn together!",
+          "center_img": "shopify:\/\/shop_images\/hijoey-Modeling_Worksheet_Thumbnail.jpg",
+          "page_title": "MODELING WORKSHEET",
+          "page_cap": "how to associate words with buttons",
+          "page_link": "shopify:\/\/pages\/free-modeling-worksheet",
+          "right_img": "shopify:\/\/shop_images\/hijoey-Targeting_Guide_Thumbnail.jpg",
+          "right_page_title": "TARGETING GUIDE",
+          "right_page_cap": "how to press the buttons",
+          "right_page_link": "shopify:\/\/pages\/targeting-guide"
         }
       }
     },

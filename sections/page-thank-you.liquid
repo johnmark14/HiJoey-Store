@@ -1,0 +1,257 @@
+<section class="section_1">
+  <div class="wrapper">
+
+    <div class="fullwidth ">
+ 	  {% if section.settings.header %}
+      <h1>{{ section.settings.header }}</h1>
+      {% endif %}
+      
+      {% if section.settings.header_subtext %}
+      <h4>{{ section.settings.header_subtext }}</h4>
+      {% endif %}
+      
+      {% if section.settings.dl_btn %}
+      <a target="_blank" href="{{ section.settings.dl_btn }}" class="download btn">{{ section.settings.dl_btntext }}</a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<section class="section_3">
+  <div class="wrapper">
+    <div class="one-fourth first">
+      {% if section.settings.sec3_left_title %}
+      <h6>
+      <span class="section_title">
+         {{ section.settings.sec3_left_title }}
+      </span>
+      </h6>
+      {% endif %}
+    </div>
+    
+    <div class="three-fourths ">
+      {% if section.settings.sec3_header %}
+      <h2>{{ section.settings.sec3_header }}</h2>
+      {% endif %}
+     
+      
+      <div class="resource_section">
+        <div class="resouce_container">
+
+          <div class="resource_list">
+            
+            
+            
+          {% for article in blogs[section.settings.resource_list].articles %}
+           {% assign article_content = article.content  | split:'<!-- split -->'  %}
+           
+
+      <article class="article small--text-center one-third">
+
+        {% unless article.image == blank %}
+          <div class="img_container">
+            <a class="article__featured-image-link" href="{{ article.url }}">
+              <noscript>
+                {{ article.image | img_url: '2048x2048' | img_tag: article.title | escape }}
+              </noscript>
+              <div class="article__featured-image-wrapper" style="padding-top:{{ 1 | divided_by: article.image.aspect_ratio | times: 100}}%;">
+                {% assign img_url = article.image | img_url: '1x1' | replace: '_1x1.', '_{width}x.' %}
+                <img class="article__featured-image lazyload"
+                  src="{{ article.image | img_url: '300x300' }}"
+                  data-src="{{ img_url }}"
+                  data-widths="[360, 540, 720, 900, 1080, 1296, 1512, 1728, 2048]"
+                  data-aspectratio="{{ article.image.aspect_ratio }}"
+                  data-sizes="auto"
+                  alt="{{ article.title | escape }}">
+              </div>
+            </a>
+          </div>
+        {% endunless %}
+
+        <div class="text_content">
+          <h5><a class="article__heading-link" href="{{ article.url }}">{{ article.title }}</a></h5>
+          
+			<div class="download_btn">
+           
+            {{ article_content[1] }}
+          </div>
+        </div>
+      </article>
+            
+          {% endfor %}
+          </div>
+        
+        </div>
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+
+
+<section class="section_2">
+  <div class="wrapper">
+    <div class="one-fourth first">
+      {% if section.settings.sec2_left_title %}
+      <h6>
+      <span class="section_title">
+         {{ section.settings.sec2_left_title }}
+        </span>
+      </h6>
+      {% endif %}
+    </div>
+    <div class="one-half ">
+      {% if section.settings.sec2_header %}
+      <h2>{{ section.settings.sec2_header }}</h2>
+      {% endif %}
+      
+    </div>
+    <div class="one-fourth desktop_only">
+
+    </div>
+    
+    <!--
+    <div class="one-fourth first desktop_only">
+
+    </div>
+    
+          {% if section.settings.featured_product %}
+       {% assign featured_product = section.settings.featured_product %}
+    {% assign featured_collection = section.settings.featured_collection %}
+    
+      
+      <div class="one-half ">
+             
+  
+   	{% for product in collections.all.products %}
+      {% if product.handle contains featured_product %}
+        <figure>
+        	<img src="{{ product.featured_image | img_url: '1920x' }}" alt="{{ product.title | escape  }}">
+          <span class="featured_top">FEATURED</span>
+        </figure>
+    {% endif %}
+    {% endfor %}
+        
+        
+      </div>
+      <div class="one-fourth ">
+        {% for product in collections.all.products %}
+      {% if product.handle contains featured_product %}
+        <h5>{{ product.title }}</h5>
+        <p>{{ product.description }}</p>
+        <p>{{ product.price | money }}</p>
+        <a href="{{ product.url }}" class="btn">Learn More</a>
+    {% endif %}
+    {% endfor %}
+        
+      </div>
+      
+      {% endif %}
+    -->
+    
+    <div class="one-fourth first"></div>
+      <div class="three-fourths">
+    {% if collections[featured_collection].products.size > 0 %}
+	<div class="featured_collection_list">
+ 
+    {% for product in collections[featured_collection].products  %}
+	 
+        {% include 'product-grid-item-cart' %}
+
+    {% endfor %}
+
+  
+	</div>
+{% endif %}
+  </div>
+    
+    
+  </div>
+</section>
+
+
+{% schema %}
+  {
+    "name": "Thank You Page",
+    "settings": [
+        {
+           "type":      "header",
+           "content":   "Section 1"
+        },
+		{
+           "type":      "text",
+           "id":        "header",
+           "label":     "Header"
+        },
+		{
+           "type":      "textarea",
+           "id":        "header_subtext",
+           "label":     "Sub Text"
+        },
+		{
+           "type":      "url",
+           "id":        "dl_btn",
+           "label":     "Download Link"
+        },
+		{
+           "type":      "text",
+           "id":        "dl_btntext",
+           "label":     "Download Label"
+        },
+
+
+        {
+           "type":      "header",
+           "content":   "Section 2"
+        },
+		{
+           "type":      "text",
+           "id":        "sec2_left_title",
+           "label":     "Left Label"
+        },
+		{
+           "type":      "text",
+           "id":        "sec2_header",
+           "label":     "Header"
+        },
+        {
+           "type":      "product",
+           "id":        "featured_product",
+           "label":     "Featured Product"
+        },
+		{
+           "type":      "collection",
+           "id":        "featured_collection",
+           "label":     "Featured Collection"
+        },
+
+
+		{
+           "type":      "header",
+           "content":   "Section 3"
+        },
+		{
+           "type":      "text",
+           "id":        "sec3_left_title",
+           "label":     "Left Label"
+        },
+		{
+           "type":      "text",
+           "id":        "sec3_header",
+           "label":     "Header"
+        },
+        {
+           "type":      "blog",
+           "id":        "resource_list",
+           "label":     "Resources Link"
+        }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

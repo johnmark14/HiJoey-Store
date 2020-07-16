@@ -7,7 +7,9 @@
   data-image-zoom-type="{{ section.settings.enable_image_zoom }}"
   data-enable-history-state="true"
   data-stacked-layout="{% if section.settings.media_layout == "stacked" %}true{% else %}false{% endif %}"
-  {% if first_3d_model %}data-has-model="true"{% endif %}>
+  {% if first_3d_model %}
+  data-has-model="true"
+  {% endif %}>
 
   <meta itemprop="url" content="{{ shop.url }}{{ product.url }}">
   <meta itemprop="image" content="{{ product.featured_media | img_url: 'grande' }}">
@@ -258,7 +260,7 @@
               {% if current_variant.inventory_quantity < 0 %}
                 <div id="sold-out" class="product-single__add-to-cart--full-width">
                   <!--<button type="button" class="btn-notify trigger" style="width: 100%">Notify me when available</button>-->
-                  <a href="#notify" class="btn-notify trigger"><caption-link>Just Notify Me When Available</caption-link></a>
+                  <a href="#Notify" class="btn-notify trigger"><caption-link>Just Notify Me When Available</caption-link></a>
                 </div>
               {% endif %}
               
@@ -308,7 +310,6 @@
         {% if section.settings.social_sharing_products %}
           {% include 'social-sharing', share_title: product.title, share_permalink: product.url, share_image: product.featured_media %}
         {% endif %}
-
       </div>
     </div>
   </div>
@@ -316,99 +317,108 @@
 <!-- Used to exit from theme defined margin & padding ================================================== -->
 </div>
 </div>
+
+<!-- Custom Code for How Tos Author: John Mark ================================================== -->
 {% if product.type == 'Button' or product.type == 'Mat' %}
-  <section class="how-to">
-    {% if product.type == 'Button' %}
+  {% if product.type == 'Button' %}
+      <section class="how-to">
+    
       <!--Can be found at snippets folder-->
       {% include 'howto-for-buttons' %}
+
     {% else %}
+      {% comment %} PLEASE UNCOMMENT IF CONTENT!!!!!
+      <section class="how-to">
       <!--Can be found at snippets folder-->
-      <!-- PLEASE UNCOMMENT IF CONTENT!!!!!
       {% include 'howto-for-mats' %} 
-      -->
-    {% endif %} 
+
+      {% endcomment %}
+    
+  {% endif %} 
   </section> 
 {% endif %}
 
-<!-- Used to exit from theme defined margin & padding ================================================== -->
+<!-- Used to Enter to theme defined margin & padding ================================================== -->
 <div class="wrapper">
 <div id="shopify-section-product-template" class="shopify-section">
-<!-- Section code for FAQ Author: John Mark ================================================== -->  
-{% if product.type == 'Button' or product.type == 'Mat' %}
-  <section class="faq-section">
-    <div class="grid product-single"> 
-      {% if product.type == 'Button' %}
-        <h3 class="h3-strong">Frequently Asked Questions</h3>
-        <div class="grid__item large--ten-twelfths faq-acc__container">
-        
-          <!--Can be found at snippets folder-->
-          {% include 'faq-for-buttons' %}
 
-      {% else %}
+  <!-- Section code for FAQ Author: John Mark ================================================== -->  
+  {% if product.type == 'Button' or product.type == 'Mat' %}
+    <section class="faq-section">
+      <div class="grid product-single"> 
+        {% if product.type == 'Button' %}
+          <h3 class="h3-strong">Frequently Asked Questions</h3>
+          <div class="grid__item large--ten-twelfths faq-acc__container">
+          
+            <!--Can be found at snippets folder-->
+            {% include 'faq-for-buttons' %}
 
-          <!--Can be found at snippets folder-->
-          <!-- PLEASE UNCOMMENT IF CONTENT!!!!!
-          {% include 'faq-for-mats' %} 
-          -->
-      {% endif %} 
+        {% else %}
+
+            <!--Can be found at snippets folder-->
+            <!-- PLEASE UNCOMMENT IF CONTENT!!!!!
+            {% include 'faq-for-mats' %} 
+            -->
+        {% endif %} 
+        </div>
+      </div>
+    </section>
+  {% endif %}
+  
+  <!-- Section code for Product Benefits Author: John Mark ================================================== -->  
+  <section class="prod-benefits">
+    <div class="grid product-single">
+      <div class="prod-benefits__container">
+        <div class="content">
+          {{ 'hijoey-freetraining.png' | asset_url | img_tag: 'Free Training' }}
+          <h4 class="h4-strong">FREE TRAINING WORKSHEETS</h4>
+        </div>
+
+        <div class="content">
+          {{ 'hijoey-100.png' | asset_url | img_tag: '100 days' }}
+          <h4 class="h4-strong">100 DAY RISK-FREE TRIAL</h4>
+        </div>
+
+        <div class="content">
+          {{ 'hijoey-support.png' | asset_url | img_tag: 'Exceptional Customer Service' }}
+          <h4 class="h4-strong">EXCEPTIONAL CUSTOMER SERVICE</h4>
+        </div>
       </div>
     </div>
   </section>
-{% endif %}
-<!-- Section code for Product Benefits Author: John Mark ================================================== -->  
-<section class="prod-benefits">
-  <div class="grid product-single">
-    <div class="prod-benefits__container">
-      <div class="content">
-        {{ 'hijoey-freetraining.png' | asset_url | img_tag: 'Free Training' }}
-        <h4 class="h4-strong">FREE TRAINING WORKSHEETS</h4>
-      </div>
 
-      <div class="content">
-        {{ 'hijoey-100.png' | asset_url | img_tag: '100 days' }}
-        <h4 class="h4-strong">100 DAY RISK-FREE TRIAL</h4>
-      </div>
+  {% unless product == empty %}
+    <script type="application/json" id="ProductJson-{{ section.id }}">
+      {{ product | json }}
+    </script>
+    <script type="application/json" id="ModelJson-{{ section.id }}">
+      {{ product.media | where: 'media_type', 'model' | json }}
+    </script>
+  {% endunless %}
 
-      <div class="content">
-        {{ 'hijoey-support.png' | asset_url | img_tag: 'Exceptional Customer Service' }}
-        <h4 class="h4-strong">EXCEPTIONAL CUSTOMER SERVICE</h4>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- MODAL OF OUT OF STOCKS Author: John Mark ================================================== -->
+  <div class="modal" id="Notify">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2 id="product-title">{{product.title}}</h2>
+        <p>Register to receive a notification when this item comes back in stock!</p>
 
-{% unless product == empty %}
-  <script type="application/json" id="ProductJson-{{ section.id }}">
-    {{ product | json }}
-  </script>
-  <script type="application/json" id="ModelJson-{{ section.id }}">
-    {{ product.media | where: 'media_type', 'model' | json }}
-  </script>
-{% endunless %}
+      <div class="modal-container">
+        {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %} 
+      
+          {{ form.errors | default_errors }}
+            <input type="email" name="contact[email]" id="emailContact" placeholder="hooman@hijoey.co" class="input-email"/>
+            <input type="submit" name="contact[submit]" class="btn btn--add-to-cart" id="btn-notify" style="width: 100%" value="Notify me when available"/>
 
-<!-- MODAL OF OUT OF STOCKS Author: John Mark ================================================== -->
-<div class="modal" id="notify-me">
-  <div class="modal-content">
-    <span class="close-button">&times;</span>
-    <h2 id="product-title">{{product.title}}</h2>
-      <p>Register to receive a notification when this item comes back in stock!</p>
-
-    <div class="modal-container">
-      {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %} 
-    
-        {{ form.errors | default_errors }}
-          <input type="email" name="contact[email]" id="emailContact" placeholder="hooman@hijoey.co" class="input-email"/>
-          <input type="submit" name="contact[submit]" class="btn btn--add-to-cart" id="btn-notify" style="width: 100%" value="Notify me when available"/>
-
-          {{form.email}}
-      {% endform %}
- 
-      <div class="alert" id="alert-msg">
-        <span class="alert-message">You're in! We'll let you know when it's back. <a class="alert-close">Close</a></span>
+            {{form.email}}
+        {% endform %}
+  
+        <div class="alert" id="alert-msg">
+          <span class="alert-message">You're in! We'll let you know when it's back. <a class="alert-close">Close</a></span>
+        </div>
       </div>
     </div>
   </div>
-</div>
 
 {% schema %}
 {
