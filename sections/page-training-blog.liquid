@@ -1,155 +1,98 @@
+
+<header class="header">
+  <h4>hijoey's Training Class</h4>
+  <h1>Ever wonder what your best friend is thinking?<br>Let's find out together.</h1>
+</header>
+<section class="products">
+  <div class="products__navigation">
+    <a href="#" class="products__navigation--link is-selected">Pre-Training Worksheet</a>
+    <a href="#" class="products__navigation--link">Modeling Worksheet</a>
+    <a href="#" class="products__navigation--link">Targeting Worksheet</a>
+  </div>
+  <div class="products__carousel js-flickity" data-flickity='{ "freeScroll": true,  "prevNextButtons": false, "pageDots": false, "dragThreshold": 10 }'>
+    <div class="products__carousel--item">
+
+    </div>
+    <div class="products__carousel--item"></div>
+    <div class="products__carousel--item"></div>
+  </div>
+</section>
+
+{%- comment -%}
 <div class="training_main">
   <section class="section_1">
-      <div class="one-third first">
-        <div class="container">
+    <div class="one-third first">
+      <div class="container">
         {% if section.settings.sec1_left_title != '' %}
         <h4>
-           {{ section.settings.sec1_left_title }}
+          {{ section.settings.sec1_left_title }}
         </h4>
-        {% endif %}
-		{% if section.settings.header != '' %}
+        {% endif %} {% if section.settings.header != '' %}
         <h1>{{ section.settings.header }}</h1>
         {% endif %}
-        </div>
-        {% if section.settings.header_subtext != '' %}
-        <p>{{ section.settings.header_subtext }}</p>
+      </div>
+      {% if section.settings.header_subtext != '' %}
+      <p>{{ section.settings.header_subtext }}</p>
+      {% endif %}
+    </div>
+    <div class="one-third mobile_half">
+      <div class="text_content">
+        {% if section.settings.page_link != blank %}
+        <a href="{{ section.settings.page_link }}">
+          {% if section.settings.center_img != '' %}
+          <figure>
+            <img src="{{ section.settings.center_img | img_url: '1440x' }}" />
+          </figure>
+          {% endif %} {% if section.settings.page_title != "" %}
+          <div class="caption">
+            <span>1</span><label>"{{ section.settings.page_title }}"</label>
+          </div>
+          {% endif %} {% if section.settings.page_cap != "" %}
+          <div class="caption_bottom">
+            <p>{{ section.settings.page_cap }}</p>
+          </div>
+          {% endif %}
+        </a>
         {% endif %}
-        
       </div>
-      <div class="one-third mobile_half   ">
-        <div class="text_content">
-          {% if section.settings.page_link != blank %}
-          <a href="{{ section.settings.page_link }}">
-            {% if section.settings.center_img != '' %}
-            <figure>
-              <img src="{{ section.settings.center_img | img_url:'1440x'}}">
-            </figure>
-            {% endif %}
-            {% if section.settings.page_title != "" %}
-            <div class="caption">
-              <span>1</span><label>"{{ section.settings.page_title }}"</label>
-            </div>
-            {% endif %}
-            {% if section.settings.page_cap != "" %}
-            <div class="caption_bottom">
-              <p>{{ section.settings.page_cap }}</p>
-            </div>
-            {% endif %}
-            
-          </a>
+    </div>
+    <div class="one-third mobile_half">
+      <div class="text_content">
+        {% if section.settings.right_page_link != blank %}
+        <a href="{{ section.settings.right_page_link }}">
+          {% if section.settings.right_img != "" %}
+          <figure>
+            <img src="{{ section.settings.right_img | img_url: '1440x' }}" />
+          </figure>
+          {% endif %} {% if section.settings.right_page_title != "" %}
+          <div class="caption">
+            <span>2</span
+            ><label>"{{ section.settings.right_page_title }}"</label>
+          </div>
+          {% endif %} {% if section.settings.right_page_cap != "" %}
+          <div class="caption_bottom">
+            <p>{{ section.settings.right_page_cap }}</p>
+          </div>
           {% endif %}
-        </div>
+        </a>
+        {% endif %}
       </div>
-      <div class="one-third mobile_half">
-		<div class="text_content">
-           {% if section.settings.right_page_link != blank %}
-          <a href="{{ section.settings.right_page_link }}">
-            {% if section.settings.right_img != "" %}
-            <figure>
-              <img src="{{ section.settings.right_img | img_url:'1440x'}}">
-            </figure>
-            {% endif %}
-            {% if section.settings.right_page_title != "" %}
-            <div class="caption">
-              <span>2</span><label>"{{ section.settings.right_page_title }}"</label>
-            </div>
-            {% endif %}
-            {% if section.settings.right_page_cap != "" %}
-            <div class="caption_bottom">
-              <p>{{ section.settings.right_page_cap }}</p>
-            </div>
-            {% endif %}
-            
-          </a>
-          {% endif %}
-        </div>
-      </div>
+    </div>
   </section>
-
 </div>
 
+{%- endcomment -%}
 
-
-{% schema %}
-  {
-    "name": "Training Page",
-    "settings": [
-		{
-           "type":      "header",
-           "content":   "Left Content"
-        },
-		{
-           "type":      "text",
-           "id":        "sec1_left_title",
-           "label":     "Left Label"
-        },
-		{
-           "type":      "text",
-           "id":        "header",
-           "label":     "Header"
-        },
-		{
-           "type":      "textarea",
-           "id":        "header_subtext",
-           "label":     "Sub Text"
-        },
-
-
-		{
-           "type":      "header",
-           "content":   "Page 1"
-        },
-		{
-           "type":      "image_picker",
-           "id":        "center_img",
-           "label":     "Image"
-        },
-		{
-           "type":      "text",
-           "id":        "page_title",
-           "label":     "Page Title"
-        },
-		{
-           "type":      "text",
-           "id":        "page_cap",
-           "label":     "Caption"
-        },
-		{
-          "id": "page_link",
-          "type": "url",
-          "label": "Page link"
-        },
-
-		{
-           "type":      "header",
-           "content":   "Page 2"
-        },
-		{
-           "type":      "image_picker",
-           "id":        "right_img",
-           "label":     "Image"
-        },
-		{
-           "type":      "text",
-           "id":        "right_page_title",
-           "label":     "Page Title"
-        },
-		{
-           "type":      "text",
-           "id":        "right_page_cap",
-           "label":     "Caption"
-        },
-		{
-          "id": "right_page_link",
-          "type": "url",
-          "label": "Page link"
-        }
-	]
-  }
-{% endschema %}
-
-{% stylesheet %}
-{% endstylesheet %}
-
-{% javascript %}
-{% endjavascript %}
+{% schema %} { "name": "Training Page", "settings": [ { "type": "header",
+"content": "Left Content" }, { "type": "text", "id": "sec1_left_title", "label":
+"Left Label" }, { "type": "text", "id": "header", "label": "Header" }, { "type":
+"textarea", "id": "header_subtext", "label": "Sub Text" }, { "type": "header",
+"content": "Page 1" }, { "type": "image_picker", "id": "center_img", "label":
+"Image" }, { "type": "text", "id": "page_title", "label": "Page Title" }, {
+"type": "text", "id": "page_cap", "label": "Caption" }, { "id": "page_link",
+"type": "url", "label": "Page link" }, { "type": "header", "content": "Page 2"
+}, { "type": "image_picker", "id": "right_img", "label": "Image" }, { "type":
+"text", "id": "right_page_title", "label": "Page Title" }, { "type": "text",
+"id": "right_page_cap", "label": "Caption" }, { "id": "right_page_link", "type":
+"url", "label": "Page link" } ] } {% endschema %} {% stylesheet %} {%
+endstylesheet %} {% javascript %} {% endjavascript %}

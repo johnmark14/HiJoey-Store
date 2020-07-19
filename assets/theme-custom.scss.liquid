@@ -474,6 +474,65 @@ h2#product-title {
   line-height: 16px;
 }
 
+//////////////////////
+////Training Page
+.header {
+  text-align: center;
+}
+
+.header h1{
+  margin: 0;
+}
+
+.products__navigation {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+
+  width: 50vw;
+  margin: 40px auto;
+}
+
+.products__navigation a {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #727272 !important;
+}
+
+.products__navigation a:hover,
+.products__navigation a:active {
+  color: #231f20 !important;
+}
+
+.products__navigation .is-selected {
+  color: #231f20 !important;
+}
+
+.products__carousel--item {
+  width: 40vw;
+  height: 445px;
+  margin: 40px 30px 80px 0;
+  border-radius: 15px;
+  background-color: #DBC3A7;
+
+  box-shadow: 0 10px 28px 0 rgba(0,0,0,.05);
+  transition: all .5s cubic-bezier(.19,1,.4,1);
+}
+
+.products__carousel--item:hover {
+  box-shadow: 0 5px 15px 0 rgba(64, 62, 62, .08);
+  transform: translateY(-1%);
+}
+
+.products__carousel--item:nth-child(2) {
+  background-color: #7ba7cd;
+}
+
+.products__carousel--item:nth-child(3) {
+  background-color: #354740;
+}
+
 @media screen and (max-width: 800px) {
   ////////////////////////////////////////
   /// How to section
