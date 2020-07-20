@@ -1538,6 +1538,10 @@
     right: {
       right: 0,
       left: 1
+    },
+    cleft: { 
+      left: 0.1,
+      right: 1
     }
   };
   

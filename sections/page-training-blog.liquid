@@ -2,6 +2,8 @@
 <header class="header">
   <h4>hijoey's Training Class</h4>
   <h1>Ever wonder what your best friend is thinking?<br>Let's find out together.</h1>
+  <p>There's still a lot we don't know. Experiment with our open and evolving 
+    frameworks and join the club so we can continue to learn together!</p>
 </header>
 <!---- Exit Multiple Class Wrapper---------->
 </div>
@@ -10,14 +12,14 @@
 </div>
 
 <section class="products">
-  <div class="products__navigation">
-    <a href="#" class="products__navigation--link is-selected">Pre-Training Worksheet</a>
-    <a href="https://hijoey.co/pages/free-modeling-worksheet" class="products__navigation--link">Modeling Worksheet</a>
-    <a href="https://hijoey.co/pages/targeting-guide" class="products__navigation--link">Targeting Worksheet</a>
+  <div class="products__navigation carousel_nav" data-flickity='{ "asNavFor": ".products__carousel", "contain": true, "cellAlign": "center", "pageDots": false, "prevNextButtons": false, "draggable": false }'>
+    <button class="carousel-cell" >Pre-Training Worksheet</button>
+    <button class="carousel-cell">Modeling Worksheet</button>
+    <button class="carousel-cell">Targeting Worksheet</button>
   </div>
-  <div class="products__carousel js-flickity" data-flickity='{ "freeScroll": true,  "prevNextButtons": false, "pageDots": false, "dragThreshold": 10 }'>
+  <div class="products__carousel js-flickity" data-flickity='{ "freeScroll": true,  "prevNextButtons": true, "pageDots": false, "dragThreshold": 10 }'>
     <div class="products__carousel--item">
-      <div class="products__carousel--text">
+      <div class="products__carousel--text"> 
         <p>How to train Without buttons</p>
         <h5 class="heading-large">"Pre-Training"<br>Worksheet</h5>
       </div>
@@ -62,6 +64,13 @@
       </div>
     </div>
   </div>
+  <!--
+  <div class="navigation__buttons" data-flickity='{"asNavFor": ".products__carousel", "contain": true, "cellAlign": "cleft", "pageDots": false, "prevNextButtons": false, "draggable": false }'>
+    {{ 'arrow-down-grey.svg' | asset_url | img_tag: 'Arrow', 'flickity-button flickity-prev-next-button' }}
+    {{ 'arrow-down-grey.svg' | asset_url | img_tag: 'Arrow' }}
+  </div>
+
+  -->
 </section>
 
 <!---- Enter Multiple Class Wrapper---------->
