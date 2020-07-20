@@ -511,13 +511,126 @@ h2#product-title {
 
 .products__carousel--item {
   width: 40vw;
+  min-width: 345px;
   height: 445px;
   margin: 40px 30px 80px 0;
+  padding: 60px 20px 20px 40px;
   border-radius: 15px;
   background-color: #DBC3A7;
 
+  backface-visibility: hidden;
   box-shadow: 0 10px 28px 0 rgba(0,0,0,.05);
   transition: all .5s cubic-bezier(.19,1,.4,1);
+
+  display: grid;
+  grid-template-columns: 1.2fr 2fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.products__carousel--text {
+  grid-column: 1 / span 2;
+  grid-row: 1;
+}
+
+.products__carousel--figure {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+}
+
+.products__carousel--figure img {
+  width: 100%;
+}
+
+.products__carousel--link {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  align-self: end;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+}
+
+.products__carousel--link span{
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  transform: rotate(-90deg);
+  transition: margin-left 0.2s; 
+}
+
+.products__carousel--link:hover span {
+  margin-left: 10px;
+}
+
+.products__carousel--text p,
+.products__carousel--link a {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  line-height: 24px !important;
+  color: #fff !important;
+  text-transform: capitalize;
+  margin: 0 !important;
+}
+
+.products__carousel--link a {
+  display: inline;
+  font-size: 14px !important;
+}
+
+.products__carousel--link a:hover,
+.products__carousel--link a:active {
+  color: #fff !important;
+}
+
+.products__carousel--text .heading-large {
+  font-family: "Cooper BT", serif !important;
+  font-size: 38px !important;
+  font-weight: 500 !important;
+  line-height: 56px !important;
+  color: #fff !important;
+}
+
+@media screen and (max-width: 1200px) { 
+  .products__navigation {
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 900px) { 
+  .products__navigation {
+    width: 80vw;
+  }
+}
+
+@media screen and (max-width: 880px) { 
+  .products__navigation {
+    display: none;
+  }
+  
+  .products__carousel--item {
+    padding-left: 20px;
+    grid-template-rows: repeat(2, 1fr) auto;
+    grid-template-columns: 1.2fr 2fr;
+  } 
+
+  .products__carousel--text {
+    grid-column: 1 / span 2;
+    grid-row: 1;
+  }
+  
+  .products__carousel--figure {
+    grid-column: 2;
+    grid-row: 2;
+    transform: scale(1.15) translateX(-5%);
+  }
+
+  .products__carousel--link {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 
 .products__carousel--item:hover {

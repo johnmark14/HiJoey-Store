@@ -12,15 +12,55 @@
 <section class="products">
   <div class="products__navigation">
     <a href="#" class="products__navigation--link is-selected">Pre-Training Worksheet</a>
-    <a href="#" class="products__navigation--link">Modeling Worksheet</a>
-    <a href="#" class="products__navigation--link">Targeting Worksheet</a>
+    <a href="https://hijoey.co/pages/free-modeling-worksheet" class="products__navigation--link">Modeling Worksheet</a>
+    <a href="https://hijoey.co/pages/targeting-guide" class="products__navigation--link">Targeting Worksheet</a>
   </div>
   <div class="products__carousel js-flickity" data-flickity='{ "freeScroll": true,  "prevNextButtons": false, "pageDots": false, "dragThreshold": 10 }'>
     <div class="products__carousel--item">
-
+      <div class="products__carousel--text">
+        <p>How to train Without buttons</p>
+        <h5 class="heading-large">"Pre-Training"<br>Worksheet</h5>
+      </div>
+      <div class="products__carousel--figure">
+        {{ 'hijoey-pre-training-btn.png' | asset_url | img_tag: 'Pre-Training image' }}
+      </div>
+      <div class="products__carousel--link">
+          <a href="">Learn More</a>
+          <span>
+            {{ 'arrow-down-white.svg' | asset_url | img_tag: 'Arrow' }}
+          </span>
+      </div>
     </div>
-    <div class="products__carousel--item"></div>
-    <div class="products__carousel--item"></div>
+    <div class="products__carousel--item"> 
+      <div class="products__carousel--text">
+        <p>How to assiciate words & buttons</p>
+        <h5 class="heading-large">"Modeling"<br>Worksheet</h5>
+      </div>
+      <div class="products__carousel--figure">
+        {{ 'hijoey-modeling-training-btn.png' | asset_url | img_tag: 'Modeling image' }}
+      </div>
+      <div class="products__carousel--link">
+          <a href="https://hijoey.co/pages/free-modeling-worksheet">Learn More</a>
+          <span>
+            {{ 'arrow-down-white.svg' | asset_url | img_tag: 'Arrow' }}
+          </span>
+      </div>
+    </div>
+    <div class="products__carousel--item">
+      <div class="products__carousel--text">
+        <p>How to press the buttons</p>
+        <h5 class="heading-large">"Targeting"<br>Worksheet</h5>
+      </div>
+      <div class="products__carousel--figure">
+        {{ 'hijoey-targeting-training-btn.png' | asset_url | img_tag: 'Targeting Image' }}
+      </div>
+      <div class="products__carousel--link">
+          <a href="https://hijoey.co/pages/targeting-guide">Learn More</a>
+          <span>
+            {{ 'arrow-down-white.svg' | asset_url | img_tag: 'Arrow' }}
+          </span>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -29,7 +69,7 @@
 <div class>
 <div class="rte rte--nomargin rte--indented-images">
 <div id="shopify-section-page-training-blog" class="shopify-section">
-
+  
 {%- comment -%}
 <div class="training_main">
   <section class="section_1">
