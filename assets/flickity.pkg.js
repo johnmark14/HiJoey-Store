@@ -1532,7 +1532,7 @@
       right: 0.5
     },
     left: {
-      left: 0.1,
+      left: 0.15,
       right: 1
     },
     right: {
