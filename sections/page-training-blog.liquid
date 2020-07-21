@@ -10,8 +10,13 @@
 </style>
 <div class="header-container  grid-12">
   <header class="header grid-col-6-12">
-    <h4>hijoey's Training Class</h4>
-    <h1>Ever wonder what your best friend is thinking?<br>Let's find out together.</h1>
+    {% if section.settings.sec1_center_title != ''%}
+      <h4> {{section.settings.sec1_center_title }} </h4>
+    {% endif %}
+    
+    {% if section.settings.header != '' %}
+      <h1>{{ section.settings.header }}</h1>
+    {% endif %}
   </header>
 </div>
 
@@ -96,8 +101,11 @@
 
   -->
   <div class="sub-text grid-12">
-    <p class="grid-col-10-12">There's still a lot we don't know. Experiment with our open and evolving 
-      frameworks and join the club so we can continue to learn together!</p>
+    <p class="grid-col-10-12"> 
+      {% if section.settings.header_subtext != '' %}
+        {{ section.settings.header_subtext }}
+      {% endif %}
+    </p>
   </div>
 </section>
 
@@ -172,16 +180,87 @@
 
 {%- endcomment -%}
 
-{% schema %} { "name": "Training Page", "settings": [ { "type": "header",
-"content": "Left Content" }, { "type": "text", "id": "sec1_left_title", "label":
-"Left Label" }, { "type": "text", "id": "header", "label": "Header" }, { "type":
-"textarea", "id": "header_subtext", "label": "Sub Text" }, { "type": "header",
-"content": "Page 1" }, { "type": "image_picker", "id": "center_img", "label":
-"Image" }, { "type": "text", "id": "page_title", "label": "Page Title" }, {
-"type": "text", "id": "page_cap", "label": "Caption" }, { "id": "page_link",
-"type": "url", "label": "Page link" }, { "type": "header", "content": "Page 2"
-}, { "type": "image_picker", "id": "right_img", "label": "Image" }, { "type":
-"text", "id": "right_page_title", "label": "Page Title" }, { "type": "text",
-"id": "right_page_cap", "label": "Caption" }, { "id": "right_page_link", "type":
-"url", "label": "Page link" } ] } {% endschema %} {% stylesheet %} {%
-endstylesheet %} {% javascript %} {% endjavascript %}
+{% schema %}
+  {
+    "name": "Training Page",
+    "settings": [
+		{
+           "type":      "header",
+           "content":   "center Content"
+        },
+		{
+           "type":      "text",
+           "id":        "sec1_center_title",
+           "label":     "Center Label"
+        },
+		{
+           "type":      "text",
+           "id":        "header",
+           "label":     "Header. To add break add <br>."
+        },
+		{
+           "type":      "textarea",
+           "id":        "header_subtext",
+           "label":     "Sub Text"
+        },
+
+
+		{
+           "type":      "header",
+           "content":   "Page 1"
+        },
+		{
+           "type":      "image_picker",
+           "id":        "center_img",
+           "label":     "Image"
+        },
+		{
+           "type":      "text",
+           "id":        "page_title",
+           "label":     "Page Title"
+        },
+		{
+           "type":      "text",
+           "id":        "page_cap",
+           "label":     "Caption"
+        },
+		{
+          "id": "page_link",
+          "type": "url",
+          "label": "Page link"
+        },
+
+		{
+           "type":      "header",
+           "content":   "Page 2"
+        },
+		{
+           "type":      "image_picker",
+           "id":        "right_img",
+           "label":     "Image"
+        },
+		{
+           "type":      "text",
+           "id":        "right_page_title",
+           "label":     "Page Title"
+        },
+		{
+           "type":      "text",
+           "id":        "right_page_cap",
+           "label":     "Caption"
+        },
+		{
+          "id": "right_page_link",
+          "type": "url",
+          "label": "Page link"
+        }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}
+
