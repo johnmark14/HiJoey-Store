@@ -89,25 +89,28 @@ https://flickity.metafizzy.co
 /* ---- previous/next buttons ---- */
 
 .flickity-prev-next-button {
-  width: 35px;
-  height: 35px;
+  padding: 0;
   
   /* vertically center 
   transform: translateY(-50%);  */
 }
 
+.flickity-button-icon {
+  width: 18px;
+  height: 18px;
 
+}
 
 .flickity-prev-next-button.previous { 
   left: 9%; 
 }
 .flickity-prev-next-button.next { 
-  left: 10.5%; 
+  left: 10.2%; 
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1300px) {
   .flickity-prev-next-button.next { 
-    left: 11% !important; 
+    left: 10.7% !important; 
   }
 }
 

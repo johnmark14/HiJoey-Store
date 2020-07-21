@@ -1,14 +1,14 @@
-
-<header class="header">
-  <h4>hijoey's Training Class</h4>
-  <h1>Ever wonder what your best friend is thinking?<br>Let's find out together.</h1>
-  <p>There's still a lot we don't know. Experiment with our open and evolving 
-    frameworks and join the club so we can continue to learn together!</p>
-</header>
 <!---- Exit Multiple Class Wrapper---------->
 </div>
 </div>
 </div>
+</div>  
+
+<div class="header-container  grid-12">
+  <header class="header grid-col-6-12">
+    <h4>hijoey's Training Class</h4>
+    <h1>Ever wonder what your best friend is thinking?<br>Let's find out together.</h1>
+  </header>
 </div>
 
 <section class="products">
@@ -16,27 +16,30 @@
     <button class="carousel-cell" >Pre-Training Worksheet</button>
     <button class="carousel-cell">Modeling Worksheet</button>
     <button class="carousel-cell">Targeting Worksheet</button>
+    <button class="carousel-cell">Other Resources</button>
   </div>
   <div class="products__carousel js-flickity" data-flickity='{ "freeScroll": true,  "prevNextButtons": true, "pageDots": false, "dragThreshold": 10 }'>
     <div class="products__carousel--item">
+      <a class="card__link" href="https://hijoey.co/pages/pre-training-worksheet"></a>
       <div class="products__carousel--text"> 
         <p>How to train Without buttons</p>
-        <h5 class="heading-large">"Pre-Training"<br>Worksheet</h5>
+        <h5>"Pre-Training"<br>Worksheet</h5>
       </div>
       <div class="products__carousel--figure">
         {{ 'hijoey-pre-training-btn.png' | asset_url | img_tag: 'Pre-Training image' }}
       </div>
       <div class="products__carousel--link">
-          <a href="">Learn More</a>
+          <a href="https://hijoey.co/pages/pre-training-worksheet">Learn More</a>
           <span>
             {{ 'arrow-down-white.svg' | asset_url | img_tag: 'Arrow' }}
           </span>
       </div>
     </div>
     <div class="products__carousel--item"> 
+      <a class="card__link" href="https://hijoey.co/pages/free-modeling-worksheet"></a>
       <div class="products__carousel--text">
         <p>How to assiciate words & buttons</p>
-        <h5 class="heading-large">"Modeling"<br>Worksheet</h5>
+        <h5>"Modeling"<br>Worksheet</h5>
       </div>
       <div class="products__carousel--figure">
         {{ 'hijoey-modeling-training-btn.png' | asset_url | img_tag: 'Modeling image' }}
@@ -49,15 +52,32 @@
       </div>
     </div>
     <div class="products__carousel--item">
+      <a class="card__link" href="https://hijoey.co/pages/targeting-worksheet"></a>
       <div class="products__carousel--text">
         <p>How to press the buttons</p>
-        <h5 class="heading-large">"Targeting"<br>Worksheet</h5>
+        <h5>"Targeting"<br>Worksheet</h5>
       </div>
       <div class="products__carousel--figure">
         {{ 'hijoey-targeting-training-btn.png' | asset_url | img_tag: 'Targeting Image' }}
       </div>
       <div class="products__carousel--link">
-          <a href="https://hijoey.co/pages/targeting-guide">Learn More</a>
+          <a href="https://hijoey.co/pages/targeting-worksheet">Learn More</a>
+          <span>
+            {{ 'arrow-down-white.svg' | asset_url | img_tag: 'Arrow' }}
+          </span>
+      </div>
+    </div>
+    <div class="products__carousel--item">
+      <a class="card__link" href="https://hijoey.co/pages/other-resources"></a>
+      <div class="products__carousel--text">
+        <p>How to press the buttons</p>
+        <h5>"Targeting"<br>Worksheet</h5>
+      </div>
+      <div class="products__carousel--figure">
+        {{ 'hijoey-targeting-training-btn.png' | asset_url | img_tag: 'Targeting Image' }}
+      </div>
+      <div class="products__carousel--link">
+          <a href="https://hijoey.co/pages/other-resources">Learn More</a>
           <span>
             {{ 'arrow-down-white.svg' | asset_url | img_tag: 'Arrow' }}
           </span>
@@ -71,6 +91,10 @@
   </div>
 
   -->
+  <div class="sub-text grid-12">
+    <p class="grid-col-10-12">There's still a lot we don't know. Experiment with our open and evolving 
+      frameworks and join the club so we can continue to learn together!</p>
+  </div>
 </section>
 
 <!---- Enter Multiple Class Wrapper---------->
