@@ -1,0 +1,155 @@
+<div class="training_main">
+  <section class="section_1">
+      <div class="one-third first">
+        <div class="container">
+        {% if section.settings.sec1_left_title != '' %}
+        <h4>
+           {{ section.settings.sec1_left_title }}
+        </h4>
+        {% endif %}
+		{% if section.settings.header != '' %}
+        <h1>{{ section.settings.header }}</h1>
+        {% endif %}
+        </div>
+        {% if section.settings.header_subtext != '' %}
+        <p>{{ section.settings.header_subtext }}</p>
+        {% endif %}
+        
+      </div>
+      <div class="one-third mobile_half   ">
+        <div class="text_content">
+          {% if section.settings.page_link != blank %}
+          <a href="{{ section.settings.page_link }}">
+            {% if section.settings.center_img != '' %}
+            <figure>
+              <img src="{{ section.settings.center_img | img_url:'1440x'}}">
+            </figure>
+            {% endif %}
+            {% if section.settings.page_title != "" %}
+            <div class="caption">
+              <span>1</span><label>"{{ section.settings.page_title }}"</label>
+            </div>
+            {% endif %}
+            {% if section.settings.page_cap != "" %}
+            <div class="caption_bottom">
+              <p>{{ section.settings.page_cap }}</p>
+            </div>
+            {% endif %}
+            
+          </a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="one-third mobile_half">
+		<div class="text_content">
+           {% if section.settings.right_page_link != blank %}
+          <a href="{{ section.settings.right_page_link }}">
+            {% if section.settings.right_img != "" %}
+            <figure>
+              <img src="{{ section.settings.right_img | img_url:'1440x'}}">
+            </figure>
+            {% endif %}
+            {% if section.settings.right_page_title != "" %}
+            <div class="caption">
+              <span>2</span><label>"{{ section.settings.right_page_title }}"</label>
+            </div>
+            {% endif %}
+            {% if section.settings.right_page_cap != "" %}
+            <div class="caption_bottom">
+              <p>{{ section.settings.right_page_cap }}</p>
+            </div>
+            {% endif %}
+            
+          </a>
+          {% endif %}
+        </div>
+      </div>
+  </section>
+
+</div>
+
+
+
+{% schema %}
+  {
+    "name": "Training Page",
+    "settings": [
+		{
+           "type":      "header",
+           "content":   "Left Content"
+        },
+		{
+           "type":      "text",
+           "id":        "sec1_left_title",
+           "label":     "Left Label"
+        },
+		{
+           "type":      "text",
+           "id":        "header",
+           "label":     "Header"
+        },
+		{
+           "type":      "textarea",
+           "id":        "header_subtext",
+           "label":     "Sub Text"
+        },
+
+
+		{
+           "type":      "header",
+           "content":   "Page 1"
+        },
+		{
+           "type":      "image_picker",
+           "id":        "center_img",
+           "label":     "Image"
+        },
+		{
+           "type":      "text",
+           "id":        "page_title",
+           "label":     "Page Title"
+        },
+		{
+           "type":      "text",
+           "id":        "page_cap",
+           "label":     "Caption"
+        },
+		{
+          "id": "page_link",
+          "type": "url",
+          "label": "Page link"
+        },
+
+		{
+           "type":      "header",
+           "content":   "Page 2"
+        },
+		{
+           "type":      "image_picker",
+           "id":        "right_img",
+           "label":     "Image"
+        },
+		{
+           "type":      "text",
+           "id":        "right_page_title",
+           "label":     "Page Title"
+        },
+		{
+           "type":      "text",
+           "id":        "right_page_cap",
+           "label":     "Caption"
+        },
+		{
+          "id": "right_page_link",
+          "type": "url",
+          "label": "Page link"
+        }
+	]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

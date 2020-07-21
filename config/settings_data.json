@@ -28,12 +28,12 @@
     "type_base_italize_titles": true,
     "cart_type": "page",
     "cart_notes_enable": true,
-    "cart_notice": "Please note: Due to COVID-19, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
-    "share_image": "shopify:\/\/shop_images\/1-outside-btn-box-11.jpg",
-    "social_facebook_link": "",
+    "cart_notice": "Please note: Due to COVID-19, we are seeing slower shipping times than normal. We greatly appreciate your patience.",
+    "share_image": "shopify:\/\/shop_images\/hellojoey-ad-outside.jpg",
+    "social_facebook_link": "https:\/\/www.facebook.com\/hijoeyco",
     "social_twitter_link": "",
     "social_pinterest_link": "",
-    "social_instagram_link": "https:\/\/instagram.com\/hijoeyco",
+    "social_instagram_link": "https:\/\/instagram.com\/hijoey.co",
     "social_snapchat_link": "",
     "social_google_plus_link": "",
     "social_tumblr_link": "",
@@ -47,7 +47,7 @@
     "checkout_header_image": "",
     "checkout_logo_image": "shopify:\/\/shop_images\/hijoey_Logo_-_light.png",
     "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
+    "checkout_logo_size": "large",
     "checkout_body_background_image": "",
     "checkout_body_background_color": "#fff",
     "checkout_input_background_color_mode": "white",
@@ -56,8 +56,8 @@
     "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
     "checkout_accent_color": "#324175",
-    "checkout_button_color": "#000000",
-    "checkout_error_color": "#e32c2b",
+    "checkout_button_color": "#324175",
+    "checkout_error_color": "#fe524a",
     "content": "Please note: Due to COVID-19 circumstances, we are seeing slower shipping times than average. We greatly appreaciate your patience.",
     "sections": {
       "header": {
@@ -171,7 +171,7 @@
           "icon1": "shopify:\/\/shop_images\/hijoey-minimalist-home-icon_9db02208-b893-42f5-a871-dc105a2b5505.png",
           "list_content_1": "Perfectly Designed For Your Minimalist Home",
           "icon2": "shopify:\/\/shop_images\/hijoey-clearer-sound-icon.png",
-          "list_content_2": "Easy To Press With Clearer Sound",
+          "list_content_2": "Super Easy To Press With Clearer Sound",
           "icon3": "shopify:\/\/shop_images\/hijoey-happiness-guarantee-icon.png",
           "list_content_3": "100% Happiness Guarantee"
         }
@@ -393,11 +393,19 @@
           "center_img": "shopify:\/\/shop_images\/hijoey-Modeling_Worksheet_Thumbnail.jpg",
           "page_title": "MODELING WORKSHEET",
           "page_cap": "how to associate words with buttons",
-          "page_link": "shopify:\/\/pages\/free-modeling-worksheet",
+          "page_link": "shopify:\/\/pages\/modeling-worksheet",
           "right_img": "shopify:\/\/shop_images\/hijoey-Targeting_Guide_Thumbnail.jpg",
           "right_page_title": "TARGETING GUIDE",
           "right_page_cap": "how to press the buttons",
-          "right_page_link": "shopify:\/\/pages\/targeting-guide"
+          "right_page_link": "shopify:\/\/pages\/targeting-worksheet"
+        }
+      },
+      "featured-guarantee": {
+        "type": "featured-guarantee",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/100_guaranteed_07ec2d33-09da-44e6-9f1b-2a6b75fb0dec.png",
+          "title": "100 DAY TRIAL & EASY RETURNS",
+          "text": "We know it's very important to never rush or force the process on our friends. To make this time as easy and as stress free as possible, we'll happily provide a full refund if you don't fall in love with our hijoey training products."
         }
       }
     },

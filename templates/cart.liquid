@@ -148,7 +148,7 @@
                     <label for="updates_{{ item.key }}" class="visually-hidden">{{ 'cart.label.quantity' | t }}</label>
                     Quantity: <input type="number" name="updates[]" id="updates_{{ item.key }}" class="cart__product-qty" value="{{ item.quantity }}" min="0" data-id="{{ item.key }}">
                     </div>
-
+                    
                     <!-- Custom code for note backordered Author: John Mark ================================================== --> 
                     {% if item.variant.inventory_quantity <= 0 %}
                       <div class="cart-caption">

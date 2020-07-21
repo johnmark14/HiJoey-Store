@@ -135,5 +135,6 @@ $('#sidebar').stickyMojo({footerID: '#shopify-section-footer', contentID: '#main
   autoplaySpeed: 4000
 });
   
+   $( ".template-product #shopify-section-featured-guarantee" ).insertBefore( "#shopify-section-footer" );
   
   });
