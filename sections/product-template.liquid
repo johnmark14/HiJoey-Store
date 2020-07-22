@@ -408,7 +408,7 @@
         <p>Register to receive a notification when this item comes back in stock!</p>
 
       <div class="modal-container">
-        {% form 'contact', contact, onSubmit:  "openMessage(); return false;" %} 
+        {% form 'contact', contact, id: 'contact_email', onSubmit:  "openMessage(); return false;" %} 
       
           {{ form.errors | default_errors }}
             <input type="email" name="contact[email]" id="emailContact" placeholder="hooman@hijoey.co" class="input-email"/>

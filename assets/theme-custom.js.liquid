@@ -339,7 +339,7 @@ htmlEmail = `
                     <tr>
                       <td>
                         <p>Hi there,</p>
-                        <p>You'll receive a notification when our ` + productTitle + ` comes back to in stock.</p>
+                        <p>You'll receive a notification when our hijoey product ${ productTitle.textContent } comes back to in stock.</p>
                         <p>We founded hijoey with one goal in mind: to help inspire confidence and curiosity for you and your best friend. We're excited to have you as part of the family!</p>
                         <p>Please use the code below for an additional 10% off on your next order:</p>
 
@@ -348,7 +348,7 @@ htmlEmail = `
                     <tr>
                       <td>
                         <div class="promo-code">
-                          <h2 class="code">` + promoCode +`</h2>
+                          <h2 class="code"> ${ promoCode } </h2>
                         </div>
                       </td>
                     </tr>
@@ -370,26 +370,24 @@ htmlEmail = `
 //#endregion
 
 function openMessage() {
-  
-    if (emailContact.value.length != 0) {
-      //Get the product Title;
-      productTitle = productTitle.innerHTML;
-  
-      try {
-  
-        Email.send({
-            SecureToken: "2d4d847e-acd8-4318-a7e3-270329e7b4ea",
-            To: emailContact.value,
-            Bcc: "hijoeyshop@gmail.com",
-            From: "hijoeyteam@gmail.com",
-            Subject: "You'll be notified when " + productTitle + " is available",
-            Body: "" + htmlEmail
-        }).then( doButton() );
-      
-      } catch (error) { 
-        console.log(error);
-      }
+
+  if (emailContact.value.length != 0) {
+
+    try {
+
+      Email.send({
+          SecureToken: "2d4d847e-acd8-4318-a7e3-270329e7b4ea",
+          To: emailContact.value,
+          Bcc: "johmarkgabrentina@gmail.com",
+          From: "hello@hijoey.co",
+          Subject: `You'll be notified when ${ productTitle.textContent } is available`,
+          Body: "" + htmlEmail
+      }).then( doButton() );
+    
+    } catch (error) { 
+      console.log(error);
     }
+  }
     
   return false;
 }
